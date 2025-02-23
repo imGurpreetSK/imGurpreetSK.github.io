@@ -1,0 +1,28 @@
+@font-face {
+    font-family: 'JetBrainsMono';
+    src: url('/fonts/JetBrainsMono-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'JetBrainsMono';
+    src: url('/fonts/JetBrainsMono-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  head {
+    font-family: 'JetBrainsMono', sans-serif;
+  }
+
+  body {
+    font-family: 'JetBrainsMono', sans-serif;
+  }
+  
+  /* Target other elements as needed */
+  h1, h2, h3, p, a {
+    font-family: 'JetBrainsMono', sans-serif;
+  }

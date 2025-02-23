@@ -1,0 +1,49 @@
+{
+  "version": "https://jsonfeed.org/version/1",
+  "title": "GurpreetSK.com",
+  "home_page_url": "//localhost:1313/",
+  "feed_url": "//localhost:1313/feed.json",
+  "description": "Gurpreet's thoughts, experiences and learnings",
+  "favicon": "//localhost:1313//assets/favicon.ico",
+  "expired": false,
+  "author": {
+    "name": "Gurpreet Singh",
+    "url": "//localhost:1313/"
+  },
+  "items": [
+    
+    
+
+    
+    {
+      "id": "5ccaaa9ca9f351d0c36b45c59728f1a23d16601d",
+      "title": "Test 1",
+      "summary": "",
+      "content_text": " Hello 1 2 3 4 fun hello() { val test = \u0026#34;Hello\u0026#34; println(\u0026#34;$test world!\u0026#34;) } 1 2 3 4 5 title = \u0026#39;GurpreetSK.com\u0026#39; theme = \u0026#39;maverick\u0026#39; [permalinks] pages = \u0026#34;/:slug\u0026#34; ",
+      "content_html": "\u003cp\u003e\n\n  \u003ca href=\"%22www.google.com%22\"\u003eHello\u003c/a\u003e\n\n\u003c/p\u003e\n\u003cdiv class=\"highlight\"\u003e\u003cdiv style=\"color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;\"\u003e\n\u003ctable style=\"border-spacing:0;padding:0;margin:0;border:0;\"\u003e\u003ctr\u003e\u003ctd style=\"vertical-align:top;padding:0;margin:0;border:0;\"\u003e\n\u003cpre tabindex=\"0\" style=\"color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;\"\u003e\u003ccode\u003e\u003cspan style=\"white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1\" id=\"hl-0-1\"\u003e\u003ca style=\"outline:none;text-decoration:none;color:inherit\" href=\"#hl-0-1\"\u003e1\u003c/a\u003e\n\u003c/span\u003e\u003cspan style=\"white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1\" id=\"hl-0-2\"\u003e\u003ca style=\"outline:none;text-decoration:none;color:inherit\" href=\"#hl-0-2\"\u003e2\u003c/a\u003e\n\u003c/span\u003e\u003cspan style=\"white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1\" id=\"hl-0-3\"\u003e\u003ca style=\"outline:none;text-decoration:none;color:inherit\" href=\"#hl-0-3\"\u003e3\u003c/a\u003e\n\u003c/span\u003e\u003cspan style=\"white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1\" id=\"hl-0-4\"\u003e\u003ca style=\"outline:none;text-decoration:none;color:inherit\" href=\"#hl-0-4\"\u003e4\u003c/a\u003e\n\u003c/span\u003e\u003c/code\u003e\u003c/pre\u003e\u003c/td\u003e\n\u003ctd style=\"vertical-align:top;padding:0;margin:0;border:0;;width:100%\"\u003e\n\u003cpre tabindex=\"0\" style=\"color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;\"\u003e\u003ccode class=\"language-kotlin\" data-lang=\"kotlin\"\u003e\u003cspan style=\"display:flex;\"\u003e\u003cspan\u003e\u003cspan style=\"color:#8839ef\"\u003efun\u003c/span\u003e \u003cspan style=\"color:#1e66f5\"\u003ehello\u003c/span\u003e() {\n\u003c/span\u003e\u003c/span\u003e\u003cspan style=\"display:flex;\"\u003e\u003cspan\u003e    \u003cspan style=\"color:#8839ef\"\u003eval\u003c/span\u003e \u003cspan style=\"color:#fe640b\"\u003etest\u003c/span\u003e = \u003cspan style=\"color:#40a02b\"\u003e\u0026#34;Hello\u0026#34;\u003c/span\u003e\n\u003c/span\u003e\u003c/span\u003e\u003cspan style=\"display:flex;\"\u003e\u003cspan\u003e    println(\u003cspan style=\"color:#40a02b\"\u003e\u0026#34;\u003c/span\u003e\u003cspan style=\"color:#40a02b\"\u003e$test\u003c/span\u003e\u003cspan style=\"color:#40a02b\"\u003e world!\u0026#34;\u003c/span\u003e)\n\u003c/span\u003e\u003c/span\u003e\u003cspan style=\"display:flex;\"\u003e\u003cspan\u003e}\n\u003c/span\u003e\u003c/span\u003e\u003c/code\u003e\u003c/pre\u003e\u003c/td\u003e\u003c/tr\u003e\u003c/table\u003e\n\u003c/div\u003e\n\u003c/div\u003e\u003cdiv class=\"highlight\"\u003e\u003cdiv style=\"color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;\"\u003e\n\u003ctable style=\"border-spacing:0;padding:0;margin:0;border:0;\"\u003e\u003ctr\u003e\u003ctd style=\"vertical-align:top;padding:0;margin:0;border:0;\"\u003e\n\u003cpre tabindex=\"0\" style=\"color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;\"\u003e\u003ccode\u003e\u003cspan style=\"white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1\" id=\"hl-1-1\"\u003e\u003ca style=\"outline:none;text-decoration:none;color:inherit\" href=\"#hl-1-1\"\u003e1\u003c/a\u003e\n\u003c/span\u003e\u003cspan style=\"white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1\" id=\"hl-1-2\"\u003e\u003ca style=\"outline:none;text-decoration:none;color:inherit\" href=\"#hl-1-2\"\u003e2\u003c/a\u003e\n\u003c/span\u003e\u003cspan style=\"white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1\" id=\"hl-1-3\"\u003e\u003ca style=\"outline:none;text-decoration:none;color:inherit\" href=\"#hl-1-3\"\u003e3\u003c/a\u003e\n\u003c/span\u003e\u003cspan style=\"white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1\" id=\"hl-1-4\"\u003e\u003ca style=\"outline:none;text-decoration:none;color:inherit\" href=\"#hl-1-4\"\u003e4\u003c/a\u003e\n\u003c/span\u003e\u003cspan style=\"white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#8c8fa1\" id=\"hl-1-5\"\u003e\u003ca style=\"outline:none;text-decoration:none;color:inherit\" href=\"#hl-1-5\"\u003e5\u003c/a\u003e\n\u003c/span\u003e\u003c/code\u003e\u003c/pre\u003e\u003c/td\u003e\n\u003ctd style=\"vertical-align:top;padding:0;margin:0;border:0;;width:100%\"\u003e\n\u003cpre tabindex=\"0\" style=\"color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;\"\u003e\u003ccode class=\"language-toml\" data-lang=\"toml\"\u003e\u003cspan style=\"display:flex;\"\u003e\u003cspan\u003etitle = \u003cspan style=\"color:#40a02b\"\u003e\u0026#39;GurpreetSK.com\u0026#39;\u003c/span\u003e\n\u003c/span\u003e\u003c/span\u003e\u003cspan style=\"display:flex;\"\u003e\u003cspan\u003etheme = \u003cspan style=\"color:#40a02b\"\u003e\u0026#39;maverick\u0026#39;\u003c/span\u003e\n\u003c/span\u003e\u003c/span\u003e\u003cspan style=\"display:flex;\"\u003e\u003cspan\u003e\n\u003c/span\u003e\u003c/span\u003e\u003cspan style=\"display:flex;\"\u003e\u003cspan\u003e[permalinks]\n\u003c/span\u003e\u003c/span\u003e\u003cspan style=\"display:flex;\"\u003e\u003cspan\u003e  pages = \u003cspan style=\"color:#40a02b\"\u003e\u0026#34;/:slug\u0026#34;\u003c/span\u003e\n\u003c/span\u003e\u003c/span\u003e\u003c/code\u003e\u003c/pre\u003e\u003c/td\u003e\u003c/tr\u003e\u003c/table\u003e\n\u003c/div\u003e\n\u003c/div\u003e",
+      "url": "//localhost:1313/posts/test-1/",
+      "date_published": "22026-22-09T251:2222:00-08:00",
+      "date_modified": "22026-22-09T251:2222:00-08:00",
+      "author": {
+        "name": "Gurpreet Singh",
+        "url": "//localhost:1313/"
+      }
+    },
+    
+    {
+      "id": "7295b69b0df06d518d481c54d71973f9f911520a",
+      "title": "Test 2",
+      "summary": "",
+      "content_text": "",
+      "content_html": "",
+      "url": "//localhost:1313/posts/test-2/",
+      "date_published": "22026-22-09T251:2222:00-08:00",
+      "date_modified": "22026-22-09T251:2222:00-08:00",
+      "author": {
+        "name": "Gurpreet Singh",
+        "url": "//localhost:1313/"
+      }
+    }
+    
+  ]
+}
