@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+  
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Liste - //localhost:1313/">
+    <title>Kotlinx Serialization - JsonConfiguration | GurpreetSK.com</title>
+    <meta name="description" content="Gurpreet&#39;s thoughts, experiences and learnings">
+    <meta property="og:url" content="//localhost:1313/posts/kotlinx-serialization-jsonconfiguration-copy/">
+  <meta property="og:site_name" content="GurpreetSK.com">
+  <meta property="og:title" content="Kotlinx Serialization - JsonConfiguration">
+  <meta property="og:description" content="In the previous posts we learned about the basics of kotlin serialization. We instantiated a Json object, passing it a configuration and used it to perform serialization and deserialization operations. This post is about that configuration, called JsonConfiguration — why is it required and what role does it play in the process.
+The JsonConfiguration class is provided by the serialization runtime library and allows us to customise JSON behaviour as per our requirements. It is a simple data class with various properties and two out-of-the-box configurations:">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2020-05-13T02:23:11+05:30">
+    <meta property="article:modified_time" content="2020-05-13T02:23:11+05:30">
+    <meta property="article:tag" content="Kotlin">
+    <meta property="article:tag" content="Migrated-From-Medium">
+    <meta property="article:tag" content="Kotlinx-Serialization">
+
+    
+  <meta itemprop="name" content="Kotlinx Serialization - JsonConfiguration">
+  <meta itemprop="description" content="In the previous posts we learned about the basics of kotlin serialization. We instantiated a Json object, passing it a configuration and used it to perform serialization and deserialization operations. This post is about that configuration, called JsonConfiguration — why is it required and what role does it play in the process.
+The JsonConfiguration class is provided by the serialization runtime library and allows us to customise JSON behaviour as per our requirements. It is a simple data class with various properties and two out-of-the-box configurations:">
+  <meta itemprop="datePublished" content="2020-05-13T02:23:11+05:30">
+  <meta itemprop="dateModified" content="2020-05-13T02:23:11+05:30">
+  <meta itemprop="wordCount" content="736">
+  <meta itemprop="keywords" content="Kotlin,Migrated-From-Medium,Kotlinx-Serialization">
+    
+    <link rel="canonical" href="//localhost:1313/posts/kotlinx-serialization-jsonconfiguration-copy/">
+    <link rel="icon" href="//localhost:1313//assets/favicon.ico">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link href="https://www.google-analytics.com" rel="preconnect" crossorigin>
+    <link rel="alternate" type="application/atom+xml" title="GurpreetSK.com" href="//localhost:1313//atom.xml" />
+    <link rel="alternate" type="application/json" title="GurpreetSK.com" href="//localhost:1313//feed.json" />
+    <link rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=">
+    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bricolage+Grotesque">
+    
+    
+    <style>*,:after,:before{box-sizing:border-box;padding:0}body{font:1rem/1.5 bricolage grotesque,-apple-system,BlinkMacSystemFont,segoe ui,Helvetica,Arial,sans-serif;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;padding:2rem;background:#fffdfa;color:#000}.skip-link{position:absolute;top:-40px;left:0;background:#eee;z-index:100}.skip-link:focus{top:0}header{line-height:2;padding-bottom:1.5rem}.link{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-decoration:none}.time{font-variant-numeric:tabular-nums;white-space:nowrap}blockquote{border-left:5px solid #eee;padding-left:1rem;margin:0}a,a:visited{color:inherit}a:hover,a.heading-link{text-decoration:none}pre{padding:.5rem;overflow:auto;overflow-x:scroll;overflow-wrap:normal}code,pre{font-family:San Francisco Mono,Monaco,consolas,lucida console,dejavu sans mono,bitstream vera sans mono,monospace;font-size:normal;font-size:small;background:#eee}code{margin:.1rem;border:none;overflow:visible;overflow-wrap:anywhere}ul{list-style-type:square}ul,ol{padding-left:1.2rem}.list{line-height:2;list-style-type:none;padding-left:0}.list li{padding-bottom:.1rem}.meta{color:#777}.content{max-width:70ch;margin:0 auto}header{line-height:2;display:flex;justify-content:space-between;padding-bottom:1rem}header a{text-decoration:none}header ul{list-style-type:none;padding:0}header li,header a{display:inline}h2.post{padding-top:.5rem}header ul a:first-child{padding-left:1rem}.nav{height:1px;background:#000;content:'';max-width:10%}.list li{display:flex;align-items:baseline}.list li time{flex:initial}.hr-list{margin-top:0;margin-bottom:0;margin-right:.5rem;margin-left:.5rem;height:1px;border:0;border-bottom:1px dotted #ccc;flex:1 0 1rem}.m,hr{border:0;margin:3rem 0}img{max-width:100%;height:auto}.post-date{margin:5% 0}.index-date{color:#9a9a9a}.animate-blink{animation:opacity 1s infinite;opacity:1}@keyframes opacity{0%{opacity:1}50%{opacity:.5}100%{opacity:0}}.tags{display:flex;justify-content:space-between}.tags ul{padding:0;margin:0}.tags li{display:inline}.avatar{height:120px;width:120px;position:relative;margin:-10px 0 0 15px;float:right;border-radius:50%}table{width:100%;border-collapse:collapse}th,td{border:1px solid #ddd;text-align:left;padding:8px}th{background-color:#f2f2f2} </style>
+  
+    
+  
+  
+  <script type="application/ld+json">
+  {
+      "@context": "http://schema.org",
+      "@type": "BlogPosting",
+      "articleSection": "posts",
+      "name": "Kotlinx Serialization - JsonConfiguration",
+      "headline": "Kotlinx Serialization - JsonConfiguration",
+      "alternativeHeadline": "",
+      "description": "\u003cbr\u003e\n\u003cp\u003e\u003cimg\n  src=\u0022\/assets\/posts\/kotlinx-serialization\/banner-kotlin-mobile.webp\u0022\n  alt=\u0022Header\u0022\n  loading=\u0022lazy\u0022\n  decoding=\u0022async\u0022\n  class=\u0022full-width\u0022\n\/\u003e\n\n\u003c\/p\u003e\n\u003cbr\u003e\n\u003cp\u003eIn the previous posts we learned about the basics of kotlin serialization. We instantiated a Json object, passing it a configuration and used it to perform serialization and deserialization operations. This post is about that configuration, called JsonConfiguration — why is it required and what role does it play in the process.\u003c\/p\u003e\n\u003cp\u003eThe JsonConfiguration class is provided by the serialization runtime library and allows us to customise JSON behaviour as per our requirements. It is a simple data class with various properties and two out-of-the-box configurations:\u003c\/p\u003e",
+      "inLanguage": "en-US",
+      "isFamilyFriendly": "true",
+      "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "\/\/localhost:1313\/posts\/kotlinx-serialization-jsonconfiguration-copy\/"
+      },
+      "author" : {
+          "@type": "Person",
+          "name": "Gurpreet"
+      },
+      "creator" : {
+          "@type": "Person",
+          "name": "Gurpreet"
+      },
+      "accountablePerson" : {
+          "@type": "Person",
+          "name": "Gurpreet"
+      },
+      "copyrightHolder" : "GurpreetSK.com",
+      "copyrightYear" : "2020",
+      "dateCreated": "2020-05-13T02:23:11.00Z",
+      "datePublished": "2020-05-13T02:23:11.00Z",
+      "dateModified": "2020-05-13T02:23:11.00Z",
+      "publisher":{
+          "@type":"Organization",
+          "name": "GurpreetSK.com",
+          "url": "//localhost:1313/",
+          "logo": {
+              "@type": "ImageObject",
+              "url": "\/\/localhost:1313\/assets\/favicon.ico",
+              "width":"32",
+              "height":"32"
+          }
+      },
+      "image": "//localhost:1313/assets/favicon.ico",
+      "url" : "\/\/localhost:1313\/posts\/kotlinx-serialization-jsonconfiguration-copy\/",
+      "wordCount" : "736",
+      "genre" : [ "kotlin" , "migrated-from-medium" , "kotlinx-serialization" ],
+      "keywords" : [ "kotlin" , "migrated-from-medium" , "kotlinx-serialization" ]
+  }
+  </script>
+  
+  
+  </head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to main</a>
+  <main id="main">
+  <div class="content">
+    <header>
+<p style="padding: 0;margin: 0;">
+  <a href="//localhost:1313/">
+    <b>GurpreetSK.com</b>
+    <span class="text-stone-500 animate-blink">▮</span>
+  </a>
+</p>
+<ul style="padding: 0;margin: 0;">
+  
+  
+  <li class="">
+    <a href="/"><span>Home</span></a>
+    
+  <li class="">
+    <a href="/about/"><span>About</span></a>
+    
+  <li class="">
+    <a href="/posts/"><span>Posts</span></a>
+    
+  <li class="">
+    <a href="/musings/"><span>Musings</span></a>
+    
+  </li>
+</ul>
+</header>
+<hr class="hr-list" style="padding: 0;margin: 0;">
+    <section>
+      <h2 class="post">Kotlinx Serialization - JsonConfiguration</h2>
+      <br>
+<p><img
+  src="/assets/posts/kotlinx-serialization/banner-kotlin-mobile.webp"
+  alt="Header"
+  loading="lazy"
+  decoding="async"
+  class="full-width"
+/>
+
+</p>
+<br>
+<p>In the previous posts we learned about the basics of kotlin serialization. We instantiated a Json object, passing it a configuration and used it to perform serialization and deserialization operations. This post is about that configuration, called JsonConfiguration — why is it required and what role does it play in the process.</p>
+<p>The JsonConfiguration class is provided by the serialization runtime library and allows us to customise JSON behaviour as per our requirements. It is a simple data class with various properties and two out-of-the-box configurations:</p>
+<ol>
+<li>Stable — adheres to the 
+<a href="https://datatracker.ietf.org/doc/html/rfc4627" target="_blank" rel="noopener">JSON specification restrictions (RFC-4627)</a>
+
+ and is guaranteed to preserve its semantics between library releases.</li>
+<li>Default — This configuration is what the library recommends for JSON format. It is not guaranteed to preserve its semantics and might change as the runtime library evolves until it hits a version 1.0.0.</li>
+</ol>
+<p>Being a data class, you can also copy either of these configurations and make changes as per your requirements, or create a configuration from scratch if that suits your use-case better.</p>
+<p>Customisable properties</p>
+<p>Following are the various available options for JSON-specific behaviour customisation (along with certain examples):</p>
+<h4 id="1-encodedefaults">1. encodeDefaults</h4>
+<p>Denotes whether the serialized JSON contains properties with default values or not.</p>
+<h4 id="2-ignoreunknownkeys">2. ignoreUnknownKeys</h4>
+<p>If false, any unknown properties in JSON will cause the deserialization to fail. This flag is true by default in stable configuration, however it’s a wise choice to keep it false to maintain backward compatibility while interacting with frequently changing objects or external APIs.</p>
+<h4 id="3-islenient">3. isLenient</h4>
+<p>If set to true, removes JSON specification restrictions and allows parsing of malformed JSON objects. In following example, notice how the input JSON is unquoted, yet the parsing succeeds.
+However, the parsing will still fail if any string values has spaces or delimiters.</p>
+<h4 id="4-serializespecialfloatingpointvalues">4. serializeSpecialFloatingPointValues</h4>
+<p>As the name suggests, allows serialization of special floating point values in the JSON. These values are Infinity, -Infinity and NaN. As a note, you should give a thought why these values are required to be parse at first place.</p>
+<h4 id="5-unquotedprint">5. unquotedPrint</h4>
+<p>If true, the output JSON does not have quoted strings. This option is not recommended to be used except for rare debugging purposes as the parsed JSON is invalid.
+If any of the values in deserialized output has a string with spaces or delimiters, it will always be quoted.</p>
+<h4 id="6-prettyprint">6. prettyPrint</h4>
+<p>If set to true, the output JSON will be pretty-printed.</p>
+<h4 id="7-indents">7. indents</h4>
+<p>Specifies the indent to use while parsing and pretty-printing JSON. Pretty printing has to be enabled while providing a custom indent, else the serialization will fail with an IllegalArgumentException.
+The next few properties we’ll talk about allow transformation of JSON from one form to another to support certain features which might be legacy or unsupported by default.</p>
+<h4 id="8-allowstructuredmapkeys">8. allowStructuredMapKeys</h4>
+<p>In JSON, only primitives can be used as keys. The serialization will fail with the following error if we have some non-primitive type representing a key in the object to be parsed.</p>
+<div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript3" data-lang="gdscript3"><span style="display:flex;"><span>    Value of type <span style="color:#40a02b">&#39;kotlin.collections.LinkedHashMap&#39;</span> can<span style="color:#40a02b">&#39;t be used in JSON as a key in the map.</span>
+</span></span><span style="display:flex;"><span>    It should have either primitive <span style="color:#04a5e5;font-weight:bold">or</span> <span style="color:#8839ef">enum</span> kind, but its kind is <span style="color:#40a02b">&#39;MAP.&#39;</span>
+</span></span></code></pre></div><p>If you need to serialize a JSON with say a map as a key, you can enable allowStructuredMapKeys flag. This will transform the serialized JSON from a map of key-value pair to a flat list of keys and values.</p>
+<h4 id="9-usearraypolymorphism">9. useArrayPolymorphism</h4>
+<p>This flag works only if you’re performing polymorphic serialization (
+<a href="https://github.com/Kotlin/kotlinx.serialization/blob/master/docs/polymorphism.md#multiplatform-polymorphic-serialization" target="_blank" rel="noopener">this article</a>
+
+ and the 
+<a href="https://github.com/Kotlin/kotlinx.serialization/blob/master/runtime/commonMain/src/kotlinx/serialization/Polymorphic.kt#L23" target="_blank" rel="noopener">class docs</a>
+
+ do a really good job of explaining what polymorphic serialization is). This flag causes the serialized JSON to be produced in the legacy array format instead of the object format.</p>
+<p>If array polymorphism is not used, the following JSON is obtained:</p>
+<div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>[{&#34;type&#34;:&#34;Dog&#34;,&#34;lovesTreats&#34;:true},{&#34;type&#34;:&#34;Cat&#34;,&#34;lovesSleeping&#34;:true}]
+</span></span></code></pre></div><p>The ‘type’ in above JSON is called the class discriminator, and can be customised too!</p>
+<h4 id="10-classdiscriminator">10. classDiscriminator</h4>
+<p>Use this property to give a custom name to the JSON property describing the class. In the above example, if we pass classDiscriminator=”class” to the JsonConfiguration, the following JSON would be obtained</p>
+<div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>[{&#34;class&#34;:&#34;Dog&#34;,&#34;lovesTreats&#34;:true},{&#34;class&#34;:&#34;Cat&#34;,&#34;lovesSleeping&#34;:true}]
+</span></span></code></pre></div><hr>
+<p>Hope this was helpful and you learnt something new. If you haven’t gone through the previous posts, you should take a look at those:</p>
+<ol>
+<li>
+
+      
+    
+  <a href="/posts/kotlinx-serialization-getting-started/">Getting started with Kotlin Serialization</a>
+
+</li>
+<li>
+
+      
+    
+  <a href="/posts/kotlinx-serialization-optional-and-transient-properties/">Kotlin serialization — Optional and Transient properties</a>
+
+</li>
+</ol>
+<p>This article is third in a series of articles I’m writing on Kotlin serialization while also learning more about the same. Stay tuned and keep learning!</p>
+<p>Hope it helps!</p>
+<p><em>Originally posted on Medium 
+<a href="https://medium.com/@gurpreetsk/kotlin-serialization-optional-and-transient-properties-b3da3247e112" target="_blank" rel="noopener">link</a>
+
+</em></p>
+
+      
+      <div class="post-date">
+        <span class="g time">May 13, 2020 </span> &#8729;
+         
+         <a href="//localhost:1313/tags/kotlin/">kotlin</a> <a href="//localhost:1313/tags/migrated-from-medium/">migrated-from-medium</a> <a href="//localhost:1313/tags/kotlinx-serialization/">kotlinx-serialization</a>
+      </div>
+      
+    </section>
+    
+    
+    
+  </div>
+</main>
+</body>
+</html>
