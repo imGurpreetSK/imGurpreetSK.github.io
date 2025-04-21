@@ -43,7 +43,7 @@ The JsonConfiguration class is provided by the serialization runtime library and
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bricolage+Grotesque">
     
     
-    <style>*,:after,:before{box-sizing:border-box;padding:0}body{font:1rem/1.5 bricolage grotesque,-apple-system,BlinkMacSystemFont,segoe ui,Helvetica,Arial,sans-serif;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;padding:2rem;background:#fffdfa;color:#000}.skip-link{position:absolute;top:-40px;left:0;background:#eee;z-index:100}.skip-link:focus{top:0}header{line-height:2;padding-bottom:1.5rem}.link{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-decoration:none}.time{font-variant-numeric:tabular-nums;white-space:nowrap}blockquote{border-left:5px solid #eee;padding-left:1rem;margin:0}a,a:visited{color:inherit}a:hover,a.heading-link{text-decoration:none}pre{padding:.5rem;overflow:auto;overflow-x:scroll;overflow-wrap:normal}code,pre{font-family:San Francisco Mono,Monaco,consolas,lucida console,dejavu sans mono,bitstream vera sans mono,monospace;font-size:normal;font-size:small;background:#eee}code{margin:.1rem;border:none;overflow:visible;overflow-wrap:anywhere}ul{list-style-type:square}ul,ol{padding-left:1.2rem}.list{line-height:2;list-style-type:none;padding-left:0}.list li{padding-bottom:.1rem}.meta{color:#777}.content{max-width:70ch;margin:0 auto}header{line-height:2;display:flex;justify-content:space-between;padding-bottom:1rem}header a{text-decoration:none}header ul{list-style-type:none;padding:0}header li,header a{display:inline}h2.post{padding-top:.5rem}header ul a:first-child{padding-left:1rem}.nav{height:1px;background:#000;content:'';max-width:10%}.list li{display:flex;align-items:baseline}.list li time{flex:initial}.hr-list{margin-top:0;margin-bottom:0;margin-right:.5rem;margin-left:.5rem;height:1px;border:0;border-bottom:1px dotted #ccc;flex:1 0 1rem}.m,hr{border:0;margin:3rem 0}img{max-width:100%;height:auto}.post-date{margin:5% 0}.index-date{color:#9a9a9a}.animate-blink{animation:opacity 1s infinite;opacity:1}@keyframes opacity{0%{opacity:1}50%{opacity:.5}100%{opacity:0}}.tags{display:flex;justify-content:space-between}.tags ul{padding:0;margin:0}.tags li{display:inline}.avatar{height:120px;width:120px;position:relative;margin:-10px 0 0 15px;float:right;border-radius:50%}table{width:100%;border-collapse:collapse}th,td{border:1px solid #ddd;text-align:left;padding:8px}th{background-color:#f2f2f2}li{font-family:inherit} </style>
+    <style>*,:after,:before{box-sizing:border-box;padding:0;line-height:165%}body{text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;padding:2rem;background:#fffdfa;color:#000}.skip-link{position:absolute;top:-40px;left:0;background:#eee;z-index:100}.skip-link:focus{top:0}header{line-height:2;padding-bottom:1.5rem}.link{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-decoration:none}.time{font-variant-numeric:tabular-nums;white-space:nowrap}blockquote{border-left:5px solid #eee;padding-left:1rem;margin:0}a,a:visited{color:inherit}a:hover,a.heading-link{text-decoration:none}pre{padding:.5rem;overflow:auto;overflow-x:scroll;overflow-wrap:normal}code,pre{font-family:San Francisco Mono,Monaco,consolas,lucida console,dejavu sans mono,bitstream vera sans mono,monospace;font-size:normal;font-size:small;background:#eee}code{margin:.1rem;border:none;overflow:visible;overflow-wrap:anywhere}ul{list-style-type:square}ul,ol{padding-left:3rem}.list{line-height:2;list-style-type:none;padding-left:0}.list li{padding-bottom:.1rem}.meta{color:#777}.content{max-width:100ch;margin:0 auto;text-align:justify}header{line-height:2;display:flex;justify-content:space-between;padding-bottom:1rem}header a{text-decoration:none}header ul{list-style-type:none;padding:0}header li,header a{display:inline}h2.post{padding-top:.5rem}header ul a:first-child{padding-left:1rem}.nav{height:1px;background:#000;content:'';max-width:10%}.list li{display:flex;align-items:baseline}.list li time{flex:initial}.hr-list{margin-top:0;margin-bottom:0;margin-right:.5rem;margin-left:.5rem;height:1px;border:0;border-bottom:1px dotted #ccc;flex:1 0 1rem}.m,hr{border:0;margin:3rem 0}img{max-width:100%;height:auto}.post-date{margin:5% 0}.index-date{color:#9a9a9a}.animate-blink{animation:opacity 1s infinite;opacity:1}@keyframes opacity{0%{opacity:1}50%{opacity:.5}100%{opacity:0}}.tags{display:flex;justify-content:space-between}.tags ul{padding:0;margin:0}.tags li{display:inline}.avatar{height:120px;width:120px;position:relative;margin:-10px 0 0 15px;float:right;border-radius:50%}table{width:100%;border-collapse:collapse}th,td{border:1px solid #ddd;text-align:left;padding:8px}th{background-color:#f2f2f2}li{font-family:inherit} </style>
   
     
   
@@ -149,9 +149,9 @@ The JsonConfiguration class is provided by the serialization runtime library and
 <p>The JsonConfiguration class is provided by the serialization runtime library and allows us to customise JSON behaviour as per our requirements. It is a simple data class with various properties and two out-of-the-box configurations:</p>
 <ol>
 <li>Stable — adheres to the 
-<a href="https://datatracker.ietf.org/doc/html/rfc4627" target="_blank" rel="noopener">JSON specification restrictions (RFC-4627)</a>
 
- and is guaranteed to preserve its semantics between library releases.</li>
+
+<a href="https://datatracker.ietf.org/doc/html/rfc4627" target="_blank" rel="noopener">JSON specification restrictions (RFC-4627)</a> and is guaranteed to preserve its semantics between library releases.</li>
 <li>Default — This configuration is what the library recommends for JSON format. It is not guaranteed to preserve its semantics and might change as the runtime library evolves until it hits a version 1.0.0.</li>
 </ol>
 <p>Being a data class, you can also copy either of these configurations and make changes as per your requirements, or create a configuration from scratch if that suits your use-case better.</p>
@@ -181,12 +181,12 @@ The next few properties we’ll talk about allow transformation of JSON from one
 </span></span></code></pre></div><p>If you need to serialize a JSON with say a map as a key, you can enable allowStructuredMapKeys flag. This will transform the serialized JSON from a map of key-value pair to a flat list of keys and values.</p>
 <h4 id="9-usearraypolymorphism">9. useArrayPolymorphism</h4>
 <p>This flag works only if you’re performing polymorphic serialization (
-<a href="https://github.com/Kotlin/kotlinx.serialization/blob/master/docs/polymorphism.md#multiplatform-polymorphic-serialization" target="_blank" rel="noopener">this article</a>
 
- and the 
-<a href="https://github.com/Kotlin/kotlinx.serialization/blob/master/runtime/commonMain/src/kotlinx/serialization/Polymorphic.kt#L23" target="_blank" rel="noopener">class docs</a>
 
- do a really good job of explaining what polymorphic serialization is). This flag causes the serialized JSON to be produced in the legacy array format instead of the object format.</p>
+<a href="https://github.com/Kotlin/kotlinx.serialization/blob/master/docs/polymorphism.md#multiplatform-polymorphic-serialization" target="_blank" rel="noopener">this article</a> and the 
+
+
+<a href="https://github.com/Kotlin/kotlinx.serialization/blob/master/runtime/commonMain/src/kotlinx/serialization/Polymorphic.kt#L23" target="_blank" rel="noopener">class docs</a> do a really good job of explaining what polymorphic serialization is). This flag causes the serialized JSON to be produced in the legacy array format instead of the object format.</p>
 <p>If array polymorphism is not used, the following JSON is obtained:</p>
 <div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>[{&#34;type&#34;:&#34;Dog&#34;,&#34;lovesTreats&#34;:true},{&#34;type&#34;:&#34;Cat&#34;,&#34;lovesSleeping&#34;:true}]
 </span></span></code></pre></div><p>The ‘type’ in above JSON is called the class discriminator, and can be customised too!</p>
@@ -198,25 +198,25 @@ The next few properties we’ll talk about allow transformation of JSON from one
 <ol>
 <li>
 
+
+
       
     
-  <a href="/posts/kotlinx-serialization-getting-started/">Getting started with Kotlin Serialization</a>
-
-</li>
+  <a href="/posts/kotlinx-serialization-getting-started/">Getting started with Kotlin Serialization</a></li>
 <li>
 
+
+
       
     
-  <a href="/posts/kotlinx-serialization-optional-and-transient-properties/">Kotlin serialization — Optional and Transient properties</a>
-
-</li>
+  <a href="/posts/kotlinx-serialization-optional-and-transient-properties/">Kotlin serialization — Optional and Transient properties</a></li>
 </ol>
 <p>This article is third in a series of articles I’m writing on Kotlin serialization while also learning more about the same. Stay tuned and keep learning!</p>
 <p>Hope it helps!</p>
 <p><em>Originally posted on Medium 
-<a href="https://medium.com/@gurpreetsk/kotlin-serialization-optional-and-transient-properties-b3da3247e112" target="_blank" rel="noopener">link</a>
 
-</em></p>
+
+<a href="https://medium.com/@gurpreetsk/kotlin-serialization-optional-and-transient-properties-b3da3247e112" target="_blank" rel="noopener">link</a></em></p>
 
       
       <div class="post-date">
