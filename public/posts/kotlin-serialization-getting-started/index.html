@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Liste - //localhost:1313/">
+    <title>Kotlinx Serialization - Getting Started | GurpreetSK.com</title>
+    <meta name="description" content="Gurpreet&#39;s thoughts, experiences and learnings">
+    <meta property="og:url" content="//localhost:1313/posts/kotlin-serialization-getting-started/">
+  <meta property="og:site_name" content="GurpreetSK.com">
+  <meta property="og:title" content="Kotlinx Serialization - Getting Started">
+  <meta property="og:description" content="Kotlin serialization is kotlin-first, compile-time, type-safe, reflection-free and completely multi-platform ready serialization mechanism to convert kotlin objects into data formats like JSON or Protobuf and vice-versa. It is comprised of a compiler plugin which is used to generate code for serializable classes and a runtime library, containing core classes and primitives for serialization &amp; IO, among some other things.
+While JSON format is supported out of the box by the library, there’s first-class support for other formats like Protobuf &amp; CBOR, with the option to extend the functionality by writing your own library to support any other format.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2019-06-08T02:23:11+05:30">
+    <meta property="article:modified_time" content="2019-06-08T02:23:11+05:30">
+    <meta property="article:tag" content="Android">
+    <meta property="article:tag" content="Migrated-From-Medium">
+
+    
+  <meta itemprop="name" content="Kotlinx Serialization - Getting Started">
+  <meta itemprop="description" content="Kotlin serialization is kotlin-first, compile-time, type-safe, reflection-free and completely multi-platform ready serialization mechanism to convert kotlin objects into data formats like JSON or Protobuf and vice-versa. It is comprised of a compiler plugin which is used to generate code for serializable classes and a runtime library, containing core classes and primitives for serialization &amp; IO, among some other things.
+While JSON format is supported out of the box by the library, there’s first-class support for other formats like Protobuf &amp; CBOR, with the option to extend the functionality by writing your own library to support any other format.">
+  <meta itemprop="datePublished" content="2019-06-08T02:23:11+05:30">
+  <meta itemprop="dateModified" content="2019-06-08T02:23:11+05:30">
+  <meta itemprop="wordCount" content="154">
+  <meta itemprop="keywords" content="Android,Migrated-From-Medium">
+    
+    <link rel="canonical" href="//localhost:1313/posts/kotlin-serialization-getting-started/">
+    <link rel="icon" href="//localhost:1313//assets/favicon.ico">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link href="https://www.google-analytics.com" rel="preconnect" crossorigin>
+    <link rel="alternate" type="application/atom+xml" title="GurpreetSK.com" href="//localhost:1313//atom.xml" />
+    <link rel="alternate" type="application/json" title="GurpreetSK.com" href="//localhost:1313//feed.json" />
+    <link rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=">
+    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bricolage+Grotesque">
+    
+    
+    <style>*,:after,:before{box-sizing:border-box;padding:0}body{font:1rem/1.5 bricolage grotesque,-apple-system,BlinkMacSystemFont,segoe ui,Helvetica,Arial,sans-serif;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;padding:2rem;background:#fffdfa;color:#000}.skip-link{position:absolute;top:-40px;left:0;background:#eee;z-index:100}.skip-link:focus{top:0}header{line-height:2;padding-bottom:1.5rem}.link{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-decoration:none}.time{font-variant-numeric:tabular-nums;white-space:nowrap}blockquote{border-left:5px solid #eee;padding-left:1rem;margin:0}a,a:visited{color:inherit}a:hover,a.heading-link{text-decoration:none}pre{padding:.5rem;overflow:auto;overflow-x:scroll;overflow-wrap:normal}code,pre{font-family:San Francisco Mono,Monaco,consolas,lucida console,dejavu sans mono,bitstream vera sans mono,monospace;font-size:normal;font-size:small;background:#eee}code{margin:.1rem;border:none;overflow:visible;overflow-wrap:anywhere}ul{list-style-type:square}ul,ol{padding-left:1.2rem}.list{line-height:2;list-style-type:none;padding-left:0}.list li{padding-bottom:.1rem}.meta{color:#777}.content{max-width:70ch;margin:0 auto}header{line-height:2;display:flex;justify-content:space-between;padding-bottom:1rem}header a{text-decoration:none}header ul{list-style-type:none;padding:0}header li,header a{display:inline}h2.post{padding-top:.5rem}header ul a:first-child{padding-left:1rem}.nav{height:1px;background:#000;content:'';max-width:10%}.list li{display:flex;align-items:baseline}.list li time{flex:initial}.hr-list{margin-top:0;margin-bottom:0;margin-right:.5rem;margin-left:.5rem;height:1px;border:0;border-bottom:1px dotted #ccc;flex:1 0 1rem}.m,hr{border:0;margin:3rem 0}img{max-width:100%;height:auto}.post-date{margin:5% 0}.index-date{color:#9a9a9a}.animate-blink{animation:opacity 1s infinite;opacity:1}@keyframes opacity{0%{opacity:1}50%{opacity:.5}100%{opacity:0}}.tags{display:flex;justify-content:space-between}.tags ul{padding:0;margin:0}.tags li{display:inline}.avatar{height:120px;width:120px;position:relative;margin:-10px 0 0 15px;float:right;border-radius:50%}table{width:100%;border-collapse:collapse}th,td{border:1px solid #ddd;text-align:left;padding:8px}th{background-color:#f2f2f2} </style>
+  
+    
+  
+  
+  <script type="application/ld+json">
+  {
+      "@context": "http://schema.org",
+      "@type": "BlogPosting",
+      "articleSection": "posts",
+      "name": "Kotlinx Serialization - Getting Started",
+      "headline": "Kotlinx Serialization - Getting Started",
+      "alternativeHeadline": "",
+      "description": "\u003cp\u003e\u003cimg\n  src=\u0022\/assets\/posts\/kotlin-serialization\/banner-kotlin-mobile.webp\u0022\n  alt=\u0022Header\u0022\n  loading=\u0022lazy\u0022\n  decoding=\u0022async\u0022\n  class=\u0022full-width\u0022\n\/\u003e\n\n\u003c\/p\u003e\n\u003cp\u003e\n\u003ca href=\u0022https:\/\/github.com\/Kotlin\/kotlinx.serialization\u0022 target=\u0022_blank\u0022 rel=\u0022noopener\u0022\u003eKotlin serialization\u003c\/a\u003e\n\n is kotlin-first, compile-time, type-safe, reflection-free and completely multi-platform ready \n\u003ca href=\u0022https:\/\/en.wikipedia.org\/wiki\/Serialization\u0022 target=\u0022_blank\u0022 rel=\u0022noopener\u0022\u003eserialization\u003c\/a\u003e\n\n mechanism to convert kotlin objects into data formats like JSON or Protobuf and vice-versa.\nIt is comprised of a compiler plugin which is used to generate code for serializable classes and a runtime library, containing core classes and primitives for serialization \u0026amp; IO, among some other things.\u003c\/p\u003e\n\u003cp\u003e\u003cimg\n  src=\u0022\/assets\/posts\/kotlin-serialization\/kotlinx-serialization-current-structure.webp\u0022\n  alt=\u0022current-library-runtime-structure\u0022\n  loading=\u0022lazy\u0022\n  decoding=\u0022async\u0022\n  class=\u0022full-width\u0022\n\/\u003e\n\n\u003c\/p\u003e\n\u003cp\u003eWhile JSON format is supported out of the box by the library, there’s first-class support for other formats like Protobuf \u0026amp; CBOR, with the option to extend the functionality by writing your own library to support any other format.\u003c\/p\u003e",
+      "inLanguage": "en-US",
+      "isFamilyFriendly": "true",
+      "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "\/\/localhost:1313\/posts\/kotlin-serialization-getting-started\/"
+      },
+      "author" : {
+          "@type": "Person",
+          "name": "Gurpreet"
+      },
+      "creator" : {
+          "@type": "Person",
+          "name": "Gurpreet"
+      },
+      "accountablePerson" : {
+          "@type": "Person",
+          "name": "Gurpreet"
+      },
+      "copyrightHolder" : "GurpreetSK.com",
+      "copyrightYear" : "2019",
+      "dateCreated": "2019-06-08T02:23:11.00Z",
+      "datePublished": "2019-06-08T02:23:11.00Z",
+      "dateModified": "2019-06-08T02:23:11.00Z",
+      "publisher":{
+          "@type":"Organization",
+          "name": "GurpreetSK.com",
+          "url": "//localhost:1313/",
+          "logo": {
+              "@type": "ImageObject",
+              "url": "\/\/localhost:1313\/assets\/favicon.ico",
+              "width":"32",
+              "height":"32"
+          }
+      },
+      "image": "//localhost:1313/assets/favicon.ico",
+      "url" : "\/\/localhost:1313\/posts\/kotlin-serialization-getting-started\/",
+      "wordCount" : "154",
+      "genre" : [ "android" , "migrated-from-medium" ],
+      "keywords" : [ "android" , "migrated-from-medium" ]
+  }
+  </script>
+  
+  
+  </head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to main</a>
+  <main id="main">
+  <div class="content">
+    <header>
+<p style="padding: 0;margin: 0;">
+  <a href="//localhost:1313/">
+    <b>GurpreetSK.com</b>
+    <span class="text-stone-500 animate-blink">▮</span>
+  </a>
+</p>
+<ul style="padding: 0;margin: 0;">
+  
+  
+  <li class="">
+    <a href="/"><span>Home</span></a>
+    
+  <li class="">
+    <a href="/about/"><span>About</span></a>
+    
+  <li class="">
+    <a href="/posts/"><span>Posts</span></a>
+    
+  <li class="">
+    <a href="/musings/"><span>Musings</span></a>
+    
+  </li>
+</ul>
+</header>
+<hr class="hr-list" style="padding: 0;margin: 0;">
+    <section>
+      <h2 class="post">Kotlinx Serialization - Getting Started</h2>
+      <p><img
+  src="/assets/posts/kotlin-serialization/banner-kotlin-mobile.webp"
+  alt="Header"
+  loading="lazy"
+  decoding="async"
+  class="full-width"
+/>
+
+</p>
+<p>
+<a href="https://github.com/Kotlin/kotlinx.serialization" target="_blank" rel="noopener">Kotlin serialization</a>
+
+ is kotlin-first, compile-time, type-safe, reflection-free and completely multi-platform ready 
+<a href="https://en.wikipedia.org/wiki/Serialization" target="_blank" rel="noopener">serialization</a>
+
+ mechanism to convert kotlin objects into data formats like JSON or Protobuf and vice-versa.
+It is comprised of a compiler plugin which is used to generate code for serializable classes and a runtime library, containing core classes and primitives for serialization &amp; IO, among some other things.</p>
+<p><img
+  src="/assets/posts/kotlin-serialization/kotlinx-serialization-current-structure.webp"
+  alt="current-library-runtime-structure"
+  loading="lazy"
+  decoding="async"
+  class="full-width"
+/>
+
+</p>
+<p>While JSON format is supported out of the box by the library, there’s first-class support for other formats like Protobuf &amp; CBOR, with the option to extend the functionality by writing your own library to support any other format.</p>
+<p>The effort was first announced in October 2016, where @elizarov posted about the team’s efforts on “working on a generic Kotlin Serialization facility for some future release of Kotlin”. You can know more about the design, goals and core concepts of kotlin serialization by going through this KEEP.</p>
+<p>Hope it helps!</p>
+<p><em>Originally posted on Medium 
+<a href="https://medium.com/@gurpreetsk/multi-caret-in-android-studio-ef9fe83f1758" target="_blank" rel="noopener">link</a>
+
+</em></p>
+
+      
+      <div class="post-date">
+        <span class="g time">June 8, 2019 </span> &#8729;
+         
+         <a href="//localhost:1313/tags/android/">android</a> <a href="//localhost:1313/tags/migrated-from-medium/">migrated-from-medium</a>
+      </div>
+      
+    </section>
+    
+    
+    
+  </div>
+</main>
+</body>
+</html>

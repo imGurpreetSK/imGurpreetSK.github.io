@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+  
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Liste - //localhost:1313/">
+    <title>Kotlinx Serialization - optional and transient properties | GurpreetSK.com</title>
+    <meta name="description" content="Gurpreet&#39;s thoughts, experiences and learnings">
+    <meta property="og:url" content="//localhost:1313/posts/kotlinx-serialization-optional-and-transient-properties/">
+  <meta property="og:site_name" content="GurpreetSK.com">
+  <meta property="og:title" content="Kotlinx Serialization - optional and transient properties">
+  <meta property="og:description" content="When interacting with a Rest API, it’s common to have some optional properties in the response. These properties might or might not be present at runtime. Let’s consider we updated out User data object to contain a required, non-nullable and unique id and age, which is an optional, nullable property.
+@Serializable data class User( val id: String, val name: String, val age: Int? = null ) (You can see all these examples as a series of unit tests here in this gist .)">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2020-05-03T02:23:11+05:30">
+    <meta property="article:modified_time" content="2020-05-03T02:23:11+05:30">
+    <meta property="article:tag" content="Kotlin">
+    <meta property="article:tag" content="Migrated-From-Medium">
+    <meta property="article:tag" content="Kotlinx-Serialization">
+
+    
+  <meta itemprop="name" content="Kotlinx Serialization - optional and transient properties">
+  <meta itemprop="description" content="When interacting with a Rest API, it’s common to have some optional properties in the response. These properties might or might not be present at runtime. Let’s consider we updated out User data object to contain a required, non-nullable and unique id and age, which is an optional, nullable property.
+@Serializable data class User( val id: String, val name: String, val age: Int? = null ) (You can see all these examples as a series of unit tests here in this gist .)">
+  <meta itemprop="datePublished" content="2020-05-03T02:23:11+05:30">
+  <meta itemprop="dateModified" content="2020-05-03T02:23:11+05:30">
+  <meta itemprop="wordCount" content="318">
+  <meta itemprop="keywords" content="Kotlin,Migrated-From-Medium,Kotlinx-Serialization">
+    
+    <link rel="canonical" href="//localhost:1313/posts/kotlinx-serialization-optional-and-transient-properties/">
+    <link rel="icon" href="//localhost:1313//assets/favicon.ico">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link href="https://www.google-analytics.com" rel="preconnect" crossorigin>
+    <link rel="alternate" type="application/atom+xml" title="GurpreetSK.com" href="//localhost:1313//atom.xml" />
+    <link rel="alternate" type="application/json" title="GurpreetSK.com" href="//localhost:1313//feed.json" />
+    <link rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=">
+    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bricolage+Grotesque">
+    
+    
+    <style>*,:after,:before{box-sizing:border-box;padding:0}body{font:1rem/1.5 bricolage grotesque,-apple-system,BlinkMacSystemFont,segoe ui,Helvetica,Arial,sans-serif;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;padding:2rem;background:#fffdfa;color:#000}.skip-link{position:absolute;top:-40px;left:0;background:#eee;z-index:100}.skip-link:focus{top:0}header{line-height:2;padding-bottom:1.5rem}.link{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-decoration:none}.time{font-variant-numeric:tabular-nums;white-space:nowrap}blockquote{border-left:5px solid #eee;padding-left:1rem;margin:0}a,a:visited{color:inherit}a:hover,a.heading-link{text-decoration:none}pre{padding:.5rem;overflow:auto;overflow-x:scroll;overflow-wrap:normal}code,pre{font-family:San Francisco Mono,Monaco,consolas,lucida console,dejavu sans mono,bitstream vera sans mono,monospace;font-size:normal;font-size:small;background:#eee}code{margin:.1rem;border:none;overflow:visible;overflow-wrap:anywhere}ul{list-style-type:square}ul,ol{padding-left:1.2rem}.list{line-height:2;list-style-type:none;padding-left:0}.list li{padding-bottom:.1rem}.meta{color:#777}.content{max-width:70ch;margin:0 auto}header{line-height:2;display:flex;justify-content:space-between;padding-bottom:1rem}header a{text-decoration:none}header ul{list-style-type:none;padding:0}header li,header a{display:inline}h2.post{padding-top:.5rem}header ul a:first-child{padding-left:1rem}.nav{height:1px;background:#000;content:'';max-width:10%}.list li{display:flex;align-items:baseline}.list li time{flex:initial}.hr-list{margin-top:0;margin-bottom:0;margin-right:.5rem;margin-left:.5rem;height:1px;border:0;border-bottom:1px dotted #ccc;flex:1 0 1rem}.m,hr{border:0;margin:3rem 0}img{max-width:100%;height:auto}.post-date{margin:5% 0}.index-date{color:#9a9a9a}.animate-blink{animation:opacity 1s infinite;opacity:1}@keyframes opacity{0%{opacity:1}50%{opacity:.5}100%{opacity:0}}.tags{display:flex;justify-content:space-between}.tags ul{padding:0;margin:0}.tags li{display:inline}.avatar{height:120px;width:120px;position:relative;margin:-10px 0 0 15px;float:right;border-radius:50%}table{width:100%;border-collapse:collapse}th,td{border:1px solid #ddd;text-align:left;padding:8px}th{background-color:#f2f2f2} </style>
+  
+    
+  
+  
+  <script type="application/ld+json">
+  {
+      "@context": "http://schema.org",
+      "@type": "BlogPosting",
+      "articleSection": "posts",
+      "name": "Kotlinx Serialization - optional and transient properties",
+      "headline": "Kotlinx Serialization - optional and transient properties",
+      "alternativeHeadline": "",
+      "description": "\u003cp\u003eWhen interacting with a Rest API, it’s common to have some optional properties in the response. These properties might or might not be present at runtime. Let’s consider we updated out User data object to contain a required, non-nullable and unique id and age, which is an optional, nullable property.\u003c\/p\u003e\n\u003cdiv class=\u0022highlight\u0022\u003e\u003cpre tabindex=\u00220\u0022 style=\u0022color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;\u0022\u003e\u003ccode class=\u0022language-kotlin\u0022 data-lang=\u0022kotlin\u0022\u003e\u003cspan style=\u0022display:flex;\u0022\u003e\u003cspan\u003e\u003cspan style=\u0022color:#1e66f5;font-weight:bold\u0022\u003e@Serializable\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan style=\u0022display:flex;\u0022\u003e\u003cspan\u003e\u003cspan style=\u0022color:#8839ef\u0022\u003edata\u003c\/span\u003e \u003cspan style=\u0022color:#8839ef\u0022\u003eclass\u003c\/span\u003e \u003cspan style=\u0022color:#df8e1d\u0022\u003eUser\u003c\/span\u003e(\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan style=\u0022display:flex;\u0022\u003e\u003cspan\u003e    \u003cspan style=\u0022color:#8839ef\u0022\u003eval\u003c\/span\u003e \u003cspan style=\u0022color:#fe640b\u0022\u003eid\u003c\/span\u003e: String,\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan style=\u0022display:flex;\u0022\u003e\u003cspan\u003e    \u003cspan style=\u0022color:#8839ef\u0022\u003eval\u003c\/span\u003e \u003cspan style=\u0022color:#fe640b\u0022\u003ename\u003c\/span\u003e: String,\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan style=\u0022display:flex;\u0022\u003e\u003cspan\u003e    \u003cspan style=\u0022color:#8839ef\u0022\u003eval\u003c\/span\u003e \u003cspan style=\u0022color:#fe640b\u0022\u003eage\u003c\/span\u003e: Int? = \u003cspan style=\u0022color:#8839ef\u0022\u003enull\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan style=\u0022display:flex;\u0022\u003e\u003cspan\u003e)\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/code\u003e\u003c\/pre\u003e\u003c\/div\u003e\u003cp\u003e(You can see all these examples as a series of unit tests here in \n\u003ca href=\u0022https:\/\/gist.github.com\/GurpreetSK95\/f2752ac9984cb6fc122765762fc8df31\u0022 target=\u0022_blank\u0022 rel=\u0022noopener\u0022\u003ethis gist\u003c\/a\u003e\n\n.)\u003c\/p\u003e",
+      "inLanguage": "en-US",
+      "isFamilyFriendly": "true",
+      "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "\/\/localhost:1313\/posts\/kotlinx-serialization-optional-and-transient-properties\/"
+      },
+      "author" : {
+          "@type": "Person",
+          "name": "Gurpreet"
+      },
+      "creator" : {
+          "@type": "Person",
+          "name": "Gurpreet"
+      },
+      "accountablePerson" : {
+          "@type": "Person",
+          "name": "Gurpreet"
+      },
+      "copyrightHolder" : "GurpreetSK.com",
+      "copyrightYear" : "2020",
+      "dateCreated": "2020-05-03T02:23:11.00Z",
+      "datePublished": "2020-05-03T02:23:11.00Z",
+      "dateModified": "2020-05-03T02:23:11.00Z",
+      "publisher":{
+          "@type":"Organization",
+          "name": "GurpreetSK.com",
+          "url": "//localhost:1313/",
+          "logo": {
+              "@type": "ImageObject",
+              "url": "\/\/localhost:1313\/assets\/favicon.ico",
+              "width":"32",
+              "height":"32"
+          }
+      },
+      "image": "//localhost:1313/assets/favicon.ico",
+      "url" : "\/\/localhost:1313\/posts\/kotlinx-serialization-optional-and-transient-properties\/",
+      "wordCount" : "318",
+      "genre" : [ "kotlin" , "migrated-from-medium" , "kotlinx-serialization" ],
+      "keywords" : [ "kotlin" , "migrated-from-medium" , "kotlinx-serialization" ]
+  }
+  </script>
+  
+  
+  </head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to main</a>
+  <main id="main">
+  <div class="content">
+    <header>
+<p style="padding: 0;margin: 0;">
+  <a href="//localhost:1313/">
+    <b>GurpreetSK.com</b>
+    <span class="text-stone-500 animate-blink">▮</span>
+  </a>
+</p>
+<ul style="padding: 0;margin: 0;">
+  
+  
+  <li class="">
+    <a href="/"><span>Home</span></a>
+    
+  <li class="">
+    <a href="/about/"><span>About</span></a>
+    
+  <li class="">
+    <a href="/posts/"><span>Posts</span></a>
+    
+  <li class="">
+    <a href="/musings/"><span>Musings</span></a>
+    
+  </li>
+</ul>
+</header>
+<hr class="hr-list" style="padding: 0;margin: 0;">
+    <section>
+      <h2 class="post">Kotlinx Serialization - optional and transient properties</h2>
+      <p>When interacting with a Rest API, it’s common to have some optional properties in the response. These properties might or might not be present at runtime. Let’s consider we updated out User data object to contain a required, non-nullable and unique id and age, which is an optional, nullable property.</p>
+<div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#1e66f5;font-weight:bold">@Serializable</span>
+</span></span><span style="display:flex;"><span><span style="color:#8839ef">data</span> <span style="color:#8839ef">class</span> <span style="color:#df8e1d">User</span>(
+</span></span><span style="display:flex;"><span>    <span style="color:#8839ef">val</span> <span style="color:#fe640b">id</span>: String,
+</span></span><span style="display:flex;"><span>    <span style="color:#8839ef">val</span> <span style="color:#fe640b">name</span>: String,
+</span></span><span style="display:flex;"><span>    <span style="color:#8839ef">val</span> <span style="color:#fe640b">age</span>: Int? = <span style="color:#8839ef">null</span>
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><p>(You can see all these examples as a series of unit tests here in 
+<a href="https://gist.github.com/GurpreetSK95/f2752ac9984cb6fc122765762fc8df31" target="_blank" rel="noopener">this gist</a>
+
+.)</p>
+<h4 id="handling-optional-values">Handling optional values</h4>
+<p>Kotlin’s features — especially its nullable types and default parameter values prove to be great when dealing with JSON. You don’t need to do anything special to handle optional values when working with Kotlin serialization.</p>
+<p>All properties with default values are considered optional.</p>
+<p>In our case, age is an optional property with null as its default value. the property will be serialized if it’s found in JSON, else the serialized object will have age as null, unlike for required objects where a MissingFieldException is thrown.</p>
+<h4 id="handling-transient-values">Handling Transient values</h4>
+<p>Transient properties are those which you never want to take part in the entire serialization process. An example can be adding an isAdult property to our User object. The value is calculated on client side and will never be returned by the Rest API, hence it never needs to take part in the entire process.</p>
+<p>Such properties can be marked using @Transient annotation. From the docs:</p>
+<p>Marking a property Transient makes it invisible for whole serialization framework.</p>
+<p>This also means that transient properties must have default values, as they can’t be initialized otherwise.</p>
+<hr>
+<p>That’s all for this one folks! Hope this was helpful and you learnt something new.</p>
+<p>This article is second of a series of articles I’m writing on Kotlin serialization while also learning more about the same. Stay tuned, stay inside and keep reading!</p>
+<p>Hope it helps!</p>
+<p><em>Originally posted on Medium 
+<a href="https://medium.com/@gurpreetsk/kotlin-serialization-optional-and-transient-properties-b3da3247e112" target="_blank" rel="noopener">link</a>
+
+</em></p>
+
+      
+      <div class="post-date">
+        <span class="g time">May 3, 2020 </span> &#8729;
+         
+         <a href="//localhost:1313/tags/kotlin/">kotlin</a> <a href="//localhost:1313/tags/migrated-from-medium/">migrated-from-medium</a> <a href="//localhost:1313/tags/kotlinx-serialization/">kotlinx-serialization</a>
+      </div>
+      
+    </section>
+    
+    
+    
+  </div>
+</main>
+</body>
+</html>

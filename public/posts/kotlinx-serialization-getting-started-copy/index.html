@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+  
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Liste - //localhost:1313/">
+    <title>Kotlinx Serialization - Getting Started | GurpreetSK.com</title>
+    <meta name="description" content="Gurpreet&#39;s thoughts, experiences and learnings">
+    <meta property="og:url" content="//localhost:1313/posts/kotlinx-serialization-getting-started-copy/">
+  <meta property="og:site_name" content="GurpreetSK.com">
+  <meta property="og:title" content="Kotlinx Serialization - Getting Started">
+  <meta property="og:description" content="Kotlin serialization is kotlin-first, compile-time, type-safe, reflection-free and completely multi-platform ready serialization mechanism to convert kotlin objects into data formats like JSON or Protobuf and vice-versa. It is comprised of a compiler plugin which is used to generate code for serializable classes and a runtime library, containing core classes and primitives for serialization &amp; IO, among some other things.
+Kotlinx serialization runtime project structure While JSON format is supported out of the box by the library, there’s first-class support for other formats like Protobuf &amp; CBOR, with the option to extend the functionality by writing your own library to support any other format.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2019-06-08T02:23:11+05:30">
+    <meta property="article:modified_time" content="2019-06-08T02:23:11+05:30">
+    <meta property="article:tag" content="Kotlin">
+    <meta property="article:tag" content="Migrated-From-Medium">
+    <meta property="article:tag" content="Kotlinx-Serialization">
+
+    
+  <meta itemprop="name" content="Kotlinx Serialization - Getting Started">
+  <meta itemprop="description" content="Kotlin serialization is kotlin-first, compile-time, type-safe, reflection-free and completely multi-platform ready serialization mechanism to convert kotlin objects into data formats like JSON or Protobuf and vice-versa. It is comprised of a compiler plugin which is used to generate code for serializable classes and a runtime library, containing core classes and primitives for serialization &amp; IO, among some other things.
+Kotlinx serialization runtime project structure While JSON format is supported out of the box by the library, there’s first-class support for other formats like Protobuf &amp; CBOR, with the option to extend the functionality by writing your own library to support any other format.">
+  <meta itemprop="datePublished" content="2019-06-08T02:23:11+05:30">
+  <meta itemprop="dateModified" content="2019-06-08T02:23:11+05:30">
+  <meta itemprop="wordCount" content="1228">
+  <meta itemprop="keywords" content="Kotlin,Migrated-From-Medium,Kotlinx-Serialization">
+    
+    <link rel="canonical" href="//localhost:1313/posts/kotlinx-serialization-getting-started-copy/">
+    <link rel="icon" href="//localhost:1313//assets/favicon.ico">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link href="https://www.google-analytics.com" rel="preconnect" crossorigin>
+    <link rel="alternate" type="application/atom+xml" title="GurpreetSK.com" href="//localhost:1313//atom.xml" />
+    <link rel="alternate" type="application/json" title="GurpreetSK.com" href="//localhost:1313//feed.json" />
+    <link rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=">
+    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bricolage+Grotesque">
+    
+    
+    <style>*,:after,:before{box-sizing:border-box;padding:0}body{font:1rem/1.5 bricolage grotesque,-apple-system,BlinkMacSystemFont,segoe ui,Helvetica,Arial,sans-serif;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;padding:2rem;background:#fffdfa;color:#000}.skip-link{position:absolute;top:-40px;left:0;background:#eee;z-index:100}.skip-link:focus{top:0}header{line-height:2;padding-bottom:1.5rem}.link{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-decoration:none}.time{font-variant-numeric:tabular-nums;white-space:nowrap}blockquote{border-left:5px solid #eee;padding-left:1rem;margin:0}a,a:visited{color:inherit}a:hover,a.heading-link{text-decoration:none}pre{padding:.5rem;overflow:auto;overflow-x:scroll;overflow-wrap:normal}code,pre{font-family:San Francisco Mono,Monaco,consolas,lucida console,dejavu sans mono,bitstream vera sans mono,monospace;font-size:normal;font-size:small;background:#eee}code{margin:.1rem;border:none;overflow:visible;overflow-wrap:anywhere}ul{list-style-type:square}ul,ol{padding-left:1.2rem}.list{line-height:2;list-style-type:none;padding-left:0}.list li{padding-bottom:.1rem}.meta{color:#777}.content{max-width:70ch;margin:0 auto}header{line-height:2;display:flex;justify-content:space-between;padding-bottom:1rem}header a{text-decoration:none}header ul{list-style-type:none;padding:0}header li,header a{display:inline}h2.post{padding-top:.5rem}header ul a:first-child{padding-left:1rem}.nav{height:1px;background:#000;content:'';max-width:10%}.list li{display:flex;align-items:baseline}.list li time{flex:initial}.hr-list{margin-top:0;margin-bottom:0;margin-right:.5rem;margin-left:.5rem;height:1px;border:0;border-bottom:1px dotted #ccc;flex:1 0 1rem}.m,hr{border:0;margin:3rem 0}img{max-width:100%;height:auto}.post-date{margin:5% 0}.index-date{color:#9a9a9a}.animate-blink{animation:opacity 1s infinite;opacity:1}@keyframes opacity{0%{opacity:1}50%{opacity:.5}100%{opacity:0}}.tags{display:flex;justify-content:space-between}.tags ul{padding:0;margin:0}.tags li{display:inline}.avatar{height:120px;width:120px;position:relative;margin:-10px 0 0 15px;float:right;border-radius:50%}table{width:100%;border-collapse:collapse}th,td{border:1px solid #ddd;text-align:left;padding:8px}th{background-color:#f2f2f2} </style>
+  
+    
+  
+  
+  <script type="application/ld+json">
+  {
+      "@context": "http://schema.org",
+      "@type": "BlogPosting",
+      "articleSection": "posts",
+      "name": "Kotlinx Serialization - Getting Started",
+      "headline": "Kotlinx Serialization - Getting Started",
+      "alternativeHeadline": "",
+      "description": "\u003cbr\u003e\n\u003cp\u003e\u003cimg\n  src=\u0022\/assets\/posts\/kotlinx-serialization\/banner-kotlin-mobile.webp\u0022\n  alt=\u0022Header\u0022\n  loading=\u0022lazy\u0022\n  decoding=\u0022async\u0022\n  class=\u0022full-width\u0022\n\/\u003e\n\n\u003c\/p\u003e\n\u003cbr\u003e\n\u003cp\u003e\n\u003ca href=\u0022https:\/\/github.com\/Kotlin\/kotlinx.serialization\u0022 target=\u0022_blank\u0022 rel=\u0022noopener\u0022\u003eKotlin serialization\u003c\/a\u003e\n\n is kotlin-first, compile-time, type-safe, reflection-free and completely multi-platform ready \n\u003ca href=\u0022https:\/\/en.wikipedia.org\/wiki\/Serialization\u0022 target=\u0022_blank\u0022 rel=\u0022noopener\u0022\u003eserialization\u003c\/a\u003e\n\n mechanism to convert kotlin objects into data formats like JSON or Protobuf and vice-versa.\nIt is comprised of a compiler plugin which is used to generate code for serializable classes and a runtime library, containing core classes and primitives for serialization \u0026amp; IO, among some other things.\u003c\/p\u003e\n\u003cp\u003e\u003cimg\n  src=\u0022\/assets\/posts\/kotlinx-serialization\/kotlinx-serialization-current-structure.webp\u0022\n  alt=\u0022current-library-runtime-structure\u0022\n  loading=\u0022lazy\u0022\n  decoding=\u0022async\u0022\n  class=\u0022full-width\u0022\n\/\u003e\n\n\u003c\/p\u003e\n\u003cdiv style=\u0022text-align:center;\u0022\u003eKotlinx serialization runtime project structure\u003c\/div\u003e\n\u003cbr\/\u003e\n\u003cp\u003eWhile JSON format is supported out of the box by the library, there’s first-class support for other formats like Protobuf \u0026amp; CBOR, with the option to extend the functionality by writing your own library to support any other format.\u003c\/p\u003e",
+      "inLanguage": "en-US",
+      "isFamilyFriendly": "true",
+      "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "\/\/localhost:1313\/posts\/kotlinx-serialization-getting-started-copy\/"
+      },
+      "author" : {
+          "@type": "Person",
+          "name": "Gurpreet"
+      },
+      "creator" : {
+          "@type": "Person",
+          "name": "Gurpreet"
+      },
+      "accountablePerson" : {
+          "@type": "Person",
+          "name": "Gurpreet"
+      },
+      "copyrightHolder" : "GurpreetSK.com",
+      "copyrightYear" : "2019",
+      "dateCreated": "2019-06-08T02:23:11.00Z",
+      "datePublished": "2019-06-08T02:23:11.00Z",
+      "dateModified": "2019-06-08T02:23:11.00Z",
+      "publisher":{
+          "@type":"Organization",
+          "name": "GurpreetSK.com",
+          "url": "//localhost:1313/",
+          "logo": {
+              "@type": "ImageObject",
+              "url": "\/\/localhost:1313\/assets\/favicon.ico",
+              "width":"32",
+              "height":"32"
+          }
+      },
+      "image": "//localhost:1313/assets/favicon.ico",
+      "url" : "\/\/localhost:1313\/posts\/kotlinx-serialization-getting-started-copy\/",
+      "wordCount" : "1228",
+      "genre" : [ "kotlin" , "migrated-from-medium" , "kotlinx-serialization" ],
+      "keywords" : [ "kotlin" , "migrated-from-medium" , "kotlinx-serialization" ]
+  }
+  </script>
+  
+  
+  </head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to main</a>
+  <main id="main">
+  <div class="content">
+    <header>
+<p style="padding: 0;margin: 0;">
+  <a href="//localhost:1313/">
+    <b>GurpreetSK.com</b>
+    <span class="text-stone-500 animate-blink">▮</span>
+  </a>
+</p>
+<ul style="padding: 0;margin: 0;">
+  
+  
+  <li class="">
+    <a href="/"><span>Home</span></a>
+    
+  <li class="">
+    <a href="/about/"><span>About</span></a>
+    
+  <li class="">
+    <a href="/posts/"><span>Posts</span></a>
+    
+  <li class="">
+    <a href="/musings/"><span>Musings</span></a>
+    
+  </li>
+</ul>
+</header>
+<hr class="hr-list" style="padding: 0;margin: 0;">
+    <section>
+      <h2 class="post">Kotlinx Serialization - Getting Started</h2>
+      <br>
+<p><img
+  src="/assets/posts/kotlinx-serialization/banner-kotlin-mobile.webp"
+  alt="Header"
+  loading="lazy"
+  decoding="async"
+  class="full-width"
+/>
+
+</p>
+<br>
+<p>
+<a href="https://github.com/Kotlin/kotlinx.serialization" target="_blank" rel="noopener">Kotlin serialization</a>
+
+ is kotlin-first, compile-time, type-safe, reflection-free and completely multi-platform ready 
+<a href="https://en.wikipedia.org/wiki/Serialization" target="_blank" rel="noopener">serialization</a>
+
+ mechanism to convert kotlin objects into data formats like JSON or Protobuf and vice-versa.
+It is comprised of a compiler plugin which is used to generate code for serializable classes and a runtime library, containing core classes and primitives for serialization &amp; IO, among some other things.</p>
+<p><img
+  src="/assets/posts/kotlinx-serialization/kotlinx-serialization-current-structure.webp"
+  alt="current-library-runtime-structure"
+  loading="lazy"
+  decoding="async"
+  class="full-width"
+/>
+
+</p>
+<div style="text-align:center;">Kotlinx serialization runtime project structure</div>
+<br/>
+<p>While JSON format is supported out of the box by the library, there’s first-class support for other formats like Protobuf &amp; CBOR, with the option to extend the functionality by writing your own library to support any other format.</p>
+<p>The effort was 
+<a href="https://discuss.kotlinlang.org/t/kotlin-serialization/2063" target="_blank" rel="noopener">first announced</a>
+
+ in October 2016, where 
+<a href="https://x.com/elizarov" target="_blank" rel="noopener">@elizarov</a>
+
+ posted about the team’s efforts on “working on a generic Kotlin Serialization facility for some future release of Kotlin”. You can know more about the design, goals and core concepts of kotlin serialization by going through 
+<a href="https://github.com/Kotlin/KEEP/blob/serialization/proposals/extensions/serialization.md" target="_blank" rel="noopener">this KEEP</a>
+
+.</p>
+<h3 id="why">Why?</h3>
+<p>Code sharing between platforms isn’t easy. Each platform you want to support has different ways of handling different things — IO, transformations, threading, serialization to name a few. There already are various libraries out there which support kotlin serialization, even generate kotlin code if you want to, Square’s Moshi being probably being the most famous one.</p>
+<p>However, all of these work only on JVM and don’t support other platforms. That’s why a new mechanism is required — one that supports all the platforms.</p>
+<h3 id="setup">Setup</h3>
+<p>Please refer to the official guide to setup. It’s simple, all you’ll need to do is :</p>
+<ol>
+<li>
+<p>Apply the serialization plugin, and</p>
+</li>
+<li>
+<p>Add dependency on the runtime library in your build.gradle file.</p>
+<p><em>You’ll need to be on Kotlin version 1.3.70 or higher to use runtime library version 0.20.0, which is the latest release at time of writing this article.</em></p>
+</li>
+</ol>
+<hr>
+<h2 id="learning-by-examples">Learning by examples</h2>
+<p>(You can see all these examples as a series of unit tests here in 
+<a href="https://gist.github.com/GurpreetSK95/d227315561c470f12f488f03ec0007a9" target="_blank" rel="noopener">this gist</a>
+
+.)</p>
+<p>Let’s go through some of the basic cases you’re likely to encounter if you plan on using kotlin serialization in one of your projects.</p>
+<h3 id="1-parse-json-object-to-kotlin-object">1. Parse JSON object to Kotlin object</h3>
+<p>Suppose you want to convert a JSON object to a kotlin object. For this, you’ll need to specify two things:</p>
+<ol>
+<li>The object to which you’re trying to parse the JSON to, and</li>
+<li>The behaviour of the JSON format you’re trying to parse</li>
+</ol>
+<p>Let’s say we want to parse JSON containing user’s information — just his name for now. The JSON looks like <code>{“name”: “Gurpreet”}</code>.</p>
+<p>In Kotlin, this can be represented as a data class User with a name property.</p>
+<pre><code>data class User(val name: String)
+</code></pre>
+<p>However, this class can’t be used just yet for serialization purposes as we haven’t told the compiler to generate serialization code. This is where @Serializable annotation comes to use. This annotation instructs the compiler to generate code required for performing serialization for our class.</p>
+<div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#1e66f5;font-weight:bold">@Serializable</span>
+</span></span><span style="display:flex;"><span><span style="color:#8839ef">data</span> <span style="color:#8839ef">class</span> <span style="color:#df8e1d">User</span>(<span style="color:#8839ef">val</span> <span style="color:#fe640b">name</span>: String)
+</span></span></code></pre></div><p>That it! It’s as simple as that. Now the compiler can understand and serialize User objects.</p>
+<p>Next, we need to define JSON format behaviour we’re trying to pass. We do this by specifying a Json instance. From the docs, this class is</p>
+<div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript3" data-lang="gdscript3"><span style="display:flex;"><span>The main entry point to work with JSON serialization<span style="color:#04a5e5;font-weight:bold">.</span>
+</span></span><span style="display:flex;"><span>It is typically used by constructing an application<span style="color:#04a5e5;font-weight:bold">-</span>specific instance, with configured json<span style="color:#04a5e5;font-weight:bold">-</span>specific behaviour<span style="color:#04a5e5;font-weight:bold">.</span>
+</span></span></code></pre></div><p>We’ll also need to defined what type of JSON we’re expecting. We define this using JsonConfiguration. This class helps us configure the behaviour for Json object. We’ll discuss more about this class a later, but for now, it’s good to know that it provides two ready to use configurations for us to use — Stable and Default. We’ll use the Stable configuration, which adheres to the 
+<a href="https://www.ietf.org/rfc/rfc4627.txt" target="_blank" rel="noopener">JSON specification restriction</a>
+
+ and is provided by the runtime library.</p>
+<p>Now that we’ve gathered information about what we need, we can take a look at code to serialize the JSON to an object. It’s as simple as calling parse on the Json instance we have created. You have to pass the serializer and the JSON you want to parse.</p>
+<div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span>Json(<span style="color:#df8e1d">JsonConfiguration</span>.Stable)
+</span></span><span style="display:flex;"><span>    .parse(<span style="color:#df8e1d">User</span>.serializer(), <span style="color:#40a02b">&#34;&#34;&#34;{&#34;name&#34;: &#34;Gurpreet&#34;}&#34;&#34;&#34;</span>)<span style="color:#9ca0b0;font-style:italic">// Output:
+</span></span></span><span style="display:flex;"><span><span style="color:#9ca0b0;font-style:italic">// User(&#34;Gurpreet&#34;)
+</span></span></span></code></pre></div><p>The above code reads <em>“Parse this input JSON to a User object using the serializer provided. The JSON provided to the parse is ‘stable’ i.e., adheres to the standards”</em>.</p>
+<h4 id="2-convert-kotlin-object-to-json">2. Convert Kotlin object to JSON</h4>
+<p>To deserialize an object (i.e. to convert it to JSON), stringify method can be used. Unlike parse, this method takes the kotlin object to deserialize as an argument.</p>
+<p>The following code snippet shows how we can convert User object to JSON.</p>
+<div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span>Json(<span style="color:#df8e1d">JsonConfiguration</span>.Stable)
+</span></span><span style="display:flex;"><span>    .stringify(<span style="color:#df8e1d">User</span>.serializer(), User(<span style="color:#40a02b">&#34;Gurpreet&#34;</span>))<span style="color:#9ca0b0;font-style:italic">// Output:
+</span></span></span><span style="display:flex;"><span><span style="color:#9ca0b0;font-style:italic">// {&#34;name&#34;:&#34;Gurpreet&#34;}
+</span></span></span></code></pre></div><h3 id="3-parsing-an-object-containing-a-list-of-objects">3. Parsing an object containing a list of objects</h3>
+<p>Let’s say you have to parse a list of contacts instead of a single object and the JSON looks something like</p>
+<div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#8839ef">val</span> <span style="color:#fe640b">jsonToParse</span> = <span style="color:#40a02b">&#34;&#34;&#34;{
+</span></span></span><span style="display:flex;"><span><span style="color:#40a02b">  &#34;result&#34;: [
+</span></span></span><span style="display:flex;"><span><span style="color:#40a02b">    {
+</span></span></span><span style="display:flex;"><span><span style="color:#40a02b">      &#34;name&#34;: &#34;Contact 1&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#40a02b">    },
+</span></span></span><span style="display:flex;"><span><span style="color:#40a02b">    {
+</span></span></span><span style="display:flex;"><span><span style="color:#40a02b">      &#34;name&#34;: &#34;Contact 2&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#40a02b">    },
+</span></span></span><span style="display:flex;"><span><span style="color:#40a02b">    {
+</span></span></span><span style="display:flex;"><span><span style="color:#40a02b">      &#34;name&#34;: &#34;Contact 3&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#40a02b">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#40a02b">  ]
+</span></span></span><span style="display:flex;"><span><span style="color:#40a02b">}&#34;&#34;&#34;</span>
+</span></span></code></pre></div><p>Looking at the structure, we can infer that we need an object which contains a list of User objects. We define it as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#1e66f5;font-weight:bold">@Serializable</span>
+</span></span><span style="display:flex;"><span><span style="color:#8839ef">data</span> <span style="color:#8839ef">class</span> <span style="color:#df8e1d">User</span>(<span style="color:#8839ef">val</span> <span style="color:#fe640b">name</span>: String)<span style="color:#1e66f5;font-weight:bold">@Serializable</span>
+</span></span><span style="display:flex;"><span><span style="color:#8839ef">data</span> <span style="color:#8839ef">class</span> <span style="color:#df8e1d">Contacts</span>(<span style="color:#8839ef">val</span> <span style="color:#fe640b">result</span>: List&lt;User&gt;)
+</span></span></code></pre></div><p>Notice that we’ve marked both the classes as @Serializable. If we don’t mark User as @Serializable, the compiler will report an error which says Serializer has not been found for type &lsquo;User’, essentially meaning that it doesn’t know how to serialize the type.</p>
+<p>It’s pretty straight-forward from here. We need to serialize the JSON to Contactsobject, similar to how we parsed a User object before</p>
+<div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span>Json(<span style="color:#df8e1d">JsonConfiguration</span>.Stable)
+</span></span><span style="display:flex;"><span>    .parse(<span style="color:#df8e1d">Contacts</span>.serializer(), jsonToParse)
+</span></span><span style="display:flex;"><span><span style="color:#9ca0b0;font-style:italic">// Output:
+</span></span></span><span style="display:flex;"><span><span style="color:#9ca0b0;font-style:italic">// Contacts(listOf(
+</span></span></span><span style="display:flex;"><span><span style="color:#9ca0b0;font-style:italic">//    User(&#34;Contact 1&#34;),
+</span></span></span><span style="display:flex;"><span><span style="color:#9ca0b0;font-style:italic">//    User(&#34;Contact 2&#34;),
+</span></span></span><span style="display:flex;"><span><span style="color:#9ca0b0;font-style:italic">//    User(&#34;Contact 3&#34;)
+</span></span></span><span style="display:flex;"><span><span style="color:#9ca0b0;font-style:italic">// ))
+</span></span></span></code></pre></div><p>Note that you can obtain the JSON back by using stringify in this case too.</p>
+<h3 id="4-parsing-a-list-of-objects">4. Parsing a list of objects</h3>
+<p>If you noticed, all the types we have talked about till now are user defined types. We learnt about how to serialize and deserialize them. But what about the cases where we want to operate on a collection of objects, for example, a list of Users? We can’t apply @Serializable on a class we don’t own 🤷‍♂.</p>
+<p>For this, the team at Jetbrains has got us covered 🎊. Serializers to parse widely used collections — Lists, Maps and Sets — are provided by the runtime library out of the box . To parse a list of contacts as shown below, we can use ListSerializer. All we need to do is tell what type of objects the list comprises of, which is User in our case.</p>
+<div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#8839ef">val</span> <span style="color:#fe640b">listOfContacts</span> = <span style="color:#40a02b">&#34;&#34;&#34;[
+</span></span></span><span style="display:flex;"><span><span style="color:#40a02b">  {
+</span></span></span><span style="display:flex;"><span><span style="color:#40a02b">    &#34;name&#34;: &#34;Contact 1&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#40a02b">  },
+</span></span></span><span style="display:flex;"><span><span style="color:#40a02b">  {
+</span></span></span><span style="display:flex;"><span><span style="color:#40a02b">    &#34;name&#34;: &#34;Contact 2&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#40a02b">  },
+</span></span></span><span style="display:flex;"><span><span style="color:#40a02b">  {
+</span></span></span><span style="display:flex;"><span><span style="color:#40a02b">    &#34;name&#34;: &#34;Contact 3&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#40a02b">  }
+</span></span></span><span style="display:flex;"><span><span style="color:#40a02b">]&#34;&#34;&#34;</span>
+</span></span></code></pre></div><p>To serialize the JSON, we do</p>
+<div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span>Json(<span style="color:#df8e1d">JsonConfiguration</span>.Stable)
+</span></span><span style="display:flex;"><span>    .parse(
+</span></span><span style="display:flex;"><span>        ListSerializer(<span style="color:#df8e1d">User</span>.serializer()),
+</span></span><span style="display:flex;"><span>        listOfContacts
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span><span style="color:#9ca0b0;font-style:italic">// Output:
+</span></span></span><span style="display:flex;"><span><span style="color:#9ca0b0;font-style:italic">// listOf(
+</span></span></span><span style="display:flex;"><span><span style="color:#9ca0b0;font-style:italic">//   User(&#34;Contact 1&#34;),
+</span></span></span><span style="display:flex;"><span><span style="color:#9ca0b0;font-style:italic">//   User(&#34;Contact 2&#34;),
+</span></span></span><span style="display:flex;"><span><span style="color:#9ca0b0;font-style:italic">//   User(&#34;Contact 3&#34;)
+</span></span></span><span style="display:flex;"><span><span style="color:#9ca0b0;font-style:italic">// )
+</span></span></span></code></pre></div><p>Similarly, we can deserialize the list to JSON by</p>
+<div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span>Json(<span style="color:#df8e1d">JsonConfiguration</span>.Stable)
+</span></span><span style="display:flex;"><span>    .stringify(
+</span></span><span style="display:flex;"><span>        ListSerializer(<span style="color:#df8e1d">User</span>.serializer()),
+</span></span><span style="display:flex;"><span>        listOf(
+</span></span><span style="display:flex;"><span>            User(<span style="color:#40a02b">&#34;Contact 1&#34;</span>),
+</span></span><span style="display:flex;"><span>            User(<span style="color:#40a02b">&#34;Contact 2&#34;</span>),
+</span></span><span style="display:flex;"><span>            User(<span style="color:#40a02b">&#34;Contact 3&#34;</span>)
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span><span style="color:#9ca0b0;font-style:italic">// Output:
+</span></span></span><span style="display:flex;"><span><span style="color:#9ca0b0;font-style:italic">// [{&#34;name&#34;: &#34;Contact 1&#34;},{&#34;name&#34;:&#34;Contact 2&#34;},{&#34;name&#34;:&#34;Contact 3&#34;}]
+</span></span></span></code></pre></div><p>You can also serialize Maps by using MapSerializerand Sets by using SetSerializer in a similar way.</p>
+<hr>
+<p>Hope this was helpful and you learnt something new. You can read 
+
+      
+    
+  <a href="/">the continuation article</a>
+
+ to this which talks about handling optional and transient properties.</p>
+<p>This article is first of a series of articles I’m writing on Kotlin serialization while also learning more about the same. Stay tuned, stay inside and keep reading!</p>
+<p>Hope it helps!</p>
+<p><em>Originally posted on Medium 
+<a href="https://medium.com/@gurpreetsk/multi-caret-in-android-studio-ef9fe83f1758" target="_blank" rel="noopener">link</a>
+
+</em></p>
+
+      
+      <div class="post-date">
+        <span class="g time">June 8, 2019 </span> &#8729;
+         
+         <a href="//localhost:1313/tags/kotlin/">kotlin</a> <a href="//localhost:1313/tags/migrated-from-medium/">migrated-from-medium</a> <a href="//localhost:1313/tags/kotlinx-serialization/">kotlinx-serialization</a>
+      </div>
+      
+    </section>
+    
+    
+    
+  </div>
+</main>
+</body>
+</html>

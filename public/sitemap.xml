@@ -20,6 +20,42 @@
     <loc>//localhost:1313/</loc>
     <lastmod>2025-02-22T22:51:40-08:00</lastmod>
   </url><url>
+    <loc>//localhost:1313/tags/kotlin/</loc>
+    <lastmod>2020-05-03T02:23:11+05:30</lastmod>
+  </url><url>
+    <loc>//localhost:1313/posts/kotlinx-serialization-getting-started/</loc>
+    <lastmod>2020-05-03T02:23:11+05:30</lastmod>
+  </url><url>
+    <loc>//localhost:1313/posts/kotlinx-serialization-optional-and-transient-properties/</loc>
+    <lastmod>2020-05-03T02:23:11+05:30</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/kotlinx-serialization/</loc>
+    <lastmod>2020-05-03T02:23:11+05:30</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/migrated-from-medium/</loc>
+    <lastmod>2020-05-03T02:23:11+05:30</lastmod>
+  </url><url>
+    <loc>//localhost:1313/posts/</loc>
+    <lastmod>2020-05-03T02:23:11+05:30</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/android/</loc>
+    <lastmod>2019-06-08T02:23:11+05:30</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/ide/</loc>
+    <lastmod>2019-06-08T02:23:11+05:30</lastmod>
+  </url><url>
+    <loc>//localhost:1313/posts/multi-caret-in-android-studio/</loc>
+    <lastmod>2019-06-08T02:23:11+05:30</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/productivity/</loc>
+    <lastmod>2019-06-08T02:23:11+05:30</lastmod>
+  </url><url>
+    <loc>//localhost:1313/posts/kotlin-sequences/</loc>
+    <lastmod>2019-03-10T02:23:11+05:30</lastmod>
+  </url><url>
+    <loc>//localhost:1313/posts/listening-to-memory-events-using-ontrimmemory/</loc>
+    <lastmod>2017-08-21T10:08:35+05:30</lastmod>
+  </url><url>
     <loc>//localhost:1313/tags/hugo/</loc>
   </url>
 </urlset>

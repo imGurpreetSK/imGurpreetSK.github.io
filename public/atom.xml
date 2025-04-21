@@ -13,5 +13,42 @@
     <atom:link href="//localhost:1313//atom.xml" rel="self" type="application/atom+xml"/>
     
     
+    <item>
+      <title>Listening to Memory events using onTrimMemory() on Android</title>
+      <link>//localhost:1313/posts/listening-to-memory-events-using-ontrimmemory/</link>
+      <description>&lt;p&gt;Anyone who has been developing android application knows how memory-scarce the platform is, with each application being provided with 
+&lt;a href=&#34;https://stackoverflow.com/questions/18675557/what-is-the-maximum-amount-of-ram-an-app-can-use&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;upto 24/32mb of memory&lt;/a&gt;
+
+ (which can go to as low as 16mb for older devices). In such a scenario, it is the developer’s duty to look out for memory leaks and free any resources that are not been used by the application.&lt;/p&gt;
+&lt;p&gt;One way of managing memory in response to system events is the 
+&lt;a href=&#34;https://developer.android.com/reference/android/content/ComponentCallbacks2.html#onTrimMemory%28int%29&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;onTrimMemory() method&lt;/a&gt;
+
+. From the docs:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;onTrimMemory():
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Called when the operating system has determined that it is a good time for a process to trim unneeded memory from its process.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;This will happen for example when it goes in the background and there is not enough memory to keep as many background processes running as desired.
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Found in the ComponentsCallback2 interface, this method should be implemented to incrementally release memory based on current system constraints. This helps provide a more responsive system overall, and benefits the user experience for the application by allowing the system to keep the process alive longer.&lt;/p&gt;
+&lt;p&gt;For a better read on how to optimise the memory usage, do read the official docs, or show some love and I’ll post another article on Using More Memory-Efficient Code Constructs to create android applications. All kinds of feedback is welcome.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;References&lt;/strong&gt;:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Memory limits per app are here depending on screen size and Android version: 
+&lt;a href=&#34;https://drive.google.com/file/d/0B7Vx1OvzrLa3Y0R0X1BZbUpicGc/view&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://drive.google.com/file/d/0B7Vx1OvzrLa3Y0R0X1BZbUpicGc/view&lt;/a&gt;
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://stackoverflow.com/questions/19398827/understanding-ontrimmemory-int-level&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://stackoverflow.com/questions/19398827/understanding-ontrimmemory-int-level&lt;/a&gt;
+
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;Post originally posted on Medium 
+&lt;a href=&#34;https://medium.com/@gurpreetsk/memory-management-on-android-using-ontrimmemory-f500d364bc1a&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;link&lt;/a&gt;
+
+&lt;/em&gt;&lt;/p&gt;
+</description>
+      <author>Gurpreet Singh</author>
+      <guid>//localhost:1313/posts/listening-to-memory-events-using-ontrimmemory/</guid>
+      <pubDate>Mon, 21 Aug 2017 10:08:35 +0530</pubDate>
+    </item>
+    
   </channel>
 </rss>
