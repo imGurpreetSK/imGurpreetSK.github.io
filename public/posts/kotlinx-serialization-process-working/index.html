@@ -33,7 +33,7 @@ The entire process of serialization is composed of two separate sub-processes:
 Serialization Encoding Each of these processes has a single responsibility, which enables clear separation of roles and allows both to operate independently. This is the reason behind the extensibility and flexibility of the library. Please note that despite being independent, these operations are still sequential— encoding always takes place after serialization.">
   <meta itemprop="datePublished" content="2020-06-13T02:23:11+05:30">
   <meta itemprop="dateModified" content="2020-06-13T02:23:11+05:30">
-  <meta itemprop="wordCount" content="780">
+  <meta itemprop="wordCount" content="777">
   <meta itemprop="keywords" content="Kotlin,Migrated-From-Medium,Kotlinx-Serialization">
     
     <link rel="canonical" href="//localhost:1313/posts/kotlinx-serialization-process-working/">
@@ -47,7 +47,7 @@ Serialization Encoding Each of these processes has a single responsibility, whic
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bricolage+Grotesque">
     
     
-    <style>*,:after,:before{box-sizing:border-box;padding:0}body{font:1rem/1.5 bricolage grotesque,-apple-system,BlinkMacSystemFont,segoe ui,Helvetica,Arial,sans-serif;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;padding:2rem;background:#fffdfa;color:#000}.skip-link{position:absolute;top:-40px;left:0;background:#eee;z-index:100}.skip-link:focus{top:0}header{line-height:2;padding-bottom:1.5rem}.link{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-decoration:none}.time{font-variant-numeric:tabular-nums;white-space:nowrap}blockquote{border-left:5px solid #eee;padding-left:1rem;margin:0}a,a:visited{color:inherit}a:hover,a.heading-link{text-decoration:none}pre{padding:.5rem;overflow:auto;overflow-x:scroll;overflow-wrap:normal}code,pre{font-family:San Francisco Mono,Monaco,consolas,lucida console,dejavu sans mono,bitstream vera sans mono,monospace;font-size:normal;font-size:small;background:#eee}code{margin:.1rem;border:none;overflow:visible;overflow-wrap:anywhere}ul{list-style-type:square}ul,ol{padding-left:1.2rem}.list{line-height:2;list-style-type:none;padding-left:0}.list li{padding-bottom:.1rem}.meta{color:#777}.content{max-width:70ch;margin:0 auto}header{line-height:2;display:flex;justify-content:space-between;padding-bottom:1rem}header a{text-decoration:none}header ul{list-style-type:none;padding:0}header li,header a{display:inline}h2.post{padding-top:.5rem}header ul a:first-child{padding-left:1rem}.nav{height:1px;background:#000;content:'';max-width:10%}.list li{display:flex;align-items:baseline}.list li time{flex:initial}.hr-list{margin-top:0;margin-bottom:0;margin-right:.5rem;margin-left:.5rem;height:1px;border:0;border-bottom:1px dotted #ccc;flex:1 0 1rem}.m,hr{border:0;margin:3rem 0}img{max-width:100%;height:auto}.post-date{margin:5% 0}.index-date{color:#9a9a9a}.animate-blink{animation:opacity 1s infinite;opacity:1}@keyframes opacity{0%{opacity:1}50%{opacity:.5}100%{opacity:0}}.tags{display:flex;justify-content:space-between}.tags ul{padding:0;margin:0}.tags li{display:inline}.avatar{height:120px;width:120px;position:relative;margin:-10px 0 0 15px;float:right;border-radius:50%}table{width:100%;border-collapse:collapse}th,td{border:1px solid #ddd;text-align:left;padding:8px}th{background-color:#f2f2f2} </style>
+    <style>*,:after,:before{box-sizing:border-box;padding:0}body{font:1rem/1.5 bricolage grotesque,-apple-system,BlinkMacSystemFont,segoe ui,Helvetica,Arial,sans-serif;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;padding:2rem;background:#fffdfa;color:#000}.skip-link{position:absolute;top:-40px;left:0;background:#eee;z-index:100}.skip-link:focus{top:0}header{line-height:2;padding-bottom:1.5rem}.link{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-decoration:none}.time{font-variant-numeric:tabular-nums;white-space:nowrap}blockquote{border-left:5px solid #eee;padding-left:1rem;margin:0}a,a:visited{color:inherit}a:hover,a.heading-link{text-decoration:none}pre{padding:.5rem;overflow:auto;overflow-x:scroll;overflow-wrap:normal}code,pre{font-family:San Francisco Mono,Monaco,consolas,lucida console,dejavu sans mono,bitstream vera sans mono,monospace;font-size:normal;font-size:small;background:#eee}code{margin:.1rem;border:none;overflow:visible;overflow-wrap:anywhere}ul{list-style-type:square}ul,ol{padding-left:3rem}.list{line-height:2;list-style-type:none;padding-left:0}.list li{padding-bottom:.1rem}.meta{color:#777}.content{max-width:70ch;margin:0 auto}header{line-height:2;display:flex;justify-content:space-between;padding-bottom:1rem}header a{text-decoration:none}header ul{list-style-type:none;padding:0}header li,header a{display:inline}h2.post{padding-top:.5rem}header ul a:first-child{padding-left:1rem}.nav{height:1px;background:#000;content:'';max-width:10%}.list li{display:flex;align-items:baseline}.list li time{flex:initial}.hr-list{margin-top:0;margin-bottom:0;margin-right:.5rem;margin-left:.5rem;height:1px;border:0;border-bottom:1px dotted #ccc;flex:1 0 1rem}.m,hr{border:0;margin:3rem 0}img{max-width:100%;height:auto}.post-date{margin:5% 0}.index-date{color:#9a9a9a}.animate-blink{animation:opacity 1s infinite;opacity:1}@keyframes opacity{0%{opacity:1}50%{opacity:.5}100%{opacity:0}}.tags{display:flex;justify-content:space-between}.tags ul{padding:0;margin:0}.tags li{display:inline}.avatar{height:120px;width:120px;position:relative;margin:-10px 0 0 15px;float:right;border-radius:50%}table{width:100%;border-collapse:collapse}th,td{border:1px solid #ddd;text-align:left;padding:8px}th{background-color:#f2f2f2}li{font-family:inherit} </style>
   
     
   
@@ -97,7 +97,7 @@ Serialization Encoding Each of these processes has a single responsibility, whic
       },
       "image": "//localhost:1313/assets/favicon.ico",
       "url" : "\/\/localhost:1313\/posts\/kotlinx-serialization-process-working\/",
-      "wordCount" : "780",
+      "wordCount" : "777",
       "genre" : [ "kotlin" , "migrated-from-medium" , "kotlinx-serialization" ],
       "keywords" : [ "kotlin" , "migrated-from-medium" , "kotlinx-serialization" ]
   }
@@ -183,9 +183,9 @@ Serialization Encoding Each of these processes has a single responsibility, whic
 <hr>
 <p>Remember the User object which we used to understand the basics in the 
 
-  <a href="/posts/kotlin-serialization-getting-started">introductory blog post</a>
 
-? We’re going to use that to look into the workings of plugin and runtime.</p>
+
+  <a href="/posts/kotlin-serialization-getting-started">introductory blog post</a>? We’re going to use that to look into the workings of plugin and runtime.</p>
 <div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#1e66f5;font-weight:bold">@Serializable</span>
 </span></span><span style="display:flex;"><span><span style="color:#8839ef">data</span> <span style="color:#8839ef">class</span> <span style="color:#df8e1d">User</span>(<span style="color:#8839ef">val</span> <span style="color:#fe640b">name</span>: String)
 </span></span></code></pre></div><p>Whenever we call User.serialize(), we obtain an object of type KSerializer. Let’s look into the generated code to know how things are structured and get a high level understanding of what’s going on inside, because Hey! code never lies :)</p>
@@ -198,9 +198,9 @@ Serialization Encoding Each of these processes has a single responsibility, whic
 </ol>
 <p>The role of the constructor is to initialise the properties of the data class. Now, as this constructor is hidden, it must be used internally in the same class. If we look closely, the constructor is used during deserialization of data to create the class object, in our case a User object.</p>
 <p>The <code>$serializer</code> class is what contains all the logic for the serialization process. This generated class implements an interface called GeneratedSerializer, which in-turn implements the KSerializer interface and overrides a number of methods. KSerializer governs the serialization and deserialization process for an object by defining strategies for serialization and deserialization — SerializationStrategy &amp; DeserializationStrategy. These are responsible for defining how the actual serialization and deserialization of an object work. The interface also defines an object of type 
-<a href="https://github.com/Kotlin/KEEP/blob/serialization/proposals/extensions/serialization.md#descriptor-of-a-serializable-entity" target="_blank" rel="noopener">SerialDescriptor</a>
 
-, which contains metadata related to the object and describes internal structure of data to be transformed.</p>
+
+<a href="https://github.com/Kotlin/KEEP/blob/serialization/proposals/extensions/serialization.md#descriptor-of-a-serializable-entity" target="_blank" rel="noopener">SerialDescriptor</a>, which contains metadata related to the object and describes internal structure of data to be transformed.</p>
 <p>If we look back at the generated class $serializer, we see a SerialDescriptor object, along with two methods which use this object:</p>
 <ol>
 <li>serialize() — This method is defined in SerializationStrategy interface and its implementation describes the actual serialization process. It receives the value to be encoded and dispatches one or multiple commands to the Encoder to transform the value.</li>
@@ -210,16 +210,16 @@ Serialization Encoding Each of these processes has a single responsibility, whic
 <hr>
 <p>Hope this was helpful and you learnt something new. If you haven’t gone through the 
 
+
+
       
     
-  <a href="/tags/kotlinx-serialization/">previous posts</a>
-
-, you should take a look at those.</p>
+  <a href="/tags/kotlinx-serialization/">previous posts</a>, you should take a look at those.</p>
 <p>Hope it helps!</p>
 <p><em>Originally posted on Medium 
-<a href="https://medium.com/@gurpreetsk/kotlin-serialization-optional-and-transient-properties-b3da3247e112" target="_blank" rel="noopener">link</a>
 
-</em></p>
+
+<a href="https://medium.com/@gurpreetsk/kotlin-serialization-optional-and-transient-properties-b3da3247e112" target="_blank" rel="noopener">link</a></em></p>
 
       
       <div class="post-date">

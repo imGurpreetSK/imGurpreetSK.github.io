@@ -6,14 +6,56 @@
     <description>Recent content in Migrated-From-Medium on GurpreetSK.com</description>
     <generator>Hugo</generator>
     <language>en-US</language>
-    <lastBuildDate>Mon, 21 Apr 2025 02:08:35 -0700</lastBuildDate>
+    <lastBuildDate>Sat, 13 Jun 2020 02:23:11 +0530</lastBuildDate>
     <atom:link href="//localhost:1313/tags/migrated-from-medium/atom.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Kotlinx Serialization - How the serialization process works</title>
+      <link>//localhost:1313/posts/kotlinx-serialization-process-working/</link>
+      <pubDate>Sat, 13 Jun 2020 02:23:11 +0530</pubDate>
+      <guid>//localhost:1313/posts/kotlinx-serialization-process-working/</guid>
+      <description>&lt;br&gt;&#xA;&lt;p&gt;&lt;img&#xA;  src=&#34;//localhost:1313/assets/posts/kotlinx-serialization/banner-kotlin-mobile.webp&#34;&#xA;  alt=&#34;Header&#34;&#xA;  loading=&#34;lazy&#34;&#xA;  decoding=&#34;async&#34;&#xA;  class=&#34;full-width&#34;&#xA;/&gt;&#xA;&#xA;&lt;/p&gt;&#xA;&lt;br&gt;&#xA;&lt;p&gt;Now that we know the basic concepts of kotlin serialization and have also seen how to use it to serialize and deserialize data, let’s talk a bit about the library’s internal working and some of the important concepts.&lt;/p&gt;&#xA;&lt;p&gt;Note: If you haven’t gone through the previous posts, you should take a look at those first.&lt;/p&gt;&#xA;&lt;p&gt;The entire process of serialization is composed of two separate sub-processes:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Serialization&lt;/li&gt;&#xA;&lt;li&gt;Encoding&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Each of these processes has a single responsibility, which enables clear separation of roles and allows both to operate independently. This is the reason behind the extensibility and flexibility of the library. Please note that despite being independent, these operations are still sequential— encoding always takes place after serialization.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Kotlinx Serialization - JsonConfiguration</title>
+      <link>//localhost:1313/posts/kotlinx-serialization-jsonconfiguration/</link>
+      <pubDate>Wed, 13 May 2020 02:23:11 +0530</pubDate>
+      <guid>//localhost:1313/posts/kotlinx-serialization-jsonconfiguration/</guid>
+      <description>&lt;br&gt;&#xA;&lt;p&gt;&lt;img&#xA;  src=&#34;//localhost:1313/assets/posts/kotlinx-serialization/banner-kotlin-mobile.webp&#34;&#xA;  alt=&#34;Header&#34;&#xA;  loading=&#34;lazy&#34;&#xA;  decoding=&#34;async&#34;&#xA;  class=&#34;full-width&#34;&#xA;/&gt;&#xA;&#xA;&lt;/p&gt;&#xA;&lt;br&gt;&#xA;&lt;p&gt;In the previous posts we learned about the basics of kotlin serialization. We instantiated a Json object, passing it a configuration and used it to perform serialization and deserialization operations. This post is about that configuration, called JsonConfiguration — why is it required and what role does it play in the process.&lt;/p&gt;&#xA;&lt;p&gt;The JsonConfiguration class is provided by the serialization runtime library and allows us to customise JSON behaviour as per our requirements. It is a simple data class with various properties and two out-of-the-box configurations:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Kotlinx Serialization - Getting Started</title>
+      <link>//localhost:1313/posts/kotlinx-serialization-getting-started/</link>
+      <pubDate>Sun, 03 May 2020 02:23:11 +0530</pubDate>
+      <guid>//localhost:1313/posts/kotlinx-serialization-getting-started/</guid>
+      <description>&lt;br&gt;&#xA;&lt;p&gt;&lt;img&#xA;  src=&#34;//localhost:1313/assets/posts/kotlinx-serialization/banner-kotlin-mobile.webp&#34;&#xA;  alt=&#34;Header&#34;&#xA;  loading=&#34;lazy&#34;&#xA;  decoding=&#34;async&#34;&#xA;  class=&#34;full-width&#34;&#xA;/&gt;&#xA;&#xA;&lt;/p&gt;&#xA;&lt;br&gt;&#xA;&lt;p&gt;&#xA;&lt;a href=&#34;https://github.com/Kotlin/kotlinx.serialization&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Kotlin serialization&lt;/a&gt;&#xA;&#xA; is kotlin-first, compile-time, type-safe, reflection-free and completely multi-platform ready &#xA;&lt;a href=&#34;https://en.wikipedia.org/wiki/Serialization&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;serialization&lt;/a&gt;&#xA;&#xA; mechanism to convert kotlin objects into data formats like JSON or Protobuf and vice-versa.&#xA;It is comprised of a compiler plugin which is used to generate code for serializable classes and a runtime library, containing core classes and primitives for serialization &amp;amp; IO, among some other things.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img&#xA;  src=&#34;//localhost:1313/assets/posts/kotlinx-serialization/kotlinx-serialization-current-structure.webp&#34;&#xA;  alt=&#34;current-library-runtime-structure&#34;&#xA;  loading=&#34;lazy&#34;&#xA;  decoding=&#34;async&#34;&#xA;  class=&#34;full-width&#34;&#xA;/&gt;&#xA;&#xA;&lt;/p&gt;&#xA;&lt;div style=&#34;text-align:center;&#34;&gt;Kotlinx serialization runtime project structure&lt;/div&gt;&#xA;&lt;br/&gt;&#xA;&lt;p&gt;While JSON format is supported out of the box by the library, there’s first-class support for other formats like Protobuf &amp;amp; CBOR, with the option to extend the functionality by writing your own library to support any other format.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Kotlinx Serialization - optional and transient properties</title>
+      <link>//localhost:1313/posts/kotlinx-serialization-optional-and-transient-properties/</link>
+      <pubDate>Sun, 03 May 2020 02:23:11 +0530</pubDate>
+      <guid>//localhost:1313/posts/kotlinx-serialization-optional-and-transient-properties/</guid>
+      <description>&lt;p&gt;When interacting with a Rest API, it’s common to have some optional properties in the response. These properties might or might not be present at runtime. Let’s consider we updated out User data object to contain a required, non-nullable and unique id and age, which is an optional, nullable property.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-kotlin&#34; data-lang=&#34;kotlin&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#1e66f5;font-weight:bold&#34;&gt;@Serializable&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8839ef&#34;&gt;data&lt;/span&gt; &lt;span style=&#34;color:#8839ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#df8e1d&#34;&gt;User&lt;/span&gt;(&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#8839ef&#34;&gt;val&lt;/span&gt; &lt;span style=&#34;color:#fe640b&#34;&gt;id&lt;/span&gt;: String,&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#8839ef&#34;&gt;val&lt;/span&gt; &lt;span style=&#34;color:#fe640b&#34;&gt;name&lt;/span&gt;: String,&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#8839ef&#34;&gt;val&lt;/span&gt; &lt;span style=&#34;color:#fe640b&#34;&gt;age&lt;/span&gt;: Int? = &lt;span style=&#34;color:#8839ef&#34;&gt;null&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;(You can see all these examples as a series of unit tests here in &#xA;&lt;a href=&#34;https://gist.github.com/GurpreetSK95/f2752ac9984cb6fc122765762fc8df31&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;this gist&lt;/a&gt;&#xA;&#xA;.)&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Multi-caret in Android Studio</title>
+      <link>//localhost:1313/posts/multi-caret-in-android-studio/</link>
+      <pubDate>Sat, 08 Jun 2019 02:23:11 +0530</pubDate>
+      <guid>//localhost:1313/posts/multi-caret-in-android-studio/</guid>
+      <description>&lt;p&gt;Knowing keyboard shortcuts is important. They save you time and help you achieve more in less time. If you need convincing, I highly recommend watching &#xA;&lt;a href=&#34;https://vimeo.com/98922030&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;‘Mouseless Driven Development’ by Hadi Hariri&lt;/a&gt;&#xA;&#xA;.&lt;/p&gt;&#xA;&lt;p&gt;This blog post is about one such feature of Android Studio (or any JetBrains IDE for that matter) which not a lot of people know about — multi-caret selection. A lot of my friends and colleagues who I pair-program with feel amazed by it and always ask “What was that!?”, so I decided to write about it to help them and everyone out there know about these.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Kotlin Sequences</title>
+      <link>//localhost:1313/posts/kotlin-sequences/</link>
+      <pubDate>Sun, 10 Mar 2019 02:23:11 +0530</pubDate>
+      <guid>//localhost:1313/posts/kotlin-sequences/</guid>
+      <description>&lt;p&gt;Transforming, filtering, manipulating and operating on data is what every developer does almost every day at their jobs. If you’re using Kotlin for writing your applications, you might have used map or filter operator to transform a collection from one form to another.&lt;/p&gt;&#xA;&lt;p&gt;Along with the kotlin.collections package, Kotlin also provides a way to lazily represent and evaluate a collection of data. This is accomplished using Sequences.&lt;/p&gt;&#xA;&lt;h3 id=&#34;sequences-are-a-collection-of-possibly-infinite-data-ordered-in-a-certain-way&#34;&gt;&lt;em&gt;Sequences are a collection of possibly infinite data, ordered in a certain way.&lt;/em&gt;&lt;/h3&gt;&#xA;&lt;p&gt;Sequences are a part of the language standard library and allow lazy evaluation of large amount of data (in millions), as opposed to collections, which compute and evaluate operations on a data set eagerly.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Listening to Memory events using onTrimMemory() on Android</title>
-      <link>//localhost:1313/posts/contact/</link>
-      <pubDate>Mon, 21 Apr 2025 02:08:35 -0700</pubDate>
-      <guid>//localhost:1313/posts/contact/</guid>
-      <description></description>
+      <link>//localhost:1313/posts/listening-to-memory-events-using-ontrimmemory/</link>
+      <pubDate>Mon, 21 Aug 2017 10:08:35 +0530</pubDate>
+      <guid>//localhost:1313/posts/listening-to-memory-events-using-ontrimmemory/</guid>
+      <description>&lt;p&gt;Anyone who has been developing android application knows how memory-scarce the platform is, with each application being provided with &#xA;&lt;a href=&#34;https://stackoverflow.com/questions/18675557/what-is-the-maximum-amount-of-ram-an-app-can-use&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;upto 24/32mb of memory&lt;/a&gt;&#xA;&#xA; (which can go to as low as 16mb for older devices). In such a scenario, it is the developer’s duty to look out for memory leaks and free any resources that are not been used by the application.&lt;/p&gt;&#xA;&lt;p&gt;One way of managing memory in response to system events is the &#xA;&lt;a href=&#34;https://developer.android.com/reference/android/content/ComponentCallbacks2.html#onTrimMemory%28int%29&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;onTrimMemory() method&lt;/a&gt;&#xA;&#xA;. From the docs:&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

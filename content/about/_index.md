@@ -4,7 +4,7 @@ draft = true
 title = 'About'
 +++
 
-## Hi! I'm [Gurpreet Singh](https://www.linkedin.com/in/imGurpreetSK/).
+## Hi! I'm [Gurpreet Singh](https://www.linkedin.com/in/imGurpreetSK/)
 
 I work on mobile applications to positively impact users' lives and deliver delightful mobile experiences.
 

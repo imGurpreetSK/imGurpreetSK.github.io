@@ -9,7 +9,7 @@ theme = 'maverick'
 [params]
   logo = "/assets/favicon.ico"
   description = "Gurpreet's thoughts, experiences and learnings"
-  author = "Gurpreet Singh"
+  author = "Gurpreet"
   items = 5
 
 [menu]
