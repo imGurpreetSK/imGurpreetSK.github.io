@@ -14,6 +14,63 @@
     
     
     <item>
+      <title>Maybe, set LayoutParams of view to be inflated in Compose UI&#39;s AndroidView</title>
+      <link>//localhost:1313/posts/why-you-should-be-setting-layout-params-of-android-views-inflated-in-compose-ui-androidview/</link>
+      <description>&lt;p&gt;I spent half of my day today figuring out why a &lt;code&gt;WebView&lt;/code&gt; does not properly load menu on a web page properly while all the other functionality seems to be working as expected. The screen was written in Compose UI and employed &lt;code&gt;AndroidView&lt;/code&gt; to compose an Android &lt;code&gt;WebView&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Turns out, I missed that &lt;code&gt;LayoutParams&lt;/code&gt; need to be set for the &lt;code&gt;WebView&lt;/code&gt; provided via the factory block; just modifying &lt;code&gt;AndroidView&lt;/code&gt; to fill max available size won’t work as expected.&lt;/p&gt;
+&lt;p&gt;Writing this so I do not waste more time in the future again, and so this can help any other poor soul pulling his/her hair, trying to figure out why their &lt;code&gt;WebView&lt;/code&gt; isn’t working as expected.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-kotlin&#34; data-lang=&#34;kotlin&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    AndroidView(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        factory = { context &lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;-&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            WebView(context).apply {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                layoutParams = &lt;span style=&#34;color:#df8e1d&#34;&gt;ViewGroup&lt;/span&gt;.LayoutParams(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#df8e1d&#34;&gt;ViewGroup&lt;/span&gt;.&lt;span style=&#34;color:#df8e1d&#34;&gt;LayoutParams&lt;/span&gt;.MATCH_PARENT,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#df8e1d&#34;&gt;ViewGroup&lt;/span&gt;.&lt;span style=&#34;color:#df8e1d&#34;&gt;LayoutParams&lt;/span&gt;.MATCH_PARENT
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                )
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                with(settings) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#9ca0b0;font-style:italic&#34;&gt;// Your webview settings.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#9ca0b0;font-style:italic&#34;&gt;&lt;/span&gt;                }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                loadUrl(url)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        modifier = Modifier
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            .fillMaxSize()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            .padding(padding)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    )
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+      <author>Gurpreet</author>
+      <guid>//localhost:1313/posts/why-you-should-be-setting-layout-params-of-android-views-inflated-in-compose-ui-androidview/</guid>
+      <pubDate>Fri, 07 Feb 2025 23:51:03 -0800</pubDate>
+    </item>
+    
+    <item>
+      <title>On software being like gardening</title>
+      <link>//localhost:1313/posts/on-software-being-like-gardening/</link>
+      <description>&lt;p&gt;Link to Product leader John Cutler’s 
+
+
+&lt;a href=&#34;https://cutlefish.substack.com/p/tbm-234-maintenance-ktlo-and-bau&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;published article&lt;/a&gt; 
+
+
+&lt;a href=&#34;https://cutlefish.substack.com/p/tbm-234-maintenance-ktlo-and-bau&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;about software maintenance&lt;/a&gt; suggesting that software is more like gardening than car maintenance, quoted from Pragmatic Engineer’s paid article 
+
+
+&lt;a href=&#34;https://newsletter.pragmaticengineer.com/p/bug-management-that-works-part-1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Bug management that works, Pt 1&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I&amp;rsquo;ve always been bothered by how teams use words and phrases like maintenance, keeping the lights on (KTLO), and business as usual. I get what they mean, but there always seems to be a stigma around this work.&lt;/p&gt;
+&lt;p&gt;When we maintain a car—oil changes, tire rotations, etc.—we aim to keep the car running smoothly and safely. When we maintain a car, we don&amp;rsquo;t normally fix bugs, apply patches, optimize performance, check for compatibility, remove features, refactor, and incorporate user feedback. Why? Car maintenance revolves around physical wear and tear, degradation of materials over time, and the occasional replacement of parts with a limited lifespan. These actions don&amp;rsquo;t &amp;ldquo;fix&amp;rdquo; or &amp;ldquo;improve&amp;rdquo; the car but rather preserve its current state and prolong its effective lifespan.&lt;/p&gt;
+&lt;p&gt;In a sense, software is much more like a garden than a mechanical entity like a car. We plant the initial seeds (start designing and building), water and nurture it (make updates
+and enhance features), and periodically have to prune (refactor) and weed (remove bugs and vulnerabilities). A product requires constant attention to grow and adapt to its environment (user needs, technological changes, and market trends). It&amp;rsquo;s an ongoing process of growth, adaptation, and care.&lt;/p&gt;
+&lt;p&gt;Applicable concepts: seeding, sowing, weeding, watering, pruning, cultivation, composting, harvesting, hardening off, propagating, rotating, aeration, grafting, trellising, thinning, etc.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Having working in software with teams of different sizes, this comparison makes a lot of sense to me not only for maintenance but also how good software is written.&lt;/p&gt;
+</description>
+      <author>Gurpreet</author>
+      <guid>//localhost:1313/posts/on-software-being-like-gardening/</guid>
+      <pubDate>Wed, 02 Oct 2024 23:51:03 -0800</pubDate>
+    </item>
+    
+    <item>
       <title>Kotlinx Serialization - How the serialization process works</title>
       <link>//localhost:1313/posts/kotlinx-serialization-process-working/</link>
       <description>&lt;br&gt;

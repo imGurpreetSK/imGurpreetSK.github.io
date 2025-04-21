@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Liste - //localhost:1313/">
+    <title>Maybe, set LayoutParams of view to be inflated in Compose UI&#39;s AndroidView | GurpreetSK.com</title>
+    <meta name="description" content="Gurpreet&#39;s thoughts, experiences and learnings">
+    <meta property="og:url" content="//localhost:1313/posts/why-you-should-be-setting-layout-params-of-android-views-inflated-in-compose-ui-androidview/">
+  <meta property="og:site_name" content="GurpreetSK.com">
+  <meta property="og:title" content="Maybe, set LayoutParams of view to be inflated in Compose UI&#39;s AndroidView">
+  <meta property="og:description" content="I spent half of my day today figuring out why a WebView does not properly load menu on a web page properly while all the other functionality seems to be working as expected. The screen was written in Compose UI and employed AndroidView to compose an Android WebView.
+Turns out, I missed that LayoutParams need to be set for the WebView provided via the factory block; just modifying AndroidView to fill max available size won’t work as expected.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-02-07T23:51:03-08:00">
+    <meta property="article:modified_time" content="2025-02-07T23:51:03-08:00">
+    <meta property="article:tag" content="Android">
+    <meta property="article:tag" content="Compose-Ui">
+
+    
+  <meta itemprop="name" content="Maybe, set LayoutParams of view to be inflated in Compose UI&#39;s AndroidView">
+  <meta itemprop="description" content="I spent half of my day today figuring out why a WebView does not properly load menu on a web page properly while all the other functionality seems to be working as expected. The screen was written in Compose UI and employed AndroidView to compose an Android WebView.
+Turns out, I missed that LayoutParams need to be set for the WebView provided via the factory block; just modifying AndroidView to fill max available size won’t work as expected.">
+  <meta itemprop="datePublished" content="2025-02-07T23:51:03-08:00">
+  <meta itemprop="dateModified" content="2025-02-07T23:51:03-08:00">
+  <meta itemprop="wordCount" content="144">
+  <meta itemprop="keywords" content="Android,Compose-Ui">
+    
+    <link rel="canonical" href="//localhost:1313/posts/why-you-should-be-setting-layout-params-of-android-views-inflated-in-compose-ui-androidview/">
+    <link rel="icon" href="//localhost:1313//assets/favicon.ico">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link href="https://www.google-analytics.com" rel="preconnect" crossorigin>
+    <link rel="alternate" type="application/atom+xml" title="GurpreetSK.com" href="//localhost:1313//atom.xml" />
+    <link rel="alternate" type="application/json" title="GurpreetSK.com" href="//localhost:1313//feed.json" />
+    <link rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=">
+    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bricolage+Grotesque">
+    
+    
+    <style>*,:after,:before{box-sizing:border-box;padding:0;line-height:165%}body{text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;padding:2rem;background:#fffdfa;color:#000}.skip-link{position:absolute;top:-40px;left:0;background:#eee;z-index:100}.skip-link:focus{top:0}header{line-height:2;padding-bottom:1.5rem}.link{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-decoration:none}.time{font-variant-numeric:tabular-nums;white-space:nowrap}blockquote{border-left:5px solid #eee;padding-left:1rem;margin:0}a,a:visited{color:inherit}a:hover,a.heading-link{text-decoration:none}pre{padding:.5rem;overflow:auto;overflow-x:scroll;overflow-wrap:normal}code,pre{font-family:San Francisco Mono,Monaco,consolas,lucida console,dejavu sans mono,bitstream vera sans mono,monospace;font-size:normal;font-size:small;background:#eee}code{margin:.1rem;border:none;overflow:visible;overflow-wrap:anywhere}ul{list-style-type:square}ul,ol{padding-left:3rem}.list{line-height:2;list-style-type:none;padding-left:0}.list li{padding-bottom:.1rem}.meta{color:#777}.content{max-width:100ch;margin:0 auto;text-align:justify}header{line-height:2;display:flex;justify-content:space-between;padding-bottom:1rem}header a{text-decoration:none}header ul{list-style-type:none;padding:0}header li,header a{display:inline}h2.post{padding-top:.5rem}header ul a:first-child{padding-left:1rem}.nav{height:1px;background:#000;content:'';max-width:10%}.list li{display:flex;align-items:baseline}.list li time{flex:initial}.hr-list{margin-top:0;margin-bottom:0;margin-right:.5rem;margin-left:.5rem;height:1px;border:0;border-bottom:1px dotted #ccc;flex:1 0 1rem}.m,hr{border:0;margin:3rem 0}img{max-width:100%;height:auto}.post-date{margin:5% 0}.index-date{color:#9a9a9a}.animate-blink{animation:opacity 1s infinite;opacity:1}@keyframes opacity{0%{opacity:1}50%{opacity:.5}100%{opacity:0}}.tags{display:flex;justify-content:space-between}.tags ul{padding:0;margin:0}.tags li{display:inline}.avatar{height:120px;width:120px;position:relative;margin:-10px 0 0 15px;float:right;border-radius:50%}table{width:100%;border-collapse:collapse}th,td{border:1px solid #ddd;text-align:left;padding:8px}th{background-color:#f2f2f2}li{font-family:inherit}footer{position:fixed;left:0;bottom:0;width:100%;text-align:center} </style>
+  
+    
+  
+  
+  <script type="application/ld+json">
+  {
+      "@context": "http://schema.org",
+      "@type": "BlogPosting",
+      "articleSection": "posts",
+      "name": "Maybe, set LayoutParams of view to be inflated in Compose UI\u0027s AndroidView",
+      "headline": "Maybe, set LayoutParams of view to be inflated in Compose UI\u0027s AndroidView",
+      "alternativeHeadline": "",
+      "description": "\u003cp\u003eI spent half of my day today figuring out why a \u003ccode\u003eWebView\u003c\/code\u003e does not properly load menu on a web page properly while all the other functionality seems to be working as expected. The screen was written in Compose UI and employed \u003ccode\u003eAndroidView\u003c\/code\u003e to compose an Android \u003ccode\u003eWebView\u003c\/code\u003e.\u003c\/p\u003e\n\u003cp\u003eTurns out, I missed that \u003ccode\u003eLayoutParams\u003c\/code\u003e need to be set for the \u003ccode\u003eWebView\u003c\/code\u003e provided via the factory block; just modifying \u003ccode\u003eAndroidView\u003c\/code\u003e to fill max available size won’t work as expected.\u003c\/p\u003e",
+      "inLanguage": "en-US",
+      "isFamilyFriendly": "true",
+      "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "\/\/localhost:1313\/posts\/why-you-should-be-setting-layout-params-of-android-views-inflated-in-compose-ui-androidview\/"
+      },
+      "author" : {
+          "@type": "Person",
+          "name": "Gurpreet"
+      },
+      "creator" : {
+          "@type": "Person",
+          "name": "Gurpreet"
+      },
+      "accountablePerson" : {
+          "@type": "Person",
+          "name": "Gurpreet"
+      },
+      "copyrightHolder" : "GurpreetSK.com",
+      "copyrightYear" : "2025",
+      "dateCreated": "2025-02-07T23:51:03.00Z",
+      "datePublished": "2025-02-07T23:51:03.00Z",
+      "dateModified": "2025-02-07T23:51:03.00Z",
+      "publisher":{
+          "@type":"Organization",
+          "name": "GurpreetSK.com",
+          "url": "//localhost:1313/",
+          "logo": {
+              "@type": "ImageObject",
+              "url": "\/\/localhost:1313\/assets\/favicon.ico",
+              "width":"32",
+              "height":"32"
+          }
+      },
+      "image": "//localhost:1313/assets/favicon.ico",
+      "url" : "\/\/localhost:1313\/posts\/why-you-should-be-setting-layout-params-of-android-views-inflated-in-compose-ui-androidview\/",
+      "wordCount" : "144",
+      "genre" : [ "android" , "compose-ui" ],
+      "keywords" : [ "android" , "compose-ui" ]
+  }
+  </script>
+  
+  
+  </head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to main</a>
+  <main id="main">
+  <div class="content">
+    <header>
+<p style="padding: 0;margin: 0;">
+  <a href="//localhost:1313/">
+    <b>GurpreetSK.com</b>
+    <span class="text-stone-500 animate-blink">▮</span>
+  </a>
+</p>
+<ul style="padding: 0;margin: 0;">
+  
+  
+  <li class="">
+    <a href="/"><span>Home</span></a>
+    
+  <li class="">
+    <a href="/about/"><span>About</span></a>
+    
+  <li class="">
+    <a href="/posts/"><span>Posts</span></a>
+    
+  <li class="">
+    <a href="/musings/"><span>Musings</span></a>
+    
+  </li>
+</ul>
+</header>
+<hr class="hr-list" style="padding: 0;margin: 0;">
+    <section>
+      <h2 class="post">Maybe, set LayoutParams of view to be inflated in Compose UI&#39;s AndroidView</h2>
+      <p>I spent half of my day today figuring out why a <code>WebView</code> does not properly load menu on a web page properly while all the other functionality seems to be working as expected. The screen was written in Compose UI and employed <code>AndroidView</code> to compose an Android <code>WebView</code>.</p>
+<p>Turns out, I missed that <code>LayoutParams</code> need to be set for the <code>WebView</code> provided via the factory block; just modifying <code>AndroidView</code> to fill max available size won’t work as expected.</p>
+<p>Writing this so I do not waste more time in the future again, and so this can help any other poor soul pulling his/her hair, trying to figure out why their <code>WebView</code> isn’t working as expected.</p>
+<div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span>    AndroidView(
+</span></span><span style="display:flex;"><span>        factory = { context <span style="color:#04a5e5;font-weight:bold">-&gt;</span>
+</span></span><span style="display:flex;"><span>            WebView(context).apply {
+</span></span><span style="display:flex;"><span>                layoutParams = <span style="color:#df8e1d">ViewGroup</span>.LayoutParams(
+</span></span><span style="display:flex;"><span>                    <span style="color:#df8e1d">ViewGroup</span>.<span style="color:#df8e1d">LayoutParams</span>.MATCH_PARENT,
+</span></span><span style="display:flex;"><span>                    <span style="color:#df8e1d">ViewGroup</span>.<span style="color:#df8e1d">LayoutParams</span>.MATCH_PARENT
+</span></span><span style="display:flex;"><span>                )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                with(settings) {
+</span></span><span style="display:flex;"><span>                    <span style="color:#9ca0b0;font-style:italic">// Your webview settings.
+</span></span></span><span style="display:flex;"><span><span style="color:#9ca0b0;font-style:italic"></span>                }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                loadUrl(url)
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>        modifier = Modifier
+</span></span><span style="display:flex;"><span>            .fillMaxSize()
+</span></span><span style="display:flex;"><span>            .padding(padding)
+</span></span><span style="display:flex;"><span>    )
+</span></span></code></pre></div>
+      
+      <div class="post-date">
+        <span class="g time">February 7, 2025 </span> &#8729;
+         
+         <a href="//localhost:1313/tags/android/">android</a> <a href="//localhost:1313/tags/compose-ui/">compose-ui</a>
+      </div>
+      
+    </section>
+    
+    
+    
+  </div>
+</main>
+</body>
+</html>

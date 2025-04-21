@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Compose-Ui on GurpreetSK.com</title>
+    <link>//localhost:1313/tags/compose-ui/</link>
+    <description>Recent content in Compose-Ui on GurpreetSK.com</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Fri, 07 Feb 2025 23:51:03 -0800</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/compose-ui/atom.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Why you should be setting layout params of Android views inflated in Compose UI&#39;s AndroidView</title>
+      <link>//localhost:1313/posts/why-you-should-besetting-layout-params-of-android-views-inflated-in-compose-ui-androidview/</link>
+      <pubDate>Fri, 07 Feb 2025 23:51:03 -0800</pubDate>
+      <guid>//localhost:1313/posts/why-you-should-besetting-layout-params-of-android-views-inflated-in-compose-ui-androidview/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
