@@ -1,3 +1,5 @@
+<!-- NOTE: This file should *not* end with a new line as it  appends a space between link and the next character. -->
+
 {{ $link := .Destination }}
 {{ $isRemote := (or (strings.HasPrefix $link "http") (in (lower $link) ".pdf")) }}
 {{- if not $isRemote -}}
@@ -13,4 +15,3 @@
   {{ end -}}
 {{- end -}}
 <a href="{{ $link | safeURL }}"{{ with .Title}} title="{{ . }}"{{ end }}{{ if $isRemote }} target="_blank" rel="noopener"{{ end }}>{{ .Text | safeHTML }}</a>
-<!-- <a href="{{ .Destination | safeURL }}"{{ with .Title}} title="{{ . }}"{{ end }}{{ if strings.HasPrefix .Destination "http" }} target="_blank" rel="noopener noreferrer"{{ end }}>{{ .Text | safeHTML }}</a> -->
