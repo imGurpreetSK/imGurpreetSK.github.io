@@ -13,7 +13,7 @@
   <meta property="og:site_name" content="GurpreetSK.com">
   <meta property="og:title" content="Kotlinx Serialization - optional and transient properties">
   <meta property="og:description" content="When interacting with a Rest API, it’s common to have some optional properties in the response. These properties might or might not be present at runtime. Let’s consider we updated out User data object to contain a required, non-nullable and unique id and age, which is an optional, nullable property.
-@Serializable data class User( val id: String, val name: String, val age: Int? = null ) (You can see all these examples as a series of unit tests here in this gist .)">
+@Serializable data class User( val id: String, val name: String, val age: Int? = null ) (You can see all these examples as a series of unit tests here in this gist.)">
   <meta property="og:locale" content="en_US">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -26,10 +26,10 @@
     
   <meta itemprop="name" content="Kotlinx Serialization - optional and transient properties">
   <meta itemprop="description" content="When interacting with a Rest API, it’s common to have some optional properties in the response. These properties might or might not be present at runtime. Let’s consider we updated out User data object to contain a required, non-nullable and unique id and age, which is an optional, nullable property.
-@Serializable data class User( val id: String, val name: String, val age: Int? = null ) (You can see all these examples as a series of unit tests here in this gist .)">
+@Serializable data class User( val id: String, val name: String, val age: Int? = null ) (You can see all these examples as a series of unit tests here in this gist.)">
   <meta itemprop="datePublished" content="2020-05-03T02:23:11+05:30">
   <meta itemprop="dateModified" content="2020-05-03T02:23:11+05:30">
-  <meta itemprop="wordCount" content="318">
+  <meta itemprop="wordCount" content="317">
   <meta itemprop="keywords" content="Kotlin,Migrated-From-Medium,Kotlinx-Serialization">
     
     <link rel="canonical" href="//localhost:1313/posts/kotlinx-serialization-optional-and-transient-properties/">
@@ -43,7 +43,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bricolage+Grotesque">
     
     
-    <style>*,:after,:before{box-sizing:border-box;padding:0}body{font:1rem/1.5 bricolage grotesque,-apple-system,BlinkMacSystemFont,segoe ui,Helvetica,Arial,sans-serif;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;padding:2rem;background:#fffdfa;color:#000}.skip-link{position:absolute;top:-40px;left:0;background:#eee;z-index:100}.skip-link:focus{top:0}header{line-height:2;padding-bottom:1.5rem}.link{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-decoration:none}.time{font-variant-numeric:tabular-nums;white-space:nowrap}blockquote{border-left:5px solid #eee;padding-left:1rem;margin:0}a,a:visited{color:inherit}a:hover,a.heading-link{text-decoration:none}pre{padding:.5rem;overflow:auto;overflow-x:scroll;overflow-wrap:normal}code,pre{font-family:San Francisco Mono,Monaco,consolas,lucida console,dejavu sans mono,bitstream vera sans mono,monospace;font-size:normal;font-size:small;background:#eee}code{margin:.1rem;border:none;overflow:visible;overflow-wrap:anywhere}ul{list-style-type:square}ul,ol{padding-left:1.2rem}.list{line-height:2;list-style-type:none;padding-left:0}.list li{padding-bottom:.1rem}.meta{color:#777}.content{max-width:70ch;margin:0 auto}header{line-height:2;display:flex;justify-content:space-between;padding-bottom:1rem}header a{text-decoration:none}header ul{list-style-type:none;padding:0}header li,header a{display:inline}h2.post{padding-top:.5rem}header ul a:first-child{padding-left:1rem}.nav{height:1px;background:#000;content:'';max-width:10%}.list li{display:flex;align-items:baseline}.list li time{flex:initial}.hr-list{margin-top:0;margin-bottom:0;margin-right:.5rem;margin-left:.5rem;height:1px;border:0;border-bottom:1px dotted #ccc;flex:1 0 1rem}.m,hr{border:0;margin:3rem 0}img{max-width:100%;height:auto}.post-date{margin:5% 0}.index-date{color:#9a9a9a}.animate-blink{animation:opacity 1s infinite;opacity:1}@keyframes opacity{0%{opacity:1}50%{opacity:.5}100%{opacity:0}}.tags{display:flex;justify-content:space-between}.tags ul{padding:0;margin:0}.tags li{display:inline}.avatar{height:120px;width:120px;position:relative;margin:-10px 0 0 15px;float:right;border-radius:50%}table{width:100%;border-collapse:collapse}th,td{border:1px solid #ddd;text-align:left;padding:8px}th{background-color:#f2f2f2}li{font-family:inherit} </style>
+    <style>*,:after,:before{box-sizing:border-box;padding:0;line-height:165%}body{text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;padding:2rem;background:#fffdfa;color:#000}.skip-link{position:absolute;top:-40px;left:0;background:#eee;z-index:100}.skip-link:focus{top:0}header{line-height:2;padding-bottom:1.5rem}.link{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-decoration:none}.time{font-variant-numeric:tabular-nums;white-space:nowrap}blockquote{border-left:5px solid #eee;padding-left:1rem;margin:0}a,a:visited{color:inherit}a:hover,a.heading-link{text-decoration:none}pre{padding:.5rem;overflow:auto;overflow-x:scroll;overflow-wrap:normal}code,pre{font-family:San Francisco Mono,Monaco,consolas,lucida console,dejavu sans mono,bitstream vera sans mono,monospace;font-size:normal;font-size:small;background:#eee}code{margin:.1rem;border:none;overflow:visible;overflow-wrap:anywhere}ul{list-style-type:square}ul,ol{padding-left:3rem}.list{line-height:2;list-style-type:none;padding-left:0}.list li{padding-bottom:.1rem}.meta{color:#777}.content{max-width:100ch;margin:0 auto;text-align:justify}header{line-height:2;display:flex;justify-content:space-between;padding-bottom:1rem}header a{text-decoration:none}header ul{list-style-type:none;padding:0}header li,header a{display:inline}h2.post{padding-top:.5rem}header ul a:first-child{padding-left:1rem}.nav{height:1px;background:#000;content:'';max-width:10%}.list li{display:flex;align-items:baseline}.list li time{flex:initial}.hr-list{margin-top:0;margin-bottom:0;margin-right:.5rem;margin-left:.5rem;height:1px;border:0;border-bottom:1px dotted #ccc;flex:1 0 1rem}.m,hr{border:0;margin:3rem 0}img{max-width:100%;height:auto}.post-date{margin:5% 0}.index-date{color:#9a9a9a}.animate-blink{animation:opacity 1s infinite;opacity:1}@keyframes opacity{0%{opacity:1}50%{opacity:.5}100%{opacity:0}}.tags{display:flex;justify-content:space-between}.tags ul{padding:0;margin:0}.tags li{display:inline}.avatar{height:120px;width:120px;position:relative;margin:-10px 0 0 15px;float:right;border-radius:50%}table{width:100%;border-collapse:collapse}th,td{border:1px solid #ddd;text-align:left;padding:8px}th{background-color:#f2f2f2}li{font-family:inherit}footer{position:fixed;left:0;bottom:0;width:100%;text-align:center} </style>
   
     
   
@@ -56,7 +56,7 @@
       "name": "Kotlinx Serialization - optional and transient properties",
       "headline": "Kotlinx Serialization - optional and transient properties",
       "alternativeHeadline": "",
-      "description": "\u003cp\u003eWhen interacting with a Rest API, it’s common to have some optional properties in the response. These properties might or might not be present at runtime. Let’s consider we updated out User data object to contain a required, non-nullable and unique id and age, which is an optional, nullable property.\u003c\/p\u003e\n\u003cdiv class=\u0022highlight\u0022\u003e\u003cpre tabindex=\u00220\u0022 style=\u0022color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;\u0022\u003e\u003ccode class=\u0022language-kotlin\u0022 data-lang=\u0022kotlin\u0022\u003e\u003cspan style=\u0022display:flex;\u0022\u003e\u003cspan\u003e\u003cspan style=\u0022color:#1e66f5;font-weight:bold\u0022\u003e@Serializable\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan style=\u0022display:flex;\u0022\u003e\u003cspan\u003e\u003cspan style=\u0022color:#8839ef\u0022\u003edata\u003c\/span\u003e \u003cspan style=\u0022color:#8839ef\u0022\u003eclass\u003c\/span\u003e \u003cspan style=\u0022color:#df8e1d\u0022\u003eUser\u003c\/span\u003e(\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan style=\u0022display:flex;\u0022\u003e\u003cspan\u003e    \u003cspan style=\u0022color:#8839ef\u0022\u003eval\u003c\/span\u003e \u003cspan style=\u0022color:#fe640b\u0022\u003eid\u003c\/span\u003e: String,\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan style=\u0022display:flex;\u0022\u003e\u003cspan\u003e    \u003cspan style=\u0022color:#8839ef\u0022\u003eval\u003c\/span\u003e \u003cspan style=\u0022color:#fe640b\u0022\u003ename\u003c\/span\u003e: String,\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan style=\u0022display:flex;\u0022\u003e\u003cspan\u003e    \u003cspan style=\u0022color:#8839ef\u0022\u003eval\u003c\/span\u003e \u003cspan style=\u0022color:#fe640b\u0022\u003eage\u003c\/span\u003e: Int? = \u003cspan style=\u0022color:#8839ef\u0022\u003enull\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan style=\u0022display:flex;\u0022\u003e\u003cspan\u003e)\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/code\u003e\u003c\/pre\u003e\u003c\/div\u003e\u003cp\u003e(You can see all these examples as a series of unit tests here in \n\u003ca href=\u0022https:\/\/gist.github.com\/GurpreetSK95\/f2752ac9984cb6fc122765762fc8df31\u0022 target=\u0022_blank\u0022 rel=\u0022noopener\u0022\u003ethis gist\u003c\/a\u003e\n\n.)\u003c\/p\u003e",
+      "description": "\u003cp\u003eWhen interacting with a Rest API, it’s common to have some optional properties in the response. These properties might or might not be present at runtime. Let’s consider we updated out User data object to contain a required, non-nullable and unique id and age, which is an optional, nullable property.\u003c\/p\u003e\n\u003cdiv class=\u0022highlight\u0022\u003e\u003cpre tabindex=\u00220\u0022 style=\u0022color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;\u0022\u003e\u003ccode class=\u0022language-kotlin\u0022 data-lang=\u0022kotlin\u0022\u003e\u003cspan style=\u0022display:flex;\u0022\u003e\u003cspan\u003e\u003cspan style=\u0022color:#1e66f5;font-weight:bold\u0022\u003e@Serializable\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan style=\u0022display:flex;\u0022\u003e\u003cspan\u003e\u003cspan style=\u0022color:#8839ef\u0022\u003edata\u003c\/span\u003e \u003cspan style=\u0022color:#8839ef\u0022\u003eclass\u003c\/span\u003e \u003cspan style=\u0022color:#df8e1d\u0022\u003eUser\u003c\/span\u003e(\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan style=\u0022display:flex;\u0022\u003e\u003cspan\u003e    \u003cspan style=\u0022color:#8839ef\u0022\u003eval\u003c\/span\u003e \u003cspan style=\u0022color:#fe640b\u0022\u003eid\u003c\/span\u003e: String,\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan style=\u0022display:flex;\u0022\u003e\u003cspan\u003e    \u003cspan style=\u0022color:#8839ef\u0022\u003eval\u003c\/span\u003e \u003cspan style=\u0022color:#fe640b\u0022\u003ename\u003c\/span\u003e: String,\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan style=\u0022display:flex;\u0022\u003e\u003cspan\u003e    \u003cspan style=\u0022color:#8839ef\u0022\u003eval\u003c\/span\u003e \u003cspan style=\u0022color:#fe640b\u0022\u003eage\u003c\/span\u003e: Int? = \u003cspan style=\u0022color:#8839ef\u0022\u003enull\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan style=\u0022display:flex;\u0022\u003e\u003cspan\u003e)\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/code\u003e\u003c\/pre\u003e\u003c\/div\u003e\u003cp\u003e(You can see all these examples as a series of unit tests here in \n\n\n\u003ca href=\u0022https:\/\/gist.github.com\/GurpreetSK95\/f2752ac9984cb6fc122765762fc8df31\u0022 target=\u0022_blank\u0022 rel=\u0022noopener\u0022\u003ethis gist\u003c\/a\u003e.)\u003c\/p\u003e",
       "inLanguage": "en-US",
       "isFamilyFriendly": "true",
       "mainEntityOfPage": {
@@ -93,7 +93,7 @@
       },
       "image": "//localhost:1313/assets/favicon.ico",
       "url" : "\/\/localhost:1313\/posts\/kotlinx-serialization-optional-and-transient-properties\/",
-      "wordCount" : "318",
+      "wordCount" : "317",
       "genre" : [ "kotlin" , "migrated-from-medium" , "kotlinx-serialization" ],
       "keywords" : [ "kotlin" , "migrated-from-medium" , "kotlinx-serialization" ]
   }
@@ -142,9 +142,9 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#8839ef">val</span> <span style="color:#fe640b">age</span>: Int? = <span style="color:#8839ef">null</span>
 </span></span><span style="display:flex;"><span>)
 </span></span></code></pre></div><p>(You can see all these examples as a series of unit tests here in 
-<a href="https://gist.github.com/GurpreetSK95/f2752ac9984cb6fc122765762fc8df31" target="_blank" rel="noopener">this gist</a>
 
-.)</p>
+
+<a href="https://gist.github.com/GurpreetSK95/f2752ac9984cb6fc122765762fc8df31" target="_blank" rel="noopener">this gist</a>.)</p>
 <h4 id="handling-optional-values">Handling optional values</h4>
 <p>Kotlin’s features — especially its nullable types and default parameter values prove to be great when dealing with JSON. You don’t need to do anything special to handle optional values when working with Kotlin serialization.</p>
 <p>All properties with default values are considered optional.</p>
@@ -159,9 +159,9 @@
 <p>This article is second of a series of articles I’m writing on Kotlin serialization while also learning more about the same. Stay tuned, stay inside and keep reading!</p>
 <p>Hope it helps!</p>
 <p><em>Originally posted on Medium 
-<a href="https://medium.com/@gurpreetsk/kotlin-serialization-optional-and-transient-properties-b3da3247e112" target="_blank" rel="noopener">link</a>
 
-</em></p>
+
+<a href="https://medium.com/@gurpreetsk/kotlin-serialization-optional-and-transient-properties-b3da3247e112" target="_blank" rel="noopener">link</a></em></p>
 
       
       <div class="post-date">

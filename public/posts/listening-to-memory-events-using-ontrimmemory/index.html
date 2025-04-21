@@ -13,7 +13,7 @@
   <meta property="og:site_name" content="GurpreetSK.com">
   <meta property="og:title" content="Listening to Memory events using onTrimMemory() on Android">
   <meta property="og:description" content="Anyone who has been developing android application knows how memory-scarce the platform is, with each application being provided with upto 24/32mb of memory (which can go to as low as 16mb for older devices). In such a scenario, it is the developer’s duty to look out for memory leaks and free any resources that are not been used by the application.
-One way of managing memory in response to system events is the onTrimMemory() method . From the docs:">
+One way of managing memory in response to system events is the onTrimMemory() method. From the docs:">
   <meta property="og:locale" content="en_US">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -25,10 +25,10 @@ One way of managing memory in response to system events is the onTrimMemory() me
     
   <meta itemprop="name" content="Listening to Memory events using onTrimMemory() on Android">
   <meta itemprop="description" content="Anyone who has been developing android application knows how memory-scarce the platform is, with each application being provided with upto 24/32mb of memory (which can go to as low as 16mb for older devices). In such a scenario, it is the developer’s duty to look out for memory leaks and free any resources that are not been used by the application.
-One way of managing memory in response to system events is the onTrimMemory() method . From the docs:">
+One way of managing memory in response to system events is the onTrimMemory() method. From the docs:">
   <meta itemprop="datePublished" content="2017-08-21T10:08:35+05:30">
   <meta itemprop="dateModified" content="2017-08-21T10:08:35+05:30">
-  <meta itemprop="wordCount" content="236">
+  <meta itemprop="wordCount" content="235">
   <meta itemprop="keywords" content="Android,Migrated-From-Medium">
     
     <link rel="canonical" href="//localhost:1313/posts/listening-to-memory-events-using-ontrimmemory/">
@@ -42,7 +42,7 @@ One way of managing memory in response to system events is the onTrimMemory() me
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bricolage+Grotesque">
     
     
-    <style>*,:after,:before{box-sizing:border-box;padding:0}body{font:1rem/1.5 bricolage grotesque,-apple-system,BlinkMacSystemFont,segoe ui,Helvetica,Arial,sans-serif;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;padding:2rem;background:#fffdfa;color:#000}.skip-link{position:absolute;top:-40px;left:0;background:#eee;z-index:100}.skip-link:focus{top:0}header{line-height:2;padding-bottom:1.5rem}.link{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-decoration:none}.time{font-variant-numeric:tabular-nums;white-space:nowrap}blockquote{border-left:5px solid #eee;padding-left:1rem;margin:0}a,a:visited{color:inherit}a:hover,a.heading-link{text-decoration:none}pre{padding:.5rem;overflow:auto;overflow-x:scroll;overflow-wrap:normal}code,pre{font-family:San Francisco Mono,Monaco,consolas,lucida console,dejavu sans mono,bitstream vera sans mono,monospace;font-size:normal;font-size:small;background:#eee}code{margin:.1rem;border:none;overflow:visible;overflow-wrap:anywhere}ul{list-style-type:square}ul,ol{padding-left:1.2rem}.list{line-height:2;list-style-type:none;padding-left:0}.list li{padding-bottom:.1rem}.meta{color:#777}.content{max-width:70ch;margin:0 auto}header{line-height:2;display:flex;justify-content:space-between;padding-bottom:1rem}header a{text-decoration:none}header ul{list-style-type:none;padding:0}header li,header a{display:inline}h2.post{padding-top:.5rem}header ul a:first-child{padding-left:1rem}.nav{height:1px;background:#000;content:'';max-width:10%}.list li{display:flex;align-items:baseline}.list li time{flex:initial}.hr-list{margin-top:0;margin-bottom:0;margin-right:.5rem;margin-left:.5rem;height:1px;border:0;border-bottom:1px dotted #ccc;flex:1 0 1rem}.m,hr{border:0;margin:3rem 0}img{max-width:100%;height:auto}.post-date{margin:5% 0}.index-date{color:#9a9a9a}.animate-blink{animation:opacity 1s infinite;opacity:1}@keyframes opacity{0%{opacity:1}50%{opacity:.5}100%{opacity:0}}.tags{display:flex;justify-content:space-between}.tags ul{padding:0;margin:0}.tags li{display:inline}.avatar{height:120px;width:120px;position:relative;margin:-10px 0 0 15px;float:right;border-radius:50%}table{width:100%;border-collapse:collapse}th,td{border:1px solid #ddd;text-align:left;padding:8px}th{background-color:#f2f2f2}li{font-family:inherit} </style>
+    <style>*,:after,:before{box-sizing:border-box;padding:0;line-height:165%}body{text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;padding:2rem;background:#fffdfa;color:#000}.skip-link{position:absolute;top:-40px;left:0;background:#eee;z-index:100}.skip-link:focus{top:0}header{line-height:2;padding-bottom:1.5rem}.link{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-decoration:none}.time{font-variant-numeric:tabular-nums;white-space:nowrap}blockquote{border-left:5px solid #eee;padding-left:1rem;margin:0}a,a:visited{color:inherit}a:hover,a.heading-link{text-decoration:none}pre{padding:.5rem;overflow:auto;overflow-x:scroll;overflow-wrap:normal}code,pre{font-family:San Francisco Mono,Monaco,consolas,lucida console,dejavu sans mono,bitstream vera sans mono,monospace;font-size:normal;font-size:small;background:#eee}code{margin:.1rem;border:none;overflow:visible;overflow-wrap:anywhere}ul{list-style-type:square}ul,ol{padding-left:3rem}.list{line-height:2;list-style-type:none;padding-left:0}.list li{padding-bottom:.1rem}.meta{color:#777}.content{max-width:100ch;margin:0 auto;text-align:justify}header{line-height:2;display:flex;justify-content:space-between;padding-bottom:1rem}header a{text-decoration:none}header ul{list-style-type:none;padding:0}header li,header a{display:inline}h2.post{padding-top:.5rem}header ul a:first-child{padding-left:1rem}.nav{height:1px;background:#000;content:'';max-width:10%}.list li{display:flex;align-items:baseline}.list li time{flex:initial}.hr-list{margin-top:0;margin-bottom:0;margin-right:.5rem;margin-left:.5rem;height:1px;border:0;border-bottom:1px dotted #ccc;flex:1 0 1rem}.m,hr{border:0;margin:3rem 0}img{max-width:100%;height:auto}.post-date{margin:5% 0}.index-date{color:#9a9a9a}.animate-blink{animation:opacity 1s infinite;opacity:1}@keyframes opacity{0%{opacity:1}50%{opacity:.5}100%{opacity:0}}.tags{display:flex;justify-content:space-between}.tags ul{padding:0;margin:0}.tags li{display:inline}.avatar{height:120px;width:120px;position:relative;margin:-10px 0 0 15px;float:right;border-radius:50%}table{width:100%;border-collapse:collapse}th,td{border:1px solid #ddd;text-align:left;padding:8px}th{background-color:#f2f2f2}li{font-family:inherit}footer{position:fixed;left:0;bottom:0;width:100%;text-align:center} </style>
   
     
   
@@ -55,7 +55,7 @@ One way of managing memory in response to system events is the onTrimMemory() me
       "name": "Listening to Memory events using onTrimMemory() on Android",
       "headline": "Listening to Memory events using onTrimMemory() on Android",
       "alternativeHeadline": "",
-      "description": "\u003cp\u003eAnyone who has been developing android application knows how memory-scarce the platform is, with each application being provided with \n\u003ca href=\u0022https:\/\/stackoverflow.com\/questions\/18675557\/what-is-the-maximum-amount-of-ram-an-app-can-use\u0022 target=\u0022_blank\u0022 rel=\u0022noopener\u0022\u003eupto 24\/32mb of memory\u003c\/a\u003e\n\n (which can go to as low as 16mb for older devices). In such a scenario, it is the developer’s duty to look out for memory leaks and free any resources that are not been used by the application.\u003c\/p\u003e\n\u003cp\u003eOne way of managing memory in response to system events is the \n\u003ca href=\u0022https:\/\/developer.android.com\/reference\/android\/content\/ComponentCallbacks2.html#onTrimMemory%28int%29\u0022 target=\u0022_blank\u0022 rel=\u0022noopener\u0022\u003eonTrimMemory() method\u003c\/a\u003e\n\n. From the docs:\u003c\/p\u003e",
+      "description": "\u003cp\u003eAnyone who has been developing android application knows how memory-scarce the platform is, with each application being provided with \n\n\n\u003ca href=\u0022https:\/\/stackoverflow.com\/questions\/18675557\/what-is-the-maximum-amount-of-ram-an-app-can-use\u0022 target=\u0022_blank\u0022 rel=\u0022noopener\u0022\u003eupto 24\/32mb of memory\u003c\/a\u003e (which can go to as low as 16mb for older devices). In such a scenario, it is the developer’s duty to look out for memory leaks and free any resources that are not been used by the application.\u003c\/p\u003e\n\u003cp\u003eOne way of managing memory in response to system events is the \n\n\n\u003ca href=\u0022https:\/\/developer.android.com\/reference\/android\/content\/ComponentCallbacks2.html#onTrimMemory%28int%29\u0022 target=\u0022_blank\u0022 rel=\u0022noopener\u0022\u003eonTrimMemory() method\u003c\/a\u003e. From the docs:\u003c\/p\u003e",
       "inLanguage": "en-US",
       "isFamilyFriendly": "true",
       "mainEntityOfPage": {
@@ -92,7 +92,7 @@ One way of managing memory in response to system events is the onTrimMemory() me
       },
       "image": "//localhost:1313/assets/favicon.ico",
       "url" : "\/\/localhost:1313\/posts\/listening-to-memory-events-using-ontrimmemory\/",
-      "wordCount" : "236",
+      "wordCount" : "235",
       "genre" : [ "android" , "migrated-from-medium" ],
       "keywords" : [ "android" , "migrated-from-medium" ]
   }
@@ -134,13 +134,13 @@ One way of managing memory in response to system events is the onTrimMemory() me
     <section>
       <h2 class="post">Listening to Memory events using onTrimMemory() on Android</h2>
       <p>Anyone who has been developing android application knows how memory-scarce the platform is, with each application being provided with 
-<a href="https://stackoverflow.com/questions/18675557/what-is-the-maximum-amount-of-ram-an-app-can-use" target="_blank" rel="noopener">upto 24/32mb of memory</a>
 
- (which can go to as low as 16mb for older devices). In such a scenario, it is the developer’s duty to look out for memory leaks and free any resources that are not been used by the application.</p>
+
+<a href="https://stackoverflow.com/questions/18675557/what-is-the-maximum-amount-of-ram-an-app-can-use" target="_blank" rel="noopener">upto 24/32mb of memory</a> (which can go to as low as 16mb for older devices). In such a scenario, it is the developer’s duty to look out for memory leaks and free any resources that are not been used by the application.</p>
 <p>One way of managing memory in response to system events is the 
-<a href="https://developer.android.com/reference/android/content/ComponentCallbacks2.html#onTrimMemory%28int%29" target="_blank" rel="noopener">onTrimMemory() method</a>
 
-. From the docs:</p>
+
+<a href="https://developer.android.com/reference/android/content/ComponentCallbacks2.html#onTrimMemory%28int%29" target="_blank" rel="noopener">onTrimMemory() method</a>. From the docs:</p>
 <div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>onTrimMemory():
 </span></span><span style="display:flex;"><span>Called when the operating system has determined that it is a good time for a process to trim unneeded memory from its process.
 </span></span><span style="display:flex;"><span>This will happen for example when it goes in the background and there is not enough memory to keep as many background processes running as desired.
@@ -149,18 +149,18 @@ One way of managing memory in response to system events is the onTrimMemory() me
 <p><strong>References</strong>:</p>
 <ol>
 <li>Memory limits per app are here depending on screen size and Android version: 
-<a href="https://drive.google.com/file/d/0B7Vx1OvzrLa3Y0R0X1BZbUpicGc/view" target="_blank" rel="noopener">https://drive.google.com/file/d/0B7Vx1OvzrLa3Y0R0X1BZbUpicGc/view</a>
 
-</li>
+
+<a href="https://drive.google.com/file/d/0B7Vx1OvzrLa3Y0R0X1BZbUpicGc/view" target="_blank" rel="noopener">https://drive.google.com/file/d/0B7Vx1OvzrLa3Y0R0X1BZbUpicGc/view</a></li>
 <li>
-<a href="https://stackoverflow.com/questions/19398827/understanding-ontrimmemory-int-level" target="_blank" rel="noopener">https://stackoverflow.com/questions/19398827/understanding-ontrimmemory-int-level</a>
 
-</li>
+
+<a href="https://stackoverflow.com/questions/19398827/understanding-ontrimmemory-int-level" target="_blank" rel="noopener">https://stackoverflow.com/questions/19398827/understanding-ontrimmemory-int-level</a></li>
 </ol>
 <p><em>Originally posted on Medium 
-<a href="https://medium.com/@gurpreetsk/memory-management-on-android-using-ontrimmemory-f500d364bc1a" target="_blank" rel="noopener">link</a>
 
-</em></p>
+
+<a href="https://medium.com/@gurpreetsk/memory-management-on-android-using-ontrimmemory-f500d364bc1a" target="_blank" rel="noopener">link</a></em></p>
 
       
       <div class="post-date">

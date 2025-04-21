@@ -1,7 +1,7 @@
 +++
 title = "Impending layoffs?"
 date = "2025-02-22T23:51:03-08:00"
-draft = false
+draft = true
 author = "imGurpreetSK"
 tags = ["life-events"]
 +++
