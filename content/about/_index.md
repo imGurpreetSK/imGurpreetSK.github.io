@@ -4,7 +4,7 @@ draft = true
 title = 'About'
 +++
 
-## Hi! I'm [Gurpreet Singh](https://www.linkedin.com/in/imGurpreetSK/)
+## Hi! I'm [Gurpreet Singh](https://www.linkedin.com/in/imGurpreetSK/).
 
 I work on mobile applications to positively impact users' lives and deliver delightful mobile experiences.
 
@@ -26,4 +26,4 @@ I started working with Android in 2016, consulting for a few startups before joi
 
 I can be reached out via [Mail](mailto:gurpreetsk@hotmail.com), [Linkedin](https://www.linkedin.com/in/imGurpreetSK/), [Github](https://github.com/imGurpreetSK/) and [Bluesky](https://bsky.app/profile/imgurpreetsk.bsky.social/).
 
-Looking for my resume? [Google Drive Link](https://drive.google.com/file/d/1rls1JHFn3G8Jc8sjdeCdAx-cdCDEI6Qe/view?usp=sharing/), [PDF](/Gurpreet's%20resume.pdf)
+Looking for my resume? [Here's the link](https://drive.google.com/file/d/1rls1JHFn3G8Jc8sjdeCdAx-cdCDEI6Qe/view?usp=sharing/).

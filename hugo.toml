@@ -7,26 +7,26 @@ theme = 'maverick'
   pages = "/:slug"
 
 [params]
-  logo = "favicon.ico"
+  logo = "/assets/favicon.ico"
   description = "Gurpreet's thoughts, experiences and learnings"
   author = "Gurpreet Singh"
-  items = 2
+  items = 5
 
 [menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 1
   [[menu.main]]
     identifier = "about"
     name = "About"
     url = "/about/"
-    weight = 1
+    weight = 2
   [[menu.main]]
     identifier = "posts"
     name = "Posts"
     url = "/posts/"
-    weight = 2
-  [[menu.main]]
-    identifier = "musings"
-    name = "Musings"
-    url = "/musings/"
     weight = 3
 
 [markup]
@@ -63,3 +63,7 @@ theme = 'maverick'
   baseName = "feed"
 
 ignoreErrors = ["error-remote-getjson"]
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
