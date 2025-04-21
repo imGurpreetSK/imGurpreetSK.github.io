@@ -28,6 +28,11 @@ theme = 'maverick'
     name = "Posts"
     url = "/posts/"
     weight = 3
+  [[menu.main]]
+    identifier = "musings"
+    name = "Musings"
+    url = "/musings/"
+    weight = 4
 
 [markup]
   [markup.goldmark.renderer]
