@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Software on GurpreetSK.com</title>
+    <title>Software on imGurpreetSK</title>
     <link>//localhost:1313/tags/software/</link>
-    <description>Recent content in Software on GurpreetSK.com</description>
+    <description>Recent content in Software on imGurpreetSK</description>
     <generator>Hugo</generator>
     <language>en-US</language>
     <lastBuildDate>Wed, 02 Oct 2024 23:51:03 -0800</lastBuildDate>
     <atom:link href="//localhost:1313/tags/software/atom.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>On creating bare-bones sudoku</title>
+      <title>On software being like gardening</title>
       <link>//localhost:1313/posts/on-software-being-like-gardening/</link>
       <pubDate>Wed, 02 Oct 2024 23:51:03 -0800</pubDate>
       <guid>//localhost:1313/posts/on-software-being-like-gardening/</guid>
-      <description></description>
+      <description>&lt;p&gt;Link to Product leader John Cutler’s &#xA;&#xA;&#xA;&lt;a href=&#34;https://cutlefish.substack.com/p/tbm-234-maintenance-ktlo-and-bau&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;published article&lt;/a&gt; &#xA;&#xA;&#xA;&lt;a href=&#34;https://cutlefish.substack.com/p/tbm-234-maintenance-ktlo-and-bau&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;about software maintenance&lt;/a&gt; suggesting that software is more like gardening than car maintenance, quoted from Pragmatic Engineer’s paid article &#xA;&#xA;&#xA;&lt;a href=&#34;https://newsletter.pragmaticengineer.com/p/bug-management-that-works-part-1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Bug management that works, Pt 1&lt;/a&gt;:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;I&amp;rsquo;ve always been bothered by how teams use words and phrases like maintenance, keeping the lights on (KTLO), and business as usual. I get what they mean, but there always seems to be a stigma around this work.&lt;/p&gt;&#xA;&lt;p&gt;When we maintain a car—oil changes, tire rotations, etc.—we aim to keep the car running smoothly and safely. When we maintain a car, we don&amp;rsquo;t normally fix bugs, apply patches, optimize performance, check for compatibility, remove features, refactor, and incorporate user feedback. Why? Car maintenance revolves around physical wear and tear, degradation of materials over time, and the occasional replacement of parts with a limited lifespan. These actions don&amp;rsquo;t &amp;ldquo;fix&amp;rdquo; or &amp;ldquo;improve&amp;rdquo; the car but rather preserve its current state and prolong its effective lifespan.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

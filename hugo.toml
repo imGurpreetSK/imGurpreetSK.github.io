@@ -1,6 +1,6 @@
 baseURL = '/'
 languageCode = "en-US"
-title = 'GurpreetSK.com'
+title = 'imGurpreetSK'
 theme = 'maverick'
 
 [permalinks]
