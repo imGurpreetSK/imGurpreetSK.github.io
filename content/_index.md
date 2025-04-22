@@ -1,6 +1,6 @@
 +++
 date = '2025-02-22T22:51:40-08:00'
-draft = true
+draft = false
 title = 'Hi! I am Gurpreet Singh.'
 +++
 
