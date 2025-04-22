@@ -20,7 +20,8 @@
 }
 
 .content {
-  max-width: 100ch;
+  /* Override theme's 70ch setting. */
+  max-width: 100ch !important;
 }
 
 ol {
