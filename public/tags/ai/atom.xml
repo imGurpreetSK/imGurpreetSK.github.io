@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ai on imGurpreetSK</title>
-    <link>http://localhost:1313/tags/ai/</link>
+    <link>https://imGurpreetSK.github.io/tags/ai/</link>
     <description>Recent content in Ai on imGurpreetSK</description>
     <generator>Hugo</generator>
     <language>en-US</language>
     <lastBuildDate>Tue, 17 Dec 2024 23:51:03 -0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/ai/atom.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://imGurpreetSK.github.io/tags/ai/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Prompting 101</title>
-      <link>http://localhost:1313/musings/prompting-101/</link>
+      <link>https://imGurpreetSK.github.io/musings/prompting-101/</link>
       <pubDate>Tue, 17 Dec 2024 23:51:03 -0800</pubDate>
-      <guid>http://localhost:1313/musings/prompting-101/</guid>
+      <guid>https://imGurpreetSK.github.io/musings/prompting-101/</guid>
       <description>&lt;p&gt;Course link: &#xA;&#xA;&#xA;&lt;a href=&#34;https://learn.deeplearning.ai/courses/chatgpt-prompt-eng/lesson/1/introduction&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://learn.deeplearning.ai/courses/chatgpt-prompt-eng/lesson/1/introduction&lt;/a&gt;&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Contents&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Best practices&lt;/li&gt;&#xA;&lt;li&gt;Common use cases&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Types of LLMs&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Base: Predicts next work based on text training data&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Instruction tuned&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Follows instructions; fine tuned on instructions.&lt;/li&gt;&#xA;&lt;li&gt;Trained on inputs and outputs&lt;/li&gt;&#xA;&lt;li&gt;Uses RLHF - Reinforcement Learning with Human Feedback&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Helpful, Honest, Harmless&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Recommended for most practical use cases&lt;/li&gt;&#xA;&lt;li&gt;While using, think of giving instructions to another human&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Quantity of information tailored to the kind of response expected is optimum&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Be clear and specific&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Guidelines for prompting - Principals and Tactics&lt;/p&gt;</description>
     </item>
   </channel>
