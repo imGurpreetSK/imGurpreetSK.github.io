@@ -2,101 +2,108 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on imGurpreetSK</title>
-    <link>https://www.gurpreetsk.com/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on imGurpreetSK</description>
     <generator>Hugo</generator>
     <language>en-US</language>
-    <lastBuildDate>Fri, 07 Feb 2025 23:51:03 -0800</lastBuildDate>
-    <atom:link href="https://www.gurpreetsk.com/tags/atom.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 22 Feb 2025 23:51:03 -0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/atom.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Life-Events</title>
+      <link>http://localhost:1313/tags/life-events/</link>
+      <pubDate>Sat, 22 Feb 2025 23:51:03 -0800</pubDate>
+      <guid>http://localhost:1313/tags/life-events/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Android</title>
-      <link>https://www.gurpreetsk.com/tags/android/</link>
+      <link>http://localhost:1313/tags/android/</link>
       <pubDate>Fri, 07 Feb 2025 23:51:03 -0800</pubDate>
-      <guid>https://www.gurpreetsk.com/tags/android/</guid>
+      <guid>http://localhost:1313/tags/android/</guid>
       <description></description>
     </item>
     <item>
       <title>Compose-Ui</title>
-      <link>https://www.gurpreetsk.com/tags/compose-ui/</link>
+      <link>http://localhost:1313/tags/compose-ui/</link>
       <pubDate>Fri, 07 Feb 2025 23:51:03 -0800</pubDate>
-      <guid>https://www.gurpreetsk.com/tags/compose-ui/</guid>
+      <guid>http://localhost:1313/tags/compose-ui/</guid>
       <description></description>
     </item>
     <item>
       <title>Ai</title>
-      <link>https://www.gurpreetsk.com/tags/ai/</link>
+      <link>http://localhost:1313/tags/ai/</link>
       <pubDate>Tue, 17 Dec 2024 23:51:03 -0800</pubDate>
-      <guid>https://www.gurpreetsk.com/tags/ai/</guid>
+      <guid>http://localhost:1313/tags/ai/</guid>
       <description></description>
     </item>
     <item>
       <title>Notes</title>
-      <link>https://www.gurpreetsk.com/tags/notes/</link>
+      <link>http://localhost:1313/tags/notes/</link>
       <pubDate>Tue, 17 Dec 2024 23:51:03 -0800</pubDate>
-      <guid>https://www.gurpreetsk.com/tags/notes/</guid>
+      <guid>http://localhost:1313/tags/notes/</guid>
       <description></description>
     </item>
     <item>
       <title>Prompting</title>
-      <link>https://www.gurpreetsk.com/tags/prompting/</link>
+      <link>http://localhost:1313/tags/prompting/</link>
       <pubDate>Tue, 17 Dec 2024 23:51:03 -0800</pubDate>
-      <guid>https://www.gurpreetsk.com/tags/prompting/</guid>
+      <guid>http://localhost:1313/tags/prompting/</guid>
       <description></description>
     </item>
     <item>
       <title>Software</title>
-      <link>https://www.gurpreetsk.com/tags/software/</link>
+      <link>http://localhost:1313/tags/software/</link>
       <pubDate>Wed, 02 Oct 2024 23:51:03 -0800</pubDate>
-      <guid>https://www.gurpreetsk.com/tags/software/</guid>
+      <guid>http://localhost:1313/tags/software/</guid>
       <description></description>
     </item>
     <item>
       <title>Coding Challenge</title>
-      <link>https://www.gurpreetsk.com/tags/coding-challenge/</link>
+      <link>http://localhost:1313/tags/coding-challenge/</link>
       <pubDate>Tue, 03 Sep 2024 23:51:03 -0800</pubDate>
-      <guid>https://www.gurpreetsk.com/tags/coding-challenge/</guid>
+      <guid>http://localhost:1313/tags/coding-challenge/</guid>
       <description></description>
     </item>
     <item>
       <title>Realization</title>
-      <link>https://www.gurpreetsk.com/tags/realization/</link>
+      <link>http://localhost:1313/tags/realization/</link>
       <pubDate>Mon, 26 Aug 2024 23:51:03 -0800</pubDate>
-      <guid>https://www.gurpreetsk.com/tags/realization/</guid>
+      <guid>http://localhost:1313/tags/realization/</guid>
       <description></description>
     </item>
     <item>
       <title>Kotlin</title>
-      <link>https://www.gurpreetsk.com/tags/kotlin/</link>
+      <link>http://localhost:1313/tags/kotlin/</link>
       <pubDate>Sat, 13 Jun 2020 02:23:11 +0530</pubDate>
-      <guid>https://www.gurpreetsk.com/tags/kotlin/</guid>
+      <guid>http://localhost:1313/tags/kotlin/</guid>
       <description></description>
     </item>
     <item>
       <title>Kotlinx-Serialization</title>
-      <link>https://www.gurpreetsk.com/tags/kotlinx-serialization/</link>
+      <link>http://localhost:1313/tags/kotlinx-serialization/</link>
       <pubDate>Sat, 13 Jun 2020 02:23:11 +0530</pubDate>
-      <guid>https://www.gurpreetsk.com/tags/kotlinx-serialization/</guid>
+      <guid>http://localhost:1313/tags/kotlinx-serialization/</guid>
       <description></description>
     </item>
     <item>
       <title>Migrated-From-Medium</title>
-      <link>https://www.gurpreetsk.com/tags/migrated-from-medium/</link>
+      <link>http://localhost:1313/tags/migrated-from-medium/</link>
       <pubDate>Sat, 13 Jun 2020 02:23:11 +0530</pubDate>
-      <guid>https://www.gurpreetsk.com/tags/migrated-from-medium/</guid>
+      <guid>http://localhost:1313/tags/migrated-from-medium/</guid>
       <description></description>
     </item>
     <item>
       <title>IDE</title>
-      <link>https://www.gurpreetsk.com/tags/ide/</link>
+      <link>http://localhost:1313/tags/ide/</link>
       <pubDate>Sat, 08 Jun 2019 02:23:11 +0530</pubDate>
-      <guid>https://www.gurpreetsk.com/tags/ide/</guid>
+      <guid>http://localhost:1313/tags/ide/</guid>
       <description></description>
     </item>
     <item>
       <title>Productivity</title>
-      <link>https://www.gurpreetsk.com/tags/productivity/</link>
+      <link>http://localhost:1313/tags/productivity/</link>
       <pubDate>Sat, 08 Jun 2019 02:23:11 +0530</pubDate>
-      <guid>https://www.gurpreetsk.com/tags/productivity/</guid>
+      <guid>http://localhost:1313/tags/productivity/</guid>
       <description></description>
     </item>
   </channel>

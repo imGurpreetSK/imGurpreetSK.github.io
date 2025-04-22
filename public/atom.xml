@@ -3,19 +3,19 @@
     
     <title>imGurpreetSK</title>
     <description>Gurpreet&#39;s thoughts, experiences and learnings</description>
-    <link>//localhost:1313/</link>
+    <link>http://localhost:1313/</link>
     
     <language>en</language>
     <copyright>Copyright 2025, Calvin Tran</copyright>
     <lastBuildDate>Sat, 22 Feb 2025 22:51:40 -0800</lastBuildDate>
     <generator>Hugo - gohugo.io</generator>
     <docs>http://cyber.harvard.edu/rss/rss.html</docs>
-    <atom:link href="//localhost:1313//atom.xml" rel="self" type="application/atom+xml"/>
+    <atom:link href="http://localhost:1313//atom.xml" rel="self" type="application/atom+xml"/>
     
     
     <item>
       <title>Maybe, set LayoutParams of view to be inflated in Compose UI&#39;s AndroidView</title>
-      <link>//localhost:1313/posts/why-you-should-be-setting-layout-params-of-android-views-inflated-in-compose-ui-androidview/</link>
+      <link>http://localhost:1313/posts/why-you-should-be-setting-layout-params-of-android-views-inflated-in-compose-ui-androidview/</link>
       <description>&lt;p&gt;I spent half of my day today figuring out why a &lt;code&gt;WebView&lt;/code&gt; does not properly load menu on a web page properly while all the other functionality seems to be working as expected. The screen was written in Compose UI and employed &lt;code&gt;AndroidView&lt;/code&gt; to compose an Android &lt;code&gt;WebView&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Turns out, I missed that &lt;code&gt;LayoutParams&lt;/code&gt; need to be set for the &lt;code&gt;WebView&lt;/code&gt; provided via the factory block; just modifying &lt;code&gt;AndroidView&lt;/code&gt; to fill max available size won’t work as expected.&lt;/p&gt;
 &lt;p&gt;Writing this so I do not waste more time in the future again, and so this can help any other poor soul pulling his/her hair, trying to figure out why their &lt;code&gt;WebView&lt;/code&gt; isn’t working as expected.&lt;/p&gt;
@@ -40,13 +40,13 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    )
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
       <author>Gurpreet</author>
-      <guid>//localhost:1313/posts/why-you-should-be-setting-layout-params-of-android-views-inflated-in-compose-ui-androidview/</guid>
+      <guid>http://localhost:1313/posts/why-you-should-be-setting-layout-params-of-android-views-inflated-in-compose-ui-androidview/</guid>
       <pubDate>Fri, 07 Feb 2025 23:51:03 -0800</pubDate>
     </item>
     
     <item>
       <title>On software being like gardening</title>
-      <link>//localhost:1313/posts/on-software-being-like-gardening/</link>
+      <link>http://localhost:1313/posts/on-software-being-like-gardening/</link>
       <description>&lt;p&gt;Link to Product leader John Cutler’s 
 
 
@@ -66,16 +66,16 @@ and enhance features), and periodically have to prune (refactor) and weed (remov
 &lt;p&gt;Having working in software with teams of different sizes, this comparison makes a lot of sense to me not only for maintenance but also how good software is written.&lt;/p&gt;
 </description>
       <author>Gurpreet</author>
-      <guid>//localhost:1313/posts/on-software-being-like-gardening/</guid>
+      <guid>http://localhost:1313/posts/on-software-being-like-gardening/</guid>
       <pubDate>Wed, 02 Oct 2024 23:51:03 -0800</pubDate>
     </item>
     
     <item>
       <title>Kotlinx Serialization - How the serialization process works</title>
-      <link>//localhost:1313/posts/kotlinx-serialization-process-working/</link>
+      <link>http://localhost:1313/posts/kotlinx-serialization-process-working/</link>
       <description>&lt;br&gt;
 &lt;p&gt;&lt;img
-  src=&#34;//localhost:1313/assets/posts/kotlinx-serialization/banner-kotlin-mobile.webp&#34;
+  src=&#34;http://localhost:1313/assets/posts/kotlinx-serialization/banner-kotlin-mobile.webp&#34;
   alt=&#34;Header&#34;
   loading=&#34;lazy&#34;
   decoding=&#34;async&#34;
@@ -93,7 +93,7 @@ and enhance features), and periodically have to prune (refactor) and weed (remov
 &lt;/ol&gt;
 &lt;p&gt;Each of these processes has a single responsibility, which enables clear separation of roles and allows both to operate independently. This is the reason behind the extensibility and flexibility of the library. Please note that despite being independent, these operations are still sequential— encoding always takes place after serialization.&lt;/p&gt;
 &lt;p&gt;&lt;img
-  src=&#34;//localhost:1313/assets/posts/kotlinx-serialization/serialization-process.webp&#34;
+  src=&#34;http://localhost:1313/assets/posts/kotlinx-serialization/serialization-process.webp&#34;
   alt=&#34;serializaton process&#34;
   loading=&#34;lazy&#34;
   decoding=&#34;async&#34;
@@ -103,7 +103,7 @@ and enhance features), and periodically have to prune (refactor) and weed (remov
 &lt;/p&gt;
 &lt;div style=&#34;text-align:center;&#34;&gt;Serialization process&lt;/div&gt;
 &lt;p&gt;&lt;img
-  src=&#34;//localhost:1313/assets/posts/kotlinx-serialization/deserialization-process.webp&#34;
+  src=&#34;http://localhost:1313/assets/posts/kotlinx-serialization/deserialization-process.webp&#34;
   alt=&#34;deserializaton process&#34;
   loading=&#34;lazy&#34;
   decoding=&#34;async&#34;
@@ -120,7 +120,7 @@ and enhance features), and periodically have to prune (refactor) and weed (remov
 
 
 
-  &lt;a href=&#34;//localhost:1313/posts/kotlin-serialization-getting-started&#34;&gt;introductory blog post&lt;/a&gt;? We’re going to use that to look into the workings of plugin and runtime.&lt;/p&gt;
+  &lt;a href=&#34;http://localhost:1313/posts/kotlin-serialization-getting-started&#34;&gt;introductory blog post&lt;/a&gt;? We’re going to use that to look into the workings of plugin and runtime.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-kotlin&#34; data-lang=&#34;kotlin&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#1e66f5;font-weight:bold&#34;&gt;@Serializable&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8839ef&#34;&gt;data&lt;/span&gt; &lt;span style=&#34;color:#8839ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#df8e1d&#34;&gt;User&lt;/span&gt;(&lt;span style=&#34;color:#8839ef&#34;&gt;val&lt;/span&gt; &lt;span style=&#34;color:#fe640b&#34;&gt;name&lt;/span&gt;: String)
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Whenever we call User.serialize(), we obtain an object of type KSerializer. Let’s look into the generated code to know how things are structured and get a high level understanding of what’s going on inside, because Hey! code never lies :)&lt;/p&gt;
@@ -149,7 +149,7 @@ and enhance features), and periodically have to prune (refactor) and weed (remov
 
       
     
-  &lt;a href=&#34;//localhost:1313/tags/kotlinx-serialization/&#34;&gt;previous posts&lt;/a&gt;, you should take a look at those.&lt;/p&gt;
+  &lt;a href=&#34;http://localhost:1313/tags/kotlinx-serialization/&#34;&gt;previous posts&lt;/a&gt;, you should take a look at those.&lt;/p&gt;
 &lt;p&gt;Hope it helps!&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Originally posted on Medium 
 
@@ -157,16 +157,16 @@ and enhance features), and periodically have to prune (refactor) and weed (remov
 &lt;a href=&#34;https://medium.com/@gurpreetsk/kotlin-serialization-optional-and-transient-properties-b3da3247e112&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;link&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 </description>
       <author>Gurpreet</author>
-      <guid>//localhost:1313/posts/kotlinx-serialization-process-working/</guid>
+      <guid>http://localhost:1313/posts/kotlinx-serialization-process-working/</guid>
       <pubDate>Sat, 13 Jun 2020 02:23:11 +0530</pubDate>
     </item>
     
     <item>
       <title>Kotlinx Serialization - JsonConfiguration</title>
-      <link>//localhost:1313/posts/kotlinx-serialization-jsonconfiguration/</link>
+      <link>http://localhost:1313/posts/kotlinx-serialization-jsonconfiguration/</link>
       <description>&lt;br&gt;
 &lt;p&gt;&lt;img
-  src=&#34;//localhost:1313/assets/posts/kotlinx-serialization/banner-kotlin-mobile.webp&#34;
+  src=&#34;http://localhost:1313/assets/posts/kotlinx-serialization/banner-kotlin-mobile.webp&#34;
   alt=&#34;Header&#34;
   loading=&#34;lazy&#34;
   decoding=&#34;async&#34;
@@ -232,14 +232,14 @@ The next few properties we’ll talk about allow transformation of JSON from one
 
       
     
-  &lt;a href=&#34;//localhost:1313/posts/kotlinx-serialization-getting-started/&#34;&gt;Getting started with Kotlin Serialization&lt;/a&gt;&lt;/li&gt;
+  &lt;a href=&#34;http://localhost:1313/posts/kotlinx-serialization-getting-started/&#34;&gt;Getting started with Kotlin Serialization&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;
 
 
 
       
     
-  &lt;a href=&#34;//localhost:1313/posts/kotlinx-serialization-optional-and-transient-properties/&#34;&gt;Kotlin serialization — Optional and Transient properties&lt;/a&gt;&lt;/li&gt;
+  &lt;a href=&#34;http://localhost:1313/posts/kotlinx-serialization-optional-and-transient-properties/&#34;&gt;Kotlin serialization — Optional and Transient properties&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;This article is third in a series of articles I’m writing on Kotlin serialization while also learning more about the same. Stay tuned and keep learning!&lt;/p&gt;
 &lt;p&gt;Hope it helps!&lt;/p&gt;
@@ -249,16 +249,16 @@ The next few properties we’ll talk about allow transformation of JSON from one
 &lt;a href=&#34;https://medium.com/@gurpreetsk/kotlin-serialization-optional-and-transient-properties-b3da3247e112&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;link&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 </description>
       <author>Gurpreet</author>
-      <guid>//localhost:1313/posts/kotlinx-serialization-jsonconfiguration/</guid>
+      <guid>http://localhost:1313/posts/kotlinx-serialization-jsonconfiguration/</guid>
       <pubDate>Wed, 13 May 2020 02:23:11 +0530</pubDate>
     </item>
     
     <item>
       <title>Kotlinx Serialization - Getting Started</title>
-      <link>//localhost:1313/posts/kotlinx-serialization-getting-started/</link>
+      <link>http://localhost:1313/posts/kotlinx-serialization-getting-started/</link>
       <description>&lt;br&gt;
 &lt;p&gt;&lt;img
-  src=&#34;//localhost:1313/assets/posts/kotlinx-serialization/banner-kotlin-mobile.webp&#34;
+  src=&#34;http://localhost:1313/assets/posts/kotlinx-serialization/banner-kotlin-mobile.webp&#34;
   alt=&#34;Header&#34;
   loading=&#34;lazy&#34;
   decoding=&#34;async&#34;
@@ -276,7 +276,7 @@ The next few properties we’ll talk about allow transformation of JSON from one
 &lt;a href=&#34;https://en.wikipedia.org/wiki/Serialization&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;serialization&lt;/a&gt; mechanism to convert kotlin objects into data formats like JSON or Protobuf and vice-versa.
 It is comprised of a compiler plugin which is used to generate code for serializable classes and a runtime library, containing core classes and primitives for serialization &amp;amp; IO, among some other things.&lt;/p&gt;
 &lt;p&gt;&lt;img
-  src=&#34;//localhost:1313/assets/posts/kotlinx-serialization/kotlinx-serialization-current-structure.webp&#34;
+  src=&#34;http://localhost:1313/assets/posts/kotlinx-serialization/kotlinx-serialization-current-structure.webp&#34;
   alt=&#34;current-library-runtime-structure&#34;
   loading=&#34;lazy&#34;
   decoding=&#34;async&#34;
@@ -426,7 +426,7 @@ It is comprised of a compiler plugin which is used to generate code for serializ
 
       
     
-  &lt;a href=&#34;//localhost:1313/posts/kotlinx-serialization-optional-and-transient-properties/&#34;&gt;the continuation article&lt;/a&gt; to this which talks about handling optional and transient properties.&lt;/p&gt;
+  &lt;a href=&#34;http://localhost:1313/posts/kotlinx-serialization-optional-and-transient-properties/&#34;&gt;the continuation article&lt;/a&gt; to this which talks about handling optional and transient properties.&lt;/p&gt;
 &lt;p&gt;This article is first of a series of articles I’m writing on Kotlin serialization while also learning more about the same. Stay tuned, stay inside and keep reading!&lt;/p&gt;
 &lt;p&gt;Hope it helps!&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Originally posted on Medium 
@@ -435,13 +435,13 @@ It is comprised of a compiler plugin which is used to generate code for serializ
 &lt;a href=&#34;https://medium.com/@gurpreetsk/getting-started-with-kotlin-serialization-3315c59bafb2&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;link&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 </description>
       <author>Gurpreet</author>
-      <guid>//localhost:1313/posts/kotlinx-serialization-getting-started/</guid>
+      <guid>http://localhost:1313/posts/kotlinx-serialization-getting-started/</guid>
       <pubDate>Sun, 03 May 2020 02:23:11 +0530</pubDate>
     </item>
     
     <item>
       <title>Kotlinx Serialization - optional and transient properties</title>
-      <link>//localhost:1313/posts/kotlinx-serialization-optional-and-transient-properties/</link>
+      <link>http://localhost:1313/posts/kotlinx-serialization-optional-and-transient-properties/</link>
       <description>&lt;p&gt;When interacting with a Rest API, it’s common to have some optional properties in the response. These properties might or might not be present at runtime. Let’s consider we updated out User data object to contain a required, non-nullable and unique id and age, which is an optional, nullable property.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-kotlin&#34; data-lang=&#34;kotlin&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#1e66f5;font-weight:bold&#34;&gt;@Serializable&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8839ef&#34;&gt;data&lt;/span&gt; &lt;span style=&#34;color:#8839ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#df8e1d&#34;&gt;User&lt;/span&gt;(
@@ -472,13 +472,13 @@ It is comprised of a compiler plugin which is used to generate code for serializ
 &lt;a href=&#34;https://medium.com/@gurpreetsk/kotlin-serialization-optional-and-transient-properties-b3da3247e112&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;link&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 </description>
       <author>Gurpreet</author>
-      <guid>//localhost:1313/posts/kotlinx-serialization-optional-and-transient-properties/</guid>
+      <guid>http://localhost:1313/posts/kotlinx-serialization-optional-and-transient-properties/</guid>
       <pubDate>Sun, 03 May 2020 02:23:11 +0530</pubDate>
     </item>
     
     <item>
       <title>Multi-caret in Android Studio</title>
-      <link>//localhost:1313/posts/multi-caret-in-android-studio/</link>
+      <link>http://localhost:1313/posts/multi-caret-in-android-studio/</link>
       <description>&lt;p&gt;Knowing keyboard shortcuts is important. They save you time and help you achieve more in less time. If you need convincing, I highly recommend watching 
 
 
@@ -487,7 +487,7 @@ It is comprised of a compiler plugin which is used to generate code for serializ
 &lt;p&gt;Why use it? Because sometimes you need to replace just a few instances of a word/pattern and find &amp;amp; replace is not very useful.&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;img
-  src=&#34;//localhost:1313/assets/posts/multi-caret-in-android-studio/shortcuts.webp&#34;
+  src=&#34;http://localhost:1313/assets/posts/multi-caret-in-android-studio/shortcuts.webp&#34;
   alt=&#34;Shortcuts&#34;
   loading=&#34;lazy&#34;
   decoding=&#34;async&#34;
@@ -499,7 +499,7 @@ It is comprised of a compiler plugin which is used to generate code for serializ
 &lt;h3 id=&#34;alt--j--control--g-select-next-occurrence&#34;&gt;Alt + J / Control + G (Select next occurrence)&lt;/h3&gt;
 &lt;p&gt;Select next occurrence of the currently selected text. If no text is selected, the current word with cursor is selected.&lt;/p&gt;
 &lt;p&gt;&lt;img
-  src=&#34;//localhost:1313/assets/posts/multi-caret-in-android-studio/select-next-occurrence.gif&#34;
+  src=&#34;http://localhost:1313/assets/posts/multi-caret-in-android-studio/select-next-occurrence.gif&#34;
   alt=&#34;Select-next-occurrence&#34;
   loading=&#34;lazy&#34;
   decoding=&#34;async&#34;
@@ -510,7 +510,7 @@ It is comprised of a compiler plugin which is used to generate code for serializ
 &lt;h3 id=&#34;alt--shift--j--control-shift--g-unselect-current-occurrence&#34;&gt;Alt + Shift + J / Control +Shift + G (Unselect current occurrence)&lt;/h3&gt;
 &lt;p&gt;Unselect current occurrence of selected text.&lt;/p&gt;
 &lt;p&gt;&lt;img
-  src=&#34;//localhost:1313/assets/posts/multi-caret-in-android-studio/unselect-current-occurrence.gif&#34;
+  src=&#34;http://localhost:1313/assets/posts/multi-caret-in-android-studio/unselect-current-occurrence.gif&#34;
   alt=&#34;unselect-current-occurrence&#34;
   loading=&#34;lazy&#34;
   decoding=&#34;async&#34;
@@ -521,7 +521,7 @@ It is comprised of a compiler plugin which is used to generate code for serializ
 &lt;h3 id=&#34;alt--shift--ctrl--j--control--command--g-select-all-occurrences&#34;&gt;Alt + Shift + Ctrl + J / Control + Command + G (Select all occurrences)&lt;/h3&gt;
 &lt;p&gt;Select all occurrences of the word in current file&lt;/p&gt;
 &lt;p&gt;&lt;img
-  src=&#34;//localhost:1313/assets/posts/multi-caret-in-android-studio/select-all-occurrences.gif&#34;
+  src=&#34;http://localhost:1313/assets/posts/multi-caret-in-android-studio/select-all-occurrences.gif&#34;
   alt=&#34;Select-all-occurrence&#34;
   loading=&#34;lazy&#34;
   decoding=&#34;async&#34;
@@ -532,7 +532,7 @@ It is comprised of a compiler plugin which is used to generate code for serializ
 &lt;h3 id=&#34;alt--click--scroll--option--click--scroll-multiple-cursors-in-column&#34;&gt;Alt + click &amp;amp; scroll / Option + click &amp;amp; scroll (Multiple cursors in column)&lt;/h3&gt;
 &lt;p&gt;Select a column of text in current file&lt;/p&gt;
 &lt;p&gt;&lt;img
-  src=&#34;//localhost:1313/assets/posts/multi-caret-in-android-studio/multiple-cursors-in-column.gif&#34;
+  src=&#34;http://localhost:1313/assets/posts/multi-caret-in-android-studio/multiple-cursors-in-column.gif&#34;
   alt=&#34;multiple-cursors-in-column&#34;
   loading=&#34;lazy&#34;
   decoding=&#34;async&#34;
@@ -543,7 +543,7 @@ It is comprised of a compiler plugin which is used to generate code for serializ
 &lt;h3 id=&#34;alt--shift--clicks--option--shift--clicks-spawn-caret-at-click-position&#34;&gt;Alt + Shift + clicks / Option + Shift + clicks (Spawn caret at click position)&lt;/h3&gt;
 &lt;p&gt;Spawn carets across file at click position, even in the same word.&lt;/p&gt;
 &lt;p&gt;&lt;img
-  src=&#34;//localhost:1313/assets/posts/multi-caret-in-android-studio/caret-at-click-position.gif&#34;
+  src=&#34;http://localhost:1313/assets/posts/multi-caret-in-android-studio/caret-at-click-position.gif&#34;
   alt=&#34;caret-at-click-position&#34;
   loading=&#34;lazy&#34;
   decoding=&#34;async&#34;
@@ -559,13 +559,13 @@ It is comprised of a compiler plugin which is used to generate code for serializ
 &lt;a href=&#34;https://medium.com/@gurpreetsk/multi-caret-in-android-studio-ef9fe83f1758&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;link&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 </description>
       <author>Gurpreet</author>
-      <guid>//localhost:1313/posts/multi-caret-in-android-studio/</guid>
+      <guid>http://localhost:1313/posts/multi-caret-in-android-studio/</guid>
       <pubDate>Sat, 08 Jun 2019 02:23:11 +0530</pubDate>
     </item>
     
     <item>
       <title>Kotlin Sequences</title>
-      <link>//localhost:1313/posts/kotlin-sequences/</link>
+      <link>http://localhost:1313/posts/kotlin-sequences/</link>
       <description>&lt;p&gt;Transforming, filtering, manipulating and operating on data is what every developer does almost every day at their jobs. If you’re using Kotlin for writing your applications, you might have used map or filter operator to transform a collection from one form to another.&lt;/p&gt;
 &lt;p&gt;Along with the kotlin.collections package, Kotlin also provides a way to lazily represent and evaluate a collection of data. This is accomplished using Sequences.&lt;/p&gt;
 &lt;h3 id=&#34;sequences-are-a-collection-of-possibly-infinite-data-ordered-in-a-certain-way&#34;&gt;&lt;em&gt;Sequences are a collection of possibly infinite data, ordered in a certain way.&lt;/em&gt;&lt;/h3&gt;
@@ -638,7 +638,7 @@ It is comprised of a compiler plugin which is used to generate code for serializ
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Once a terminal operation is encountered, computations are carried out one after another, and as soon as a result is found, execution is stopped. This is why sequences are called lazy.&lt;/p&gt;
 &lt;p&gt;A visual comparison of how collections and sequences work can be:&lt;/p&gt;
 &lt;p&gt;&lt;img
-  src=&#34;//localhost:1313/assets/posts/kotlin-sequences-1.webp&#34;
+  src=&#34;http://localhost:1313/assets/posts/kotlin-sequences-1.webp&#34;
   alt=&#34;kotlin-sequences&#34;
   loading=&#34;lazy&#34;
   decoding=&#34;async&#34;
@@ -672,13 +672,13 @@ It is comprised of a compiler plugin which is used to generate code for serializ
 &lt;a href=&#34;https://medium.com/android-news/kotlin-sequences-ac6dc7c883d3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;link&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 </description>
       <author>Gurpreet</author>
-      <guid>//localhost:1313/posts/kotlin-sequences/</guid>
+      <guid>http://localhost:1313/posts/kotlin-sequences/</guid>
       <pubDate>Sun, 10 Mar 2019 02:23:11 +0530</pubDate>
     </item>
     
     <item>
       <title>Listening to Memory events using onTrimMemory() on Android</title>
-      <link>//localhost:1313/posts/listening-to-memory-events-using-ontrimmemory/</link>
+      <link>http://localhost:1313/posts/listening-to-memory-events-using-ontrimmemory/</link>
       <description>&lt;p&gt;Anyone who has been developing android application knows how memory-scarce the platform is, with each application being provided with 
 
 
@@ -709,7 +709,7 @@ It is comprised of a compiler plugin which is used to generate code for serializ
 &lt;a href=&#34;https://medium.com/@gurpreetsk/memory-management-on-android-using-ontrimmemory-f500d364bc1a&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;link&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 </description>
       <author>Gurpreet</author>
-      <guid>//localhost:1313/posts/listening-to-memory-events-using-ontrimmemory/</guid>
+      <guid>http://localhost:1313/posts/listening-to-memory-events-using-ontrimmemory/</guid>
       <pubDate>Mon, 21 Aug 2017 10:08:35 +0530</pubDate>
     </item>
     

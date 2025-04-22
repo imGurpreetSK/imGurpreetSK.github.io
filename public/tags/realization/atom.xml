@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Realization on imGurpreetSK</title>
-    <link>https://www.gurpreetsk.com/tags/realization/</link>
+    <link>http://localhost:1313/tags/realization/</link>
     <description>Recent content in Realization on imGurpreetSK</description>
     <generator>Hugo</generator>
     <language>en-US</language>
     <lastBuildDate>Mon, 26 Aug 2024 23:51:03 -0800</lastBuildDate>
-    <atom:link href="https://www.gurpreetsk.com/tags/realization/atom.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/realization/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>On the marvel that SQLite testing is</title>
-      <link>https://www.gurpreetsk.com/musings/on-the-marvel-that-sqlite-testing-is/</link>
+      <link>http://localhost:1313/musings/on-the-marvel-that-sqlite-testing-is/</link>
       <pubDate>Mon, 26 Aug 2024 23:51:03 -0800</pubDate>
-      <guid>https://www.gurpreetsk.com/musings/on-the-marvel-that-sqlite-testing-is/</guid>
+      <guid>http://localhost:1313/musings/on-the-marvel-that-sqlite-testing-is/</guid>
       <description>&lt;p&gt;&amp;ldquo;Small. Fast. Reliable. Choose any three.&amp;rdquo; - &#xA;&#xA;&#xA;&lt;a href=&#34;https://www.sqlite.org/testing.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.sqlite.org/testing.html&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;I highly recommend reading the entire document. It outlines the various cases SQLite is tested for which makes it as reliable as it is to be able to make the above claim. It also boasts the thoroughness of tests, having roughly 590 lines of test code for a single line of library code.&lt;/p&gt;</description>
     </item>
     <item>
       <title>On extending software</title>
-      <link>https://www.gurpreetsk.com/musings/on-extending-software/</link>
+      <link>http://localhost:1313/musings/on-extending-software/</link>
       <pubDate>Wed, 21 Aug 2024 23:51:03 -0800</pubDate>
-      <guid>https://www.gurpreetsk.com/musings/on-extending-software/</guid>
+      <guid>http://localhost:1313/musings/on-extending-software/</guid>
       <description>&lt;p&gt;It is much easier to add features to reliable software, than it is to add reliability to featureful software. Going well will help you go far!&lt;/p&gt;</description>
     </item>
     <item>
       <title>On association bias</title>
-      <link>https://www.gurpreetsk.com/musings/on-association-bias/</link>
+      <link>http://localhost:1313/musings/on-association-bias/</link>
       <pubDate>Tue, 13 Aug 2024 23:51:03 -0800</pubDate>
-      <guid>https://www.gurpreetsk.com/musings/on-association-bias/</guid>
+      <guid>http://localhost:1313/musings/on-association-bias/</guid>
       <description>&lt;p&gt;A quote by Mark Twain from the book &amp;ldquo;The art of thinking clearly&amp;rdquo; by Rolf Dobelli:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;We should be careful to get out of an experience only the wisdom that is in it - and stop there; les we be like the cat that sits down on a hot stove-lid. She will never sit down on a hot stove-lid again - and that is well; but also she will never sit down on a cold one anymore.&lt;/p&gt;</description>
     </item>
   </channel>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Life-Events on imGurpreetSK</title>
-    <link>//localhost:1313/tags/life-events/</link>
+    <link>http://localhost:1313/tags/life-events/</link>
     <description>Recent content in Life-Events on imGurpreetSK</description>
     <generator>Hugo</generator>
     <language>en-US</language>
     <lastBuildDate>Sat, 22 Feb 2025 23:51:03 -0800</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/life-events/atom.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/life-events/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Impending layoffs?</title>
-      <link>//localhost:1313/musings/impending-layoffs/</link>
+      <link>http://localhost:1313/musings/impending-layoffs/</link>
       <pubDate>Sat, 22 Feb 2025 23:51:03 -0800</pubDate>
-      <guid>//localhost:1313/musings/impending-layoffs/</guid>
+      <guid>http://localhost:1313/musings/impending-layoffs/</guid>
       <description>&lt;p&gt;So, it seems that in coming weeks (as soon as in 2 weeks?) the mobile team at JobGet will be let go.&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;m unsure how good a decision this is given we pride ourselves in being a mobile-first organisation, with the applications being directly used and loved by thousands of job seekers and hundreds of employers.&#xA;However, my heart does go out for my colleagues who have put it so much effort to run the shop smoothly despite being low on bandwidth. It sucks to be jobless; it sucks more to have false assurance of importance.&lt;/p&gt;</description>
     </item>
   </channel>
