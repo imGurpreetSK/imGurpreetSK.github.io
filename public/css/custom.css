@@ -15,9 +15,15 @@
 }
 
 * {
+  line-height: 170%;
   font-family: 'JetBrainsMono', sans-serif;
 }
 
+.content {
+  max-width: 100ch;
+}
+
 ul, ol {
-  padding-left: 3rem;
+  /* Override theme's 1.2rem setting. */
+  padding-left: 3rem !important;
 }
