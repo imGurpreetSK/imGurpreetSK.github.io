@@ -6,7 +6,7 @@ title = 'About'
 
 ## Hi! I'm [Gurpreet Singh](https://www.linkedin.com/in/imGurpreetSK/) 👋
 
-##### [Resume](https://drive.google.com/file/d/1rls1JHFn3G8Jc8sjdeCdAx-cdCDEI6Qe/view?usp=sharing/) [Email](mailto:gurpreetsk@hotmail.com) [Linkedin](https://www.linkedin.com/in/imGurpreetSK/) [Github](https://github.com/imGurpreetSK/)
+#### [Resume](https://drive.google.com/file/d/1rls1JHFn3G8Jc8sjdeCdAx-cdCDEI6Qe/view?usp=sharing/) [Email](mailto:gurpreetsk@hotmail.com) [Linkedin](https://www.linkedin.com/in/imGurpreetSK/) [Github](https://github.com/imGurpreetSK/)
 
 I craft mobile applications designed to positively impact users' lives and provide delightful experiences. As a Principal Software Engineer at [JobGet](https://www.jobget.com), I work with the Mobile team on a platform connecting over 100 million US job seekers to opportunities.
 
