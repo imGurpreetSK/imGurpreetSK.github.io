@@ -29,3 +29,9 @@ Recognizing my passion, my parents got me my first PC, which allowed me to play 
 
 In college, I pursued software development by working on my startup and gaining experience in full-stack development for a couple of years.
 I started working with Android in 2016, consulting for a few startups before joining [Kite](https://kite.work/) as a Software Engineer.
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>

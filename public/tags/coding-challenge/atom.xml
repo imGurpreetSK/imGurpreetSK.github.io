@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Coding Challenge on imGurpreetSK</title>
-    <link>https://imGurpreetSK.github.io/tags/coding-challenge/</link>
+    <link>http://localhost:1313/tags/coding-challenge/</link>
     <description>Recent content in Coding Challenge on imGurpreetSK</description>
     <generator>Hugo</generator>
     <language>en-US</language>
     <lastBuildDate>Tue, 03 Sep 2024 23:51:03 -0800</lastBuildDate>
-    <atom:link href="https://imGurpreetSK.github.io/tags/coding-challenge/atom.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/coding-challenge/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>On creating bare-bones sudoku</title>
-      <link>https://imGurpreetSK.github.io/musings/on-creating-bare-bones-sudoku/</link>
+      <link>http://localhost:1313/musings/on-creating-bare-bones-sudoku/</link>
       <pubDate>Tue, 03 Sep 2024 23:51:03 -0800</pubDate>
-      <guid>https://imGurpreetSK.github.io/musings/on-creating-bare-bones-sudoku/</guid>
+      <guid>http://localhost:1313/musings/on-creating-bare-bones-sudoku/</guid>
       <description>&lt;p&gt;I love John Crickett&amp;rsquo;s coding challenges. They&amp;rsquo;re (almost) bite sized challenges that can be done in a weekend and extended as much as you want to add more functionalities. I highly recommend you try some.&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;ve been trying to do them during my weekends but work has been catching up recently. It was a &#xA;&#xA;&#xA;&lt;a href=&#34;https://codingchallenges.fyi/challenges/challenge-sudoku&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;fun task to create Sudoku&lt;/a&gt; this weekend; I hope you do too if/when you try it. I implemented &#xA;&#xA;&#xA;&lt;a href=&#34;https://github.com/imGurpreetSK/codingchallenges/tree/main/sudoku&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;my solution&lt;/a&gt; as a desktop app using Kotlin Multiplatform to share business logic and Compose Multiplatform to share UI logic across clients. I&amp;rsquo;d try creating mobile/web clients using this in the future to explore KMP further.&lt;/p&gt;</description>
     </item>
   </channel>
