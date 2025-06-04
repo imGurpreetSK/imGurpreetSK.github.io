@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Compose-Ui on imGurpreetSK</title>
-    <link>http://localhost:1313/tags/compose-ui/</link>
+    <link>https://imGurpreetSK.github.io/tags/compose-ui/</link>
     <description>Recent content in Compose-Ui on imGurpreetSK</description>
     <generator>Hugo</generator>
     <language>en-US</language>
     <lastBuildDate>Fri, 07 Feb 2025 23:51:03 -0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/compose-ui/atom.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://imGurpreetSK.github.io/tags/compose-ui/atom.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Maybe, set LayoutParams of view to be inflated in Compose UI&#39;s AndroidView</title>
-      <link>http://localhost:1313/posts/why-you-should-be-setting-layout-params-of-android-views-inflated-in-compose-ui-androidview/</link>
+      <link>https://imGurpreetSK.github.io/posts/why-you-should-be-setting-layout-params-of-android-views-inflated-in-compose-ui-androidview/</link>
       <pubDate>Fri, 07 Feb 2025 23:51:03 -0800</pubDate>
-      <guid>http://localhost:1313/posts/why-you-should-be-setting-layout-params-of-android-views-inflated-in-compose-ui-androidview/</guid>
+      <guid>https://imGurpreetSK.github.io/posts/why-you-should-be-setting-layout-params-of-android-views-inflated-in-compose-ui-androidview/</guid>
       <description>&lt;p&gt;I spent half of my day today figuring out why a &lt;code&gt;WebView&lt;/code&gt; does not properly load menu on a web page properly while all the other functionality seems to be working as expected. The screen was written in Compose UI and employed &lt;code&gt;AndroidView&lt;/code&gt; to compose an Android &lt;code&gt;WebView&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Turns out, I missed that &lt;code&gt;LayoutParams&lt;/code&gt; need to be set for the &lt;code&gt;WebView&lt;/code&gt; provided via the factory block; just modifying &lt;code&gt;AndroidView&lt;/code&gt; to fill max available size won’t work as expected.&lt;/p&gt;</description>
     </item>
   </channel>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jetbrains on imGurpreetSK</title>
+    <link>https://imGurpreetSK.github.io/tags/jetbrains/</link>
+    <description>Recent content in Jetbrains on imGurpreetSK</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Mon, 02 Jun 2025 10:47:17 -0700</lastBuildDate>
+    <atom:link href="https://imGurpreetSK.github.io/tags/jetbrains/atom.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>KotlinConf 2025</title>
+      <link>https://imGurpreetSK.github.io/posts/kotlinconf-2025/</link>
+      <pubDate>Mon, 02 Jun 2025 10:47:17 -0700</pubDate>
+      <guid>https://imGurpreetSK.github.io/posts/kotlinconf-2025/</guid>
+      <description>&lt;p&gt;This year, I finally had the chance to attend KotlinConf in Copenhagen—a conference I’ve wanted to experience for a long time. It was also my first time visiting Copenhagen and exploring Europe, which made the trip even more memorable. The week was powered by plenty of falafels, chocolate, and coffee. (On the flip side, I had the worst pizza of my life—definitely not what I expected from Europe!)&lt;/p&gt;&#xA;&lt;h2 id=&#34;exciting-announcements&#34;&gt;Exciting Announcements&lt;/h2&gt;&#xA;&lt;p&gt;KotlinConf 2025 was packed with exciting updates for the Kotlin community. I’m especially looking forward to new language features like rich errors, name-based destructuring, and context receivers. The introduction of Junie and &#xA;&#xA;&#xA;&lt;a href=&#34;https://github.com/JetBrains/koog/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Koog&lt;/a&gt; also caught my attention—they both look promising for future projects. Another big highlight: CMP for iOS is now stable! 🎉&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
