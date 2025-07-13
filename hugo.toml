@@ -1,6 +1,6 @@
 baseURL = "https://imGurpreetSK.github.io"
 languageCode = "en-US"
-title = 'imGurpreetSK'
+title = "Gurpreet's thoughts"
 theme = 'maverick'
 
 [permalinks]

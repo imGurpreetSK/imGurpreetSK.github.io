@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Llms on Gurpreet&#39;s thoughts</title>
+    <link>http://localhost:1313/tags/llms/</link>
+    <description>Recent content in Llms on Gurpreet&#39;s thoughts</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sat, 05 Jul 2025 12:28:41 -0700</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/llms/atom.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Thoughts on working with Agents</title>
+      <link>http://localhost:1313/posts/thoughts-on-working-with-agents/</link>
+      <pubDate>Sat, 05 Jul 2025 12:28:41 -0700</pubDate>
+      <guid>http://localhost:1313/posts/thoughts-on-working-with-agents/</guid>
+      <description>&lt;ul&gt;&#xA;&lt;li&gt;Type: Live post&lt;/li&gt;&#xA;&lt;li&gt;Last updated: 6 July, 2025&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Software engineering is evolving&#xA;&#xA;&#xA;&lt;a href=&#34;#links&#34;&gt;1&lt;/a&gt;, quite rapidly while at it. While I do fear for my job and what impacts AI might have on me, I cannot say that some part of this AI wave haven&amp;rsquo;t been fun.&#xA;LLMs and Agents have become a crucial part of my workflow and I&amp;rsquo;ve found myself relying on them much more than I imagined I would. I use Claude/Claude Code as my daily driver, with Gemini as fallback for one-off chat scenarios or for rare cases requiring it&amp;rsquo;s generous context window.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
