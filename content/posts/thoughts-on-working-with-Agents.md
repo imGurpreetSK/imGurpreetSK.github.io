@@ -1,6 +1,6 @@
 +++
 date = '2025-07-05T12:28:41-07:00'
-draft = true
+draft = false
 title = 'Thoughts on working with Agents'
 author = "Gurpreet"
 tags = ["ai","gen-ai","llms","agents","workflow"]
