@@ -14,6 +14,196 @@
     
     
     <item>
+      <title>Thoughts on working with Agents</title>
+      <link>https://imGurpreetSK.github.io/posts/thoughts-on-working-with-agents/</link>
+      <description>&lt;ul&gt;
+&lt;li&gt;Type: Live post&lt;/li&gt;
+&lt;li&gt;Last updated: 13 July, 2025&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Software engineering is evolving
+
+
+&lt;a href=&#34;#links&#34;&gt;1&lt;/a&gt;, quite rapidly while at it. While I do fear for my job and what impacts AI might have on me, I cannot say that some part of this AI wave haven&amp;rsquo;t been fun.
+LLMs and Agents have become a crucial part of my workflow and I&amp;rsquo;ve found myself relying on them much more than I imagined I would. I use Claude/Claude Code as my daily driver, with Gemini as fallback for one-off chat scenarios or for rare cases requiring it&amp;rsquo;s generous context window.&lt;/p&gt;
+&lt;p&gt;This post acts as one where I put my thoughts on things, how I use different tools and what works for me. Expect this to be updated with time, as I learn more.&lt;/p&gt;
+&lt;h2 id=&#34;changes-i-see&#34;&gt;Changes I see&lt;/h2&gt;
+&lt;h3 id=&#34;prototyping-is-becoming-much-cheaper&#34;&gt;Prototyping is becoming much cheaper&lt;/h3&gt;
+&lt;p&gt;&amp;ldquo;A prototype is an early sample, model, or release of a product built to test a concept or process.&amp;rdquo; 
+
+
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Prototype&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Wikipedia&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s becoming much quicker - and 
+
+
+&lt;a href=&#34;https://www.infoq.com/presentations/Simple-Made-Easy/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;easier&lt;/a&gt; - to get to a working prototype. Verifying a hypothesis is becoming cheaper as Vibe coding gains popularity.
+For me, vibing practically implements the principle of &amp;ldquo;Iterate quickly, produce results&amp;rdquo; and as long as I do not see a Vibe-PR™ raised to prod, I&amp;rsquo;m all in favor of it.&lt;/p&gt;
+&lt;h3 id=&#34;accelerated-learning&#34;&gt;Accelerated learning&lt;/h3&gt;
+&lt;p&gt;Whether it&amp;rsquo;s about working on projects that I&amp;rsquo;ve wanted to implement or learning about projects I&amp;rsquo;ve wanted to explore, learning new things has become easier than it ever has been.&lt;/p&gt;
+&lt;p&gt;Want synopsis of a project? Here it is. A detailed document on workings of the core rendering engine? Can do. Want to create a game using tech you&amp;rsquo;ve never used? Sure thing.&lt;/p&gt;
+&lt;p&gt;
+
+
+&lt;a href=&#34;#context-is-king&#34;&gt;&lt;em&gt;Describe&lt;/em&gt;&lt;/a&gt; what you need Claude Code to do and it&amp;rsquo;ll iterate on it with you until you&amp;rsquo;re satisfied with the results.&lt;/p&gt;
+&lt;h2 id=&#34;what-ive-learnt-so-far&#34;&gt;What I&amp;rsquo;ve learnt so far&lt;/h2&gt;
+&lt;h3 id=&#34;ai-has-a-multiplicative-effect&#34;&gt;AI has a multiplicative effect&lt;/h3&gt;
+&lt;p&gt;Agents and LLMs demonstrate a multiplicative effect on an individual&amp;rsquo;s abilities - High ability individuals see their impact increase multifold. With the changes we&amp;rsquo;re seeing, Engineers who&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Think from first principles&lt;/li&gt;
+&lt;li&gt;Have strong fundamentals&lt;/li&gt;
+&lt;li&gt;Communicate effectively&lt;/li&gt;
+&lt;li&gt;Collaborate efficiently, and&lt;/li&gt;
+&lt;li&gt;Have good intuition&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;seem to excel at AI adoption and reap most benefits.&lt;/p&gt;
+&lt;h3 id=&#34;context-is-king&#34;&gt;Context is King&lt;/h3&gt;
+&lt;p&gt;The information provided to the LLM during conversation is called the 
+
+
+&lt;a href=&#34;https://docs.anthropic.com/en/docs/build-with-claude/context-windows&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;em&gt;Context&lt;/em&gt;&lt;/a&gt;. The initial prompt, conversation that follows and any additional setup information picked from memory and other files, external links, etc all form the Context for the LLM.&lt;/p&gt;
+&lt;p&gt;Providing the correct amount of context is critical; provide less details and you won&amp;rsquo;t get the desired outcome, share too much and you risk wasting effort due to 
+
+
+&lt;a href=&#34;https://www.dbreunig.com/2025/06/22/how-contexts-fail-and-how-to-fix-them.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;large context-related problems&lt;/a&gt;. It&amp;rsquo;s important to say that providing the correct amount of context is quite difficult - iterating on the initial prompt, steering the conversation in the correct direction, even restarting the chat are expected and helped me learn from mistakes.&lt;/p&gt;
+&lt;p&gt;I like to think of my conversation with an LLM/Agent as one similar to one I might have with an intern on my team - they might understand the intent but they can&amp;rsquo;t do exactly what I need without me telling them. &lt;strong&gt;It&amp;rsquo;s on me to be explicit and empower them to do a task as expected.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;As an example, the following is the prompt I first used to start my recent 
+
+
+&lt;a href=&#34;https://github.com/imGurpreetSK/pongwars&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;pong-wars&lt;/a&gt; project. The prompt doesn&amp;rsquo;t define the task very well and the result was way off of what was expected.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;How can I create something like https://github.com/vnglst/pong-wars using compose multiplatform?
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;The current project has been created for you as a starter project targeting Android, iOS, desktop and web using compose multiplatform for UI code sharing.
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Conversely, the following prompt performed much better and generated a project that could be further iterated on:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-gdscript3&#34; data-lang=&#34;gdscript3&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Problem statement:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;I want to create a game using kotlin multiplatform as shown &lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;in&lt;/span&gt; the video here: [link](https:&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;//&lt;/span&gt;private&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;-&lt;/span&gt;user&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;-&lt;/span&gt;images&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;.&lt;/span&gt;githubusercontent&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;.&lt;/span&gt;com&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#fe640b&#34;&gt;3457693&lt;/span&gt;&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#fe640b&#34;&gt;300288131&lt;/span&gt;&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#fe640b&#34;&gt;4&lt;/span&gt;eae12fa&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;-&lt;/span&gt;bdc1&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#fe640b&#34;&gt;49&lt;/span&gt;ee&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#fe640b&#34;&gt;8&lt;/span&gt;b39&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;-&lt;/span&gt;c94deb7cb2c8&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;.&lt;/span&gt;mov&lt;span style=&#34;color:#d20f39&#34;&gt;?&lt;/span&gt;jwt&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;=&lt;/span&gt;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;.&lt;/span&gt;eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTE1MjEyNDksIm5iZiI6MTc1MTUyMDk0OSwicGF0aCI6Ii8zNDU3NjkzLzMwMDI4ODEzMS00ZWFlMTJmYS1iZGMxLTQ5ZWUtOGIzOS1jOTRkZWI3Y2IyYzgubW92P1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI1MDcwMyUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNTA3MDNUMDUzNTQ5WiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9YzM0YzQwNjJmYzk1Y2ViNmEwZDZjMmEyYzQ3ZDcyMjA2MTExYzZhODM4M2E4YmYwZDdjMTMyMzEwNzVlOWU2ZCZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QifQ&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;.&lt;/span&gt;xdwdcwuE&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;-&lt;/span&gt;Cmi0sxjhbkHhtSA9Lm8WmtJypyFYqYkiDo)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;The target platforms are Android, iOS, web &lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;and&lt;/span&gt; desktop&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;.&lt;/span&gt; The UI is to be created using Compose multiplatform&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;The game starts with the square area split vertically into two equal parts with two balls, one on each side&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Overview:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#fe640b&#34;&gt;Area&lt;/span&gt; description:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;The area is composed of smaller squares, all of equal size&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;.&lt;/span&gt; The squares on the same side are of the same color&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;As soon as a ball hits a square, it bounces back to the opposite side&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;.&lt;/span&gt; The square is marked claimed by the ball &lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;and&lt;/span&gt; its
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;color changes to the opposite color&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;.&lt;/span&gt; Additionally, the counter increases by one showing the squares count claimed by
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;each color&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Each square has a &lt;span style=&#34;color:#fe640b&#34;&gt;1&lt;/span&gt;px black border&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Ball description:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Each ball is of the same color as the opposite area&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;.&lt;/span&gt; As soon as the ball hits a square, it bounces back to the opposite side&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;The square is marked claimed by the ball &lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;and&lt;/span&gt; its color changes to the opposite color&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;.&lt;/span&gt; Additionally, the counter increases by one showing the squares count claimed by each color&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;The ball moves at a constant speed throughout the area&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;.&lt;/span&gt; If the ball hits a wall, it bounces back to the opposite side&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Game termination:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;The game keeps on going indefinitely until closed by the user&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Task:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#fe640b&#34;&gt;1.&lt;/span&gt; Break the task into smaller tasks&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#fe640b&#34;&gt;2.&lt;/span&gt; Provide a list of tasks to complete&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;.&lt;/span&gt; Take approval on execution plan before making any changes&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#fe640b&#34;&gt;3.&lt;/span&gt; Once each task is complete, commit the changes with a meaningful commit message&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#fe640b&#34;&gt;4.&lt;/span&gt; Start with the next task only once the commit has been approved by me&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;im-loving-planning-mode&#34;&gt;I&amp;rsquo;m loving planning mode&lt;/h3&gt;
+&lt;p&gt;Imagine conversing with a highly-knowledgeable coworker who understands the problem space, is non-judgmental, is commendably patient and is always available to chat. That&amp;rsquo;s how I feel about planning mode.&lt;/p&gt;
+&lt;p&gt;I can have long discussions to refine an idea into deliverable milestones and actionable tasks, all while steering the conversation towards my desired outcome. If I feel like, I can later ask the peer to be an expert programmer and pair with me to implement a part or whole of the feature we just discussed at length.&lt;/p&gt;
+&lt;h3 id=&#34;do-not-blindly-trust-all-actions&#34;&gt;Do not blindly trust all actions&lt;/h3&gt;
+&lt;p&gt;I&amp;rsquo;ve had tests deleted from codebase to achieve &amp;lsquo;Ensure all tests pass before committing changes&amp;rsquo;. LLMs can play dirty to achieve task completion; I&amp;rsquo;d suggest actively reviewing the changes they make and uphold them to same standards as a developer.&lt;/p&gt;
+&lt;p&gt;While I understand the lure of &lt;code&gt;--dangerously-skip-permissions&lt;/code&gt; (or similar) but I&amp;rsquo;d recommend keeping it only for side projects running in an isolated container.&lt;/p&gt;
+&lt;h2 id=&#34;how-llms-and-agents-improve-my-productivity&#34;&gt;How LLMs and Agents improve my productivity&lt;/h2&gt;
+&lt;p&gt;The following is a list of workflows where I see highest positive impact of using LLMs and Agents:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Experiments and spikes&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;This is the one area that has been impacted the most, in a way that looking back at older ways of operation feel &lt;em&gt;dirty&lt;/em&gt;. I have saved hours while joyfully experimenting as I focus on the what to do than how to do it. To top that, if things don&amp;rsquo;t work out as planned, I can just &lt;code&gt;/clear&lt;/code&gt; and &lt;code&gt;git reset&lt;/code&gt; and start again - &lt;strong&gt;the fear of failure has turned into joy of learning by exploration&lt;/strong&gt; and I&amp;rsquo;m thankful for that.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Jira tickets&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;If you haven&amp;rsquo;t tried connecting to Atlassian services via MCP server, I&amp;rsquo;d highly recommend you do. My recent Jira workflow has essentially stripped down to asking Claude Code to &lt;code&gt;Come up with a plan to implement Jira ticket PROJ-1234&lt;/code&gt; after I break down the task into smaller, well defined sub-tasks that can be run and committed by agents.&lt;/p&gt;
+&lt;p&gt;I also sometimes use 
+
+
+&lt;a href=&#34;https://jules.google&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Jules by Google&lt;/a&gt; for asynchronous work, mainly for project chores.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Project exploration&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;/init&lt;/code&gt;, if not done already
+&lt;ul&gt;
+&lt;li&gt;Tweak as required for best experience&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Help me understand the application architecture&lt;/code&gt; or &lt;code&gt;What does the CoreRepository do?&lt;/code&gt; or &lt;code&gt;Go through the git history and help me understand how X component evolved over time&lt;/code&gt; or any other project related answers, delivered hot right to your screen.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Side projects&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I want to work on side projects that help me learn something new. This is much more lucrative now - the speed of execution has increased due to the decrease in cost of bootstrapping. By this I mean I can now focus on learning about the one thing that matters to me the most without having to go through the pain of setting up the project first.&lt;/p&gt;
+&lt;p&gt;This simply let&amp;rsquo;s me learn new things more efficiently.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Learning&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Two tools I use frequently to learn about concepts or systems that I do not work directly with are&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;DeepWiki&lt;/p&gt;
+&lt;p&gt;Mostly to explore libraries used in projects - explore them to have a high level understanding of how they work and itch my &amp;lsquo;buy how&amp;rsquo;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;NotebookLM&lt;/p&gt;
+&lt;p&gt;For researching topics and asking questions interactively. I love NotebookLM because I provide the sources, with option to explore similar sources recommended by the book. Currently, I&amp;rsquo;m creating a notebook to learn more about Gradle and project structuring.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;yet-to-explore&#34;&gt;Yet to explore&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Multi-agent workflows&lt;/li&gt;
+&lt;li&gt;Anthropic&amp;rsquo;s Write tests, commit; code, iterate, commit 
+
+
+&lt;a href=&#34;#links&#34;&gt;(TDD) workflow&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;E2E tests with Maestro/Android Studio journeys/playwright&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;footnotes&#34;&gt;Footnotes&lt;/h2&gt;
+&lt;h3 id=&#34;links&#34;&gt;Links&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;I&amp;rsquo;d highly recommend watching Andrej Karpathy&amp;rsquo;s talk 
+
+
+
+  &lt;a href=&#34;www.youtube.com/watch?v=LCEmiRjPEtQ&#34;&gt;Software is changing (again)&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Simon Willison&amp;rsquo;s amazing 
+
+
+&lt;a href=&#34;https://simonwillison.net/tags/ai/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;blog&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;David Crawshaw: 
+
+
+&lt;a href=&#34;https://crawshaw.io/blog/programming-with-agents&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;How I program with Agents&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Armin Ronacher&amp;rsquo;s 
+
+
+&lt;a href=&#34;https://www.youtube.com/watch?v=nfOVgz_omlU&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;talk on Agentic Coding&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Claude code 
+
+
+&lt;a href=&#34;https://www.anthropic.com/engineering/claude-code-best-practices&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;best practices&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;In particular: Simon on 
+
+
+&lt;a href=&#34;https://simonwillison.net/2025/Jul/3/table-saws/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;future of programming&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;notes&#34;&gt;Notes&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Regardless of the use case
+&lt;ul&gt;
+&lt;li&gt;Ask for options, a lot. First iteration is rarely what you want.&lt;/li&gt;
+&lt;li&gt;Always ask for a plan first, and be explicit with this - think, harder, ultra, think step-by-step are your friends.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+      <author>Gurpreet</author>
+      <guid>https://imGurpreetSK.github.io/posts/thoughts-on-working-with-agents/</guid>
+      <pubDate>Sat, 05 Jul 2025 12:28:41 -0700</pubDate>
+    </item>
+    
+    <item>
       <title>KotlinConf 2025</title>
       <link>https://imGurpreetSK.github.io/posts/kotlinconf-2025/</link>
       <description>&lt;p&gt;This year, I finally had the chance to attend KotlinConf in Copenhagen—a conference I’ve wanted to experience for a long time. It was also my first time visiting Copenhagen and exploring Europe, which made the trip even more memorable. The week was powered by plenty of falafels, chocolate, and coffee. (On the flip side, I had the worst pizza of my life—definitely not what I expected from Europe!)&lt;/p&gt;
