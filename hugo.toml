@@ -8,9 +8,9 @@ theme = 'maverick'
 
 [params]
   logo = "/assets/favicon.ico"
-  description = "Gurpreet's thoughts, experiences and learnings"
+  description = "Gurpreet's thoughts"
   author = "Gurpreet"
-  items = 5
+  items = 10
 
 [menu]
   [[menu.main]]
