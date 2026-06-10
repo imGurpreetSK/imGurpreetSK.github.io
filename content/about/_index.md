@@ -6,12 +6,13 @@ title = 'About'
 
 ## Hi! I'm [Gurpreet Singh](https://www.linkedin.com/in/imGurpreetSK/) 👋
 
-#### [Resume](https://drive.google.com/file/d/1rls1JHFn3G8Jc8sjdeCdAx-cdCDEI6Qe/view?usp=sharing/) [Email](mailto:gurpreetsk@hotmail.com) [Linkedin](https://www.linkedin.com/in/imGurpreetSK/) [Github](https://github.com/imGurpreetSK/)
+#### [Resume](https://drive.google.com/file/d/1__w2bqId3BfwRunGlAKVGah_4MxJws5h/view?usp=sharing) [Email](mailto:gurpreetsk@hotmail.com) [Linkedin](https://www.linkedin.com/in/imGurpreetSK/) [Github](https://github.com/imGurpreetSK/)
 
 I craft mobile applications designed to positively impact users' lives and provide delightful experiences. As a Principal Software Engineer at [JobGet](https://www.jobget.com), I work with the Mobile team on a platform connecting over 100 million US job seekers to opportunities.
 
 My focus is delivering tangible product impact through technical excellence. This means shipping high-quality software via initiatives like:
 
+0. Leading cross-functional teams to unify and modernize fragmented, cross-platform mobile portfolios following multiple business acquisitions and scaling QA efficiency through automated integration and E2E testing.
 1. Architecting and leading implementation of core system: Increased average RPU by 110% and user base by 20%.
 2. Developing key retention features: Cut monthly acquisition costs from $80k to $27k.
 3. Spearheading stability improvements: Reduced crash and ANR rates by over 90% (to <0.04%) and significantly boosted store ratings.
