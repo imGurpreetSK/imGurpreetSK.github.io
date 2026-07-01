@@ -10,7 +10,7 @@ title = 'About'
 
 I craft mobile applications designed to positively impact users' lives and provide delightful experiences. As a Principal Software Engineer at [JobGet](https://www.jobget.com), I work with the Mobile team on a platform connecting over 100 million US job seekers to opportunities.
 
-My focus is delivering tangible product impact through technical excellence. This means shipping high-quality software via initiatives like:
+My focus is delivering tangible product impact through technical excellence and tasteful AI integration & adoption. This means shipping high-quality software via initiatives like:
 
 0. Leading cross-functional teams to unify and modernize fragmented, cross-platform mobile portfolios following multiple business acquisitions and scaling QA efficiency through automated integration and E2E testing.
 1. Architecting and leading implementation of core system: Increased average RPU by 110% and user base by 20%.
